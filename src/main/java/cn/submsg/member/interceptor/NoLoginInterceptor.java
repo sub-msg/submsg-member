@@ -16,7 +16,6 @@ public class NoLoginInterceptor extends AbstractInterceptor{
 		
 //		BaseActionSupport aldAction = null;
 		Object obj = invocation.getAction();
-		
 		if (obj instanceof BaseActionSupport) {
 //			aldAction = (BaseActionSupport) invocation.getAction();
 			return invocation.invoke();
