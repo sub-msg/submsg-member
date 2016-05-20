@@ -1,0 +1,41 @@
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+    
+	<package name="auth" extends="memberAuthInterceptor" namespace="/member">
+		
+	</package>
+
+	<!-- 不用登录即可访问的界面 -->
+	<package name="nologin" extends="noLoginInterceptor" namespace="/">
+		 		
+	</package>
+
+
+   	<package name="memberAuthInterceptor" extends="myInterceptor">
+		<interceptors>
+			<!-- 认证拦截器-->
+			<interceptor name="memberAuthInterceptor"
+				class="cn.submsg.member.interceptor.MemberAuthInterceptor" />
+			<interceptor-stack name="authStack">
+				<interceptor-ref name="memberAuthInterceptor" />
+				<interceptor-ref name="myStack" />
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="authStack" />
+	</package>
+	
+	<package name="noLoginInterceptor" extends="myInterceptor">
+		<interceptors>
+			<!-- 不需要认证的拦截器-->
+			<interceptor name="noLoginInterceptor"
+				class="cn.submsg.member.interceptor.NoLoginInterceptor" />
+			<interceptor-stack name="noLoginStack">
+				<interceptor-ref name="noLoginInterceptor" />
+				<interceptor-ref name="myStack" />
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="noLoginStack" />
+	</package>
+</struts>
