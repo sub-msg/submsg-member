@@ -9,7 +9,10 @@
 
 	<!-- 不用登录即可访问的界面 -->
 	<package name="nologin" extends="noLoginInterceptor" namespace="/">
-		 		
+		  <action name="index" class="cn.submsg.member.action.IndexAction">
+           <result name="showIndex">/member/index.jsp</result>
+		   <result name="success">/member/index.jsp</result>
+		</action>	
 	</package>
 
 

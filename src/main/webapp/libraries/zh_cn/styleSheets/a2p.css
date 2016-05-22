@@ -1,0 +1,440 @@
+body.white_color{background: #fff;}
+li{list-style: none;}
+a{color: #fff;}
+a:link{outline: none;}
+.fl{float: left;}
+.fr{float: right;}
+.send_btn[disabled]{background-color:#fff!important}
+.mb_20{margin-bottom: 20px;}
+.mt_20{margin-top: 20px;}
+.mt_20_2{margin-top: 20px;}
+.relative{position: relative;}
+.overflow_h{overflow: hidden;}
+.color_0{color: #000;}
+/*a2p  start*/
+.solutions-bg-g{background: #1dc998;}
+.a2p_top{padding: 30px 0 0 0;overflow: hidden;}
+.a2p_top p{text-align: left;color: #fff;margin: 0;}
+.a2p_content1{width: 100%;margin-top: 0px;}
+.a2p_text1{margin-left: 10px;color: #fff;font-size: 24px;text-align: left;}
+.top_pad{padding-left: 5%;}
+.a2p_text1 p{margin: 0;}
+.a2p_text1 p.text1_p2{color: #0d664d;}
+.w_100{width: 100%;overflow: hidden;}
+.a2p_top p.text1_p3{font-size: 20px;margin-top: 15px;}
+.a2p_top p.text1_p4{font-size: 16px;margin-top: 15px;}
+.a2p_top p.text1_p5{font-size: 14px;margin-top: 15px;}
+.try_btn{width: 270px;height: 45px;display: block;background: #fff;font-size: 24px;line-height: 45px;color: #1dc998;margin-top: 40px;margin-bottom: 40px;padding: 0;border-color: #fff;-webkit-box-shadow: 0px 3px 0px 0px rgba(23,171,129,1);
+-moz-box-shadow: 0px 3px 0px 0px rgba(23,171,129,1);
+box-shadow: 0px 3px 0px 0px rgba(23,171,129,1);}
+a.try_btn:hover{background: #fff; color: #1dc998;border-color: #fff}
+
+.down_list{width: 100%;margin-bottom: 20px;overflow: hidden;}
+.down_list ul{padding: 0;}
+.down_list li{float: left;margin-right: 5%;text-align: left;color: #fff;font-size: 14px;margin-bottom: 10px;}
+.down_list a:hover{color: #fff;}
+.a2p_img1{width: 100%;position: absolute;left: 0;top: 0;display: none;}
+.a2p_icon_width .img-responsive{max-width: 85%;}
+.a2p_content p.a2p_div1_p1{color: #1dc998;}
+/*.a2p_div1_p1{font-size: 22px;}*/
+.a2p_div1_p2{font-size: 14px;color: #000;}
+.border_g{border-bottom: 1px #f6f6f6 solid;}
+.color_g{color: #1dc998;}
+.test_p1{font-size: 18px;text-align: left;}
+.test_list{margin-top: 30px;}
+.test_list p{width: 100%;text-align: left;font-size: 12px;margin-bottom: 5px;overflow: hidden;}
+.test_list input{width: 280px;float: left;border: 1px #59d7b3 solid;overflow: hidden;margin-bottom: 10px;height: 45px;line-height: 45px;}
+.test_list input.test_code{width: 140px;}
+.receive_code{width: 120px;margin-left:20px; height: 45px;background: #1dc998;text-align: center;line-height: 45px;color: #fff;font-size: 24px;}
+.send_btn{width: 140px;margin-top: 15px;height: 45px;background: #fff;color: #1dc998;line-height: 45px;font-size: 18px;border: 0;padding: 0;display: block;-webkit-box-shadow: 0px 3px 0px 0px rgba(23,171,129,1);
+-moz-box-shadow: 0px 3px 0px 0px rgba(23,171,129,1);
+box-shadow: 0px 3px 0px 0px rgba(23,171,129,1);}
+.send_btn:hover{background: #fff;color: #1dc998;}
+.a2p_icon6_width .img-responsive{max-width: 50%;}
+.a2p_icon7_width .img-responsive{max-width: 50%;}
+.sort_p{width: 60%;margin: 0 auto;}
+.a2p_icon11_width .img-responsive{max-width: 80%;}
+.icon_width .img-responsive{max-width: 50%;}
+.text_white{font-size: 24px;}
+.color_w{color: #fff;}
+.m_icon_img,.e_icon_img{width: 28%;}
+.action_detail{width: 100%;overflow: hidden;}
+.action_num{font-size: 32px;line-height: 8px}
+.add_icon,.large_text{font-size: 41px;}
+.message_icon,.email_icon{width: 45%;}
+.m_text,.e_icon_img{margin-left: 5px;}
+.buy_btn{width: 270px;margin: 0 auto;height: 45px;line-height: 45px;color: #1dc998;background: #fff;display: block;margin-top: 25px;font-size: 24px;padding: 0;border: 0;-webkit-box-shadow: 0px 3px 0px 0px rgba(23,171,129,1);
+-moz-box-shadow: 0px 3px 0px 0px rgba(23,171,129,1);
+box-shadow: 0px 3px 0px 0px rgba(23,171,129,1);}
+a.buy_btn:hover{background: #fff;color: #1dc998;}
+.last_sections{overflow: hidden;width: 100%;padding: 50px 0;border-bottom: 1px #1dc998 solid;text-align: center;}
+.last_sections p{font-size: 18px;margin-top: 15px;}
+.try_btn_2{width: 240px;height: 45px;line-height: 45px;margin: 0 auto;color: #fff;background: #1dc998;display: block;text-align: center;font-size: 24px;padding: 0;border: 0;-webkit-box-shadow: 0px 3px 0px 0px rgba(23,171,129,1);
+-moz-box-shadow: 0px 3px 0px 0px rgba(23,171,129,1);
+box-shadow: 0px 3px 0px 0px rgba(23,171,129,1);}
+a.try_btn_2:hover{color: #fff;background: #1dc998;}
+.a2p_icon6_width{margin-top: 45px;}
+.a2p_div1_p1{font-size: 18px;}
+ .a2p_img1{position: relative;}
+ .a2p_img1 .img-responsive{max-width: 50%;}
+.a2p_icon1{width: 18%;} 
+.a2p_text1 p.text1_p2{font-size: 32px;line-height: 36px;}
+.a2p_div{height: 290px}
+.test_list input{color: #1dc998;font-size: 24px;text-indent: 10px;}
+
+/*a2p  end*/
+
+/*email_css  start*/
+.solutions-bg-b{background: #007ffc;}
+.email_top{padding: 30px 0 0 0;overflow: hidden;}
+.mail_icon1{max-width: 18%;}
+.mail_top{padding: 30px 0 0 ;}
+.mail_top .a2p_text1 .text1_p2{color:#004990}
+.mail_top p{text-align: left;color: #fff;}
+.mail_img1{margin-top: 100px;margin-bottom: 50px;display: none;}
+.mail_top .text1_p3{font-size: 22px;margin-top: 20px;}
+
+.mail_top .try_btn:hover{color: #007ffc;}
+.mail_top .down_list{margin-bottom: 0;}
+.mail_content .a2p_div1_p1{color: #007ffc;font-size: 16px;}
+.mail_content2{text-align: center;color: #fff;}
+.mail_content2 p{font-size: 12px;}
+.mail_content2 p.mail_p1{font-size: 30px;}
+.mail_content2 p.mail_p2{margin-bottom: 0;}
+.jc_div{display: inline-block;overflow: hidden;width: 100%;margin: 0 auto;}
+.mail_add_icon{width: 10%;margin:40px 10px 0;}
+.mail_max_width{width: 40%;}
+.a2p_icon2_width .img-responsive{max-width: 55%;}
+.mail_content_third .a2p_div1_p2{max-width: 80%;margin: 0 auto;}
+.flow_num{width: 80px;height: 80px;margin: 0 auto;font-size:48px;color: #007ffc;background: #fff;border-radius: 50%;line-height: 80px;margin-bottom: 10px; }
+.flow_num2{color: #fff;background: #1dc998;}
+.mail_content_flow .a2p_div1_p1{font-size: 15px;}
+.mail_content_flow .a2p_div1_p2{max-width: 100%;margin: 0 auto;}
+.dashed_line{display: none;}
+.last_sections_blue{border-color: #007ffc; }
+.try_btn_mail{background: #007ffc;-webkit-box-shadow: 0px 3px 0px 0px rgba(0,73,144,1);
+-moz-box-shadow: 0px 3px 0px 0px rgba(0,73,144,1);
+box-shadow: 0px 3px 0px 0px rgba(0,73,144,1);}
+a.try_btn_mail:hover{background: #007ffc;color: #fff;}
+.color_blue{color: #007ffc;}
+.mail_div_first{margin-bottom: 40px;}
+.flow_div{margin-bottom: 0px;height: 265px;}
+.a2p_p1{color: #1dc998;}
+.color_black{color: #6b6b6b;}
+/*email_css  end*/
+
+
+/*voice_css start*/
+.solutions-bg-lb{background: #22e0ed;}
+.lb_color{color: #22e0ed;}
+.voice_top .a2p_text1 .voice_text1_p1{color: #01696e;}
+
+.voice_top a.try_btn_voice:hover{color: #22e0ed;}
+.voice_img1{display: none;}
+.voice_content .a2p_div1_p1 {color: #22e0ed;}
+.voice_content .a2p_div1_p2 {color: #666666;}
+.flow_num3{color: #fff;background: #22e0ed;}
+.last_sections_lb{border-color: #22e0ed;color: #00949e;}
+.btn_voice{background: #22e0ed;-webkit-box-shadow: 0px 3px 0px 0px rgba(0,148,158,1);
+-moz-box-shadow: 0px 3px 0px 0px rgba(0,148,158,1);
+box-shadow: 0px 3px 0px 0px rgba(0,148,158,1);}
+a.btn_voice:hover{background: #22e0ed;color: #fff;}
+.voice_icon_width .img-responsive{max-width: 73%;}
+
+/*voice_css end*/
+
+/*iot_css  start*/
+.solutions-bg-lb2{background: #63cbf3;}
+.iot_container{background: #63cbf3;}
+.iot_top .a2p_text1 .text1_p2{color: #01729e;}
+.iot_top .text1_p4{font-size: 18px;}
+.iot_top a.try_btn:hover{color: #1a88b3;}
+.iot_content .a2p_div1_p1{color: #63cbf3;}
+.iot_content .a2p_div1_p2{color: #666666;}
+.iot_content2 p{color: #fff;text-align: center;}
+.iot_content2 .big_text1{font-size: 28px;}
+.iot_content2 .small_text1{max-width: 80%;font-size: 18px;margin: 0 auto;}
+.iot_div{margin-top: 40px;}
+.iot_content2 .a2p_div1_p1,.iot_content2 .a2p_div1_p2{color: #fff;}
+.iot_content2 .a2p_icon_width .img-responsive{max-width: 96%;}
+.iot_content3 .big_text1{color: #63cbf3;text-align: center;font-size: 28px;}
+.iot_content3 .small_text1{max-width: 80%;font-size: 18px;margin: 0 auto;text-align: center;color: #666666;}
+.iot_content3 .a2p_div1_p1 {color: #63cbf3;}
+.iot_content3 .a2p_div1_p2{color: #666666;}
+.iot_content4 .big_text1,.iot_content4 .small_text1{color: #fff;}
+.iot_icon2 .img-responsive{max-width: 70%;}
+/*.iot_icon2_left .img-responsive{float: right;margin-right: 30px;}
+.iot_icon2_right .img-responsive{float: left;margin-left: 30px;}*/
+.iot_content4 .a2p_div1_p1,.iot_content4 .a2p_div1_p2{color: #fff}
+.iot_content4 .a2p_div1_p2{max-width: 100%;margin: 0 auto;}
+.border_lb{border-bottom: 1px #63cbf3 solid;}
+.flow_num_iot{background: #63cbf3;color: #fff;}
+.iot_content_flow .iot_p1{color: #63cbf3;}
+.iot_content_flow p{color: #63cbf3;}
+.iot_content_flow .a2p_div1_p2{color: #676767;}
+.dashed_line_iot{border-color: #63cbf3;}
+.round_area {width: 200px;height: 200px;margin: 0 auto;border: 1px #fd0011 solid;border-radius: 50%;line-height: 200px;font-size: 48px;color: #fd0011;margin-bottom: 10px;}
+.round_area_blue{border-color:#002cfc;color: #002cfc;}
+.round_area_green{border-color:#2cfc2b;color: #2cfc2b;}
+.iot_content5 .mail_p1{color: #63cbf3;}
+.iot_content5 .a2p_icon_width{margin-top: 40px;}
+.iot_content5 .a2p_icon_width .img-responsive{max-width: 50%;}
+.iot_content .a2p_div{height: auto;}
+.iot_content2 .a2p_div{margin-top: 30px;}
+.iot_content5 .iot_p2{color: #666;max-width: 60%;margin: 0 auto;font-size: 13px;margin-top: 50px;}
+.new_area p{color: #fff;}
+.big_text2{font-size: 80px;text-align: center;color: #fff;padding-bottom: 80px;}
+.color_lb2{color: #63cbf3;}
+.try_btn_iot{background: #63cbf3;-webkit-box-shadow: 0px 3px 0px 0px rgba(1,114,158,1);
+-moz-box-shadow: 0px 3px 0px 0px rgba(1,114,158,1);
+box-shadow: 0px 3px 0px 0px rgba(1,114,158,1);}
+a.try_btn_iot:hover{background: #63cbf3;}
+.new_area .a2p_div1_p1{font-size: 16px;}
+.top_height{height: 480px;overflow: hidden;}
+.voice_top p.text1_p4{font-size: 16px;}
+.padding_80{padding: 80px 0;}
+/*iot_css edn*/
+.flow_top p.text1_p3{font-size: 18px;}
+.flow_img1{width: 17%;}
+.btn_mobile_2{background-color:#d9534f;-webkit-box-shadow: 0px 3px 0px 0px rgba(212,63,58,1);
+-moz-box-shadow: 0px 3px 0px 0px rgba(212,63,58,1);
+box-shadow: 0px 3px 0px 0px rgba(212,63,58,1);}
+a.btn_mobile_2:hover,a.btn_mobile_2:active,a.btn_mobile_2:focus{background: #ea4543;}
+.btn_mobile{color:#970a08;-webkit-box-shadow: 0px 3px 0px 0px rgba(199,48,47,1);
+-moz-box-shadow: 0px 3px 0px 0px rgba(199,48,47,1);
+box-shadow: 0px 3px 0px 0px rgba(199,48,47,1);}
+a.btn_mobile:hover,a.btn_mobile:active{color:#970a08;background: #fff;}
+.try_btn_voice{color: #22e0ed;-webkit-box-shadow: 0px 3px 0px 0px rgba(1,105,110,1);
+-moz-box-shadow: 0px 3px 0px 0px rgba(1,105,110,1);
+box-shadow: 0px 3px 0px 0px rgba(1,105,110,1);}
+a.btn_voice:hover,a.btn_voice:active,a.btn_voice:focus{background: #20d3df;}
+.mail_btn{color: #007ffc;-webkit-box-shadow: 0px 3px 0px 0px rgba(0,73,144,1);
+-moz-box-shadow: 0px 3px 0px 0px rgba(0,73,144,1);
+box-shadow: 0px 3px 0px 0px rgba(0,73,144,1);}
+a.try_btn_mail:hover,a.try_btn_mail:active,a.try_btn_mail:focus{background: #067aec;}
+.iot_btn{color: #1a88b3;-webkit-box-shadow: 0px 3px 0px 0px rgba(1,114,158,1);
+-moz-box-shadow: 0px 3px 0px 0px rgba(1,114,158,1);
+box-shadow: 0px 3px 0px 0px rgba(1,114,158,1);}
+a.try_btn_iot:hover,a.try_btn_iot:active,a.try_btn_iot:focus{background: #61c5ec;}
+
+
+
+
+@media (min-width: 480px) {
+/*a2p  start*/
+.test_list input{width:90%;float: left;border: 1px #59d7b3 solid;overflow: hidden;margin-bottom: 10px;height: 45px;line-height: 45px;}
+.test_list input.test_code{width: 180px;}
+.receive_code{width: 120px;margin-left:20px; height: 45px;background: #1dc998;text-align: center;line-height: 45px;color: #fff;font-size: 24px;}
+.send_btn{width: 180px;margin-top: 15px;}
+.action_num{font-size: 50px;line-height: 30px}
+.add_icon,.large_text{font-size: 50px;}
+.a2p_div{height: 330px}
+.a2p_icon1{width: 15%;} 
+.a2p_top p.text1_p3{font-size: 24px;margin-top: 15px;}
+.a2p_top p.text1_p4{font-size: 18px;margin-top: 15px;}
+.a2p_top p.text1_p5{font-size: 14px;margin-top: 15px;}
+
+/*a2p  end*/
+
+/*email_css  start*/
+.mail_top .text1_p3{font-size: 30px;margin-top: 20px;}
+.mail_content .a2p_div1_p1{font-size: 18px;}
+.mail_content_flow .a2p_div1_p1{font-size: 18px;}
+..mail_content2 p{font-size: 14px;}
+.flow_num{width: 100px;height: 100px;margin: 0 auto;font-size:54px;color: #007ffc;background: #fff;border-radius: 50%;line-height: 100px;margin-bottom: 10px; }
+.flow_num2{color: #fff;background: #1dc998;}
+.flow_div{margin-bottom: 20px;height:auto;}
+.voice_top p.text1_p4{font-size: 18px;}
+/*email_css  end*/
+
+
+/*voice_css start*/
+.voice_content .a2p_div1_p1 {color: #22e0ed;}
+.flow_num3{color: #fff;background: #22e0ed;}
+.voice_icon1{width: 14%;}
+.voice_icon_width .img-responsive{max-width: 73%;}
+/*voice_css end*/
+
+.flow_num_iot{background: #63cbf3;color: #fff;}
+.iot_content .a2p_div{height: auto;}
+.iot_content2 .a2p_div{height: auto;}
+.flow_top p.text1_p3{font-size: 20px;}
+
+
+}
+@media (min-width: 640px){
+/*a2p  start*/
+.a2p_img1 .img-responsive{max-width: 83%;} 
+.a2p_icon1{width: 13%;} 
+.a2p_text1 p.text1_p2{font-size: 56px;line-height: 40px;}
+.top_pad{padding-left: 5%;}
+.a2p_div{height: 400px;}
+.a2p_img1 .img-responsive{max-width: 50%;}
+/*a2p  end*/  
+
+/*email_css  start*/
+.jc_div{display: inline-block;overflow: hidden;width: 75%;margin: 0 auto;}
+.a2p_icon2_width .img-responsive{max-width: 36%;}
+.mail_div_first .a2p_div1_p1 {font-size: 24px;}
+.mail_content .a2p_div{height: 410px;}
+.mail_add_icon{width: 10%;margin:70px 10px 0;}
+.mail_max_width{width: 42%;}
+.mail_content_flow .a2p_div1_p2{max-width: 80%;margin: 0 auto;}
+
+/*email_css  end*/
+
+/*voice_css start*/
+.voice_img1{position: relative;left: 18%;top: 40px;width: 64%;margin-bottom: 50px;}
+.voice_top .a2p_text1 .voice_text1_p1{font-size: 34px;}
+.voice_icon1{width: 14%;}
+.voice_icon_width .img-responsive{max-width: 70%;}
+.voice_top p.text1_p4{font-size: 18px;}
+/*voice_css end*/
+
+
+/*iot_css  start*/
+.iot_content .a2p_div{height: auto;}
+.iot_icon2 .img-responsive{max-width: 60%;}
+.iot_content4 .a2p_div1_p2{max-width: 70%;margin: 0 auto;}
+.iot_container{background: #63cbf3;}
+.new_area .a2p_div1_p1{font-size: 18px;}
+
+.flow_top .a2p_text1 .text1_p2{font-size: 38px;}
+
+
+/*iot_css edn*/
+
+}
+@media (min-width: 768px) {
+/*a2p  start*/
+.a2p_top{padding: 30px 0 0 0;overflow: hidden;}
+.top_pad{padding-left: 0%;}
+.a2p_img1{width: 100%;position: absolute;left: 0;top: 44px;display: block;}
+.a2p_img1 .img-responsive{max-width: 83%;}
+.a2p_icon1{width: 24%;} 
+.a2p_text1 p.text1_p2{font-size: 40px;line-height: 46px;}
+.a2p_top p.text1_p3{font-size: 30px;}
+.a2p_top p.text1_p4{font-size: 21px;}
+.a2p_div{height: auto;}
+.a2p_div1_p1{font-size:18px;}
+.mt_20_2{margin-top: 10px;}
+.m_icon_img,.e_icon_img{width: 30%;}
+.action_num{font-size: 36px;}
+.m_text{font-size: 12px;}
+.message_icon,.email_icon{width: 47%;}
+.add_icon, .large_text{font-size: 30px;}
+.a2p_img1{position: absolute;}
+.a2p_img1 .img-responsive{max-width: 95%;}
+/*a2p  end*/
+/*email_css  start*/
+.mail_top .text1_p3{font-size: 26px;margin-top: 20px;}
+.a2p_icon2_width .img-responsive{max-width: 36%;}
+.mail_div_first .a2p_div1_p1 {font-size: 24px;}
+.dashed_line{position: absolute;left: 84%;top: 45px;width: 33%;height: 2px;border-top: 1px #fff dashed;display: block;}
+.jc_div{display: inline-block;overflow: hidden;width: 50%;margin: 0 auto;}
+.mail_content .a2p_div{height: auto;}
+.mail_content2 p{font-size: 16px;}
+.mail_content_flow .a2p_div1_p1{font-size: 20px;}
+.dashed_line2{border-color: #1dc998;}
+.dashed_line3{border-color: #22e0ed;}
+.mail_img1{margin-top: 100px;margin-bottom: 50px;display: block;}
+.voice_top .a2p_text1 .voice_text1_p1{font-size: 34px;}
+.mail_top{padding: 30px 0 ;}
+.flow_top p.text1_p3{font-size: 23px;}
+
+/*email_css  end*/
+
+/*voice_css start*/
+.voice_top .a2p_text1 .voice_text1_p1{font-size: 34px;}
+.voice_img1{position: absolute;left: 0%;top: 37px;width: 100%;display: block;}
+.voice_top p.text1_p4{font-size: 16px;}
+/*voice_css end*/
+
+/*iot_css  start*/
+.dashed_line_iot{border-color: #63cbf3;}
+.iot_container{background: url("http://libraries.submail.cn/images/iot/img1.svg") no-repeat right center;background-size: 54% auto;}
+/*iot_css edn*/
+
+.top_height{height: 480px;overflow: hidden;}
+.flow_icon1{max-width: 22%;}
+.flow_top .a2p_text1 .text1_p2{font-size: 32px;}
+.flow_top p.text1_p3{font-size: 18px;}
+.flow_top p.text1_p4{font-size: 17px;}
+.flow_top p.text1_p5{font-size: 14px;}
+.flow_img1{top: 92px;}
+.flow_img1 .img-responsive{max-width: 100%;}
+.a2p_content1{margin-top: 0;}
+
+}
+
+@media (min-width: 992px) {
+/*a2p  start*/
+.a2p_img1{width: 91%;position: absolute;left: 0;top: 10px;display: block;}
+.test_p1{font-size: 22px;text-align: left;}
+.message_icon,.email_icon{width: 45%;}
+.action_num{font-size: 56px;}
+.add_icon, .large_text{font-size: 56px;}
+.a2p_img1 .img-responsive{max-width: 100%;}
+.a2p_icon1{width: 18%;}
+.a2p_text1 p.text1_p2{font-size: 42px;line-height: 47px;}
+.a2p_top{padding: 60px 0 0 0;overflow: hidden;}
+/*a2p  end*/
+/*email_css  start*/
+.mail_top .text1_p3{font-size: 30px;margin-top: 20px;}
+.a2p_icon2_width .img-responsive{max-width: 70%;}
+.mail_div_first{margin-bottom: 0px;}
+.dashed_line{position: absolute;left: 77%;top: 45px;width: 45%;height: 2px;border-top: 1px #fff dashed;display: block;}
+.dashed_line2{border-color: #1dc998;}
+.dashed_line3{border-color: #22e0ed;}
+.voice_img1{position: absolute;left: 5%;top: 47px;width: 93%;}
+
+/*email_css  end*/
+/*voice_css start*/
+.voice_top p.text1_p4{font-size: 20px;}
+.voice_top .a2p_text1 .voice_text1_p1{font-size: 42px;}
+/*voice_css end*/
+
+/*iot_css  start*/
+.iot_icon1{width: 18%;}
+.dashed_line_iot{border-color: #63cbf3;}
+.top_height{height: 570px;overflow: hidden;}
+.flow_top .a2p_text1 .text1_p2{font-size: 42px;}
+.flow_img1{width: 100%;top: 45px;}
+.flow_top p.text1_p3{font-size: 22px;}
+.flow_top p.text1_p4{font-size: 20px;}
+.flow_top p.text1_p5{font-size: 14px;}
+.a2p_content1{margin-top: 30px;}
+.mail_top{padding: 60px 0 ;}
+
+/*iot_css edn*/
+    
+}
+@media (min-width: 1200px) {
+/*a2p  start*/
+.a2p_icon1{width: 15%;}
+.a2p_div1_p1{font-size:24px;}
+.mt_20_2{margin-top: 20px;}
+.dashed_line_iot{border-color: #63cbf3;}
+.a2p_img1{width: 80%;position: absolute;left: 0;top: -20px;display: block;}
+.flow_img1{width: 90%;top: 5px;}
+.voice_top .a2p_text1 .voice_text1_p1{font-size: 42px;}
+.a2p_text1 p.text1_p2{font-size: 42px;line-height: 54px;}
+
+/*a2p  end*/
+/*email_css  start*/
+  
+/*email_css  end*/
+
+/*voice_css start*/
+.voice_img1{position: absolute;left: 5%;top: 30px;width: 80%;}
+.iot_icon1{width: 15%;}
+/*voice_css end*/
+
+/*iot_css  start*/
+
+/*iot_css edn*/
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+
+}

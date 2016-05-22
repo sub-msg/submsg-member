@@ -5,15 +5,3 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@taglib prefix="s" uri="/struts-tags" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-<%
-	response.setCharacterEncoding("utf-8");
-	response.setHeader("Cache-Control", "no-cache"); //HTTP 1.1
-	response.setHeader("Pragma", "no-cache"); //HTTP 1.0
-	response.setDateHeader("Expires", 0); //prevents caching at the proxy server
-	String path = request.getContextPath();
-	String basePath = request.getScheme() + "://"
-			+ request.getServerName() + ":" + request.getServerPort()
-			+ path + "/";
-	request.setAttribute("basePath", basePath);
-%>
-
