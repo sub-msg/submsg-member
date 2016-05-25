@@ -13,6 +13,7 @@
 		  <action name="index" class="cn.submsg.member.action.IndexAction">
            <result name="index">/index.jsp</result>
            <result name="sms">/sms.jsp</result>
+           <result name="mall">/mall.jsp</result>
 		</action>
 	</package>
 

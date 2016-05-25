@@ -7,8 +7,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7, IE=9" />
-            <meta name="Author" content="sms解决方案 － SUBMSG - 触发邮件和短信云端服务提供商 - submsg.cn  - 专注于事务类邮件和短信的云服务" />
-            <meta name="description" content="SUBMSG致力于为中小型企业提供安全高效的短信群发服务,企业主可借助SUBMSG短信群发平台、短信群发软件轻松实现短信营销,SUBMSG短信验证码送达率99%以上,可为用户提供短信网关、接口." />
+            <meta name="Author" content="sms解决方案 － ${siteAuthor}" />
+            <meta name="description" content="${siteDesc}" />
             <meta name="keywords" content="短信验证码" />
             <title>短信平台_软件_短信验证码_短信网关_接口 - SUBMSG</title>
             <link rel="stylesheet" href="${libUrl}PlugIns/dist/css/bootstrap.css"  type="text/css" />
