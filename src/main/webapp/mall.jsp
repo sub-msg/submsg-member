@@ -18,8 +18,8 @@
             <script src="${libUrl}PlugIns/address.js" type="text/javascript" charset="utf-8"></script>
             <script src="${libUrl}PlugIns/jquery.cookie.js" type="text/javascript" charset="utf-8"></script>
             <script src="${libUrl}PlugIns/dist/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
-            <script src="${libUrl}zh_cn/scripts/global.base.js?2.5.0" type="text/javascript" charset="utf-8"></script>
-            <script src="${libUrl}zh_cn/scripts/global.store.js?2.5.0" type="text/javascript" charset="utf-8"></script>
+            <script src="${libUrl}zh_cn/scripts/global.base.js" type="text/javascript" charset="utf-8"></script>
+            <script src="${libUrl}zh_cn/scripts/global.store.js" type="text/javascript" charset="utf-8"></script>
             <%@ include file="/member/common/com_head_element.jsp"%>
             </head>
     <body>
@@ -61,8 +61,9 @@
                     </div>
                     <div class='d-sas-line2'></div>
                     <div id='message_presents' class='presents'></div>
+                    <textarea rows="" cols="" id="con" name="con"></textarea>
                 </div>
-   
+  
             </div>
      <div class="sections sections-signupnow">
     <div class="container">
@@ -76,6 +77,9 @@
         </div>
     </div>
 </div>        
+ <script type="text/javascript" charset="utf-8">
+alert($("#message_presents").html());
+ </script>
 <%@ include file="/member/common/bottom.jsp"%>
     </body>
 </html>
