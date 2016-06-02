@@ -38,15 +38,17 @@ public class IndexAction extends JsonBaseActionSupport{
 	public String account(){
 		return "account";
 	}
-	
+	private String verifyCode;
 	public String activeMember(){
-		
-		
-		
-		
+		this.setErrorResult("noactive");
+		MemberService memberService = ServiceCacheFactory.getService(MemberService.class);
+		super.setUserName(memberService.activeMember(verifyCode));
 		return "active";
 	}
 	
+	public String reSendActiveEmail(){
+		return null;
+	}
 	
 	private String firstname;
 	private String lastname;
@@ -98,6 +100,12 @@ public class IndexAction extends JsonBaseActionSupport{
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
-	
+
+	public String getVerifyCode() {
+		return verifyCode;
+	}
+
+	public void setVerifyCode(String verifyCode) {
+		this.verifyCode = verifyCode;
+	}
 }

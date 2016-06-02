@@ -15,6 +15,8 @@
            <result name="sms">/sms.jsp</result>
            <result name="mall">/mall.jsp</result>
            <result name="account">/account.jsp</result>
+           <result name="noactive" type="redirect">/index!account.sm#/activeTimesup?userName=${userName}</result>
+           <result name="active" type="redirect">/index!account.sm#/actived?userName=${userName}</result>
 		</action>
 	</package>
 
