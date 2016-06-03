@@ -110,25 +110,27 @@ $(function() {
             })
         },
         resend: function() {
-            "" != a && ($("input[name=resend]").removeClass("btn-primary").removeClass("btn-success").addClass("btn-spn").attr("disable", "disable").val("正在发送"), $.post("resend", {
+        	a = $("#activeEmail").text();
+            "" != a && ($("input[name=resend]").removeClass("btn-primary").removeClass("btn-success").addClass("btn-spn").attr("disable", "disable").val("正在发送"), $.post("/index!reSendActiveEmail.sm", {
                 email: a
             },
-            function(a) {
-                var b = $.parseJSON(a);
-                "true" == b.returns && $("input[name=resend]").removeClass("btn-spn").addClass("btn-success").removeAttr("disable").val("已发送")
+            function(r) {
+                var b = r;
+                "0" == b.flag ? ($("input[name=resend]").removeClass("btn-spn").addClass("btn-success").removeAttr("disable").val("已发送")):"1"==b.flag ? ($("input[name=resend]").removeClass("btn-spn").addClass("btn-success").removeAttr("disable").val("账号已激活")):"100"==b.flag?($("input[name=resend]").removeClass("btn-spn").addClass("btn-success").removeAttr("disable").val("邮件地址不能为空")):($("input[name=resend]").removeClass("btn-spn").addClass("btn-success").removeAttr("disable").val("发送失败"));
             }))
         },
         change: function() {
             var b, c, d, e;
-            "" != a && (b = '<div id="signup-sppiner" style="width:100%;height:100%;background:#fff;position:absolute;left:0;top:0;z-index:999;">  <div class="text-center" style="margin-top:100px;overflow:hidden;dispaly:block;"> <img src="/libraries/zh_cn/images/spinner_42px_ffffff.gif" style="position:absolute;left:50%;top:100px; margin-left:-21px;"> </div><div class="clearfix"></div> <div class="text-center" style="margin-top:50px;">正在更改账户 ...</div></div>', $("#change").append(b), c = $("#change-form").find("input[name=email]").val(), d = $("#change-form").find("input[name=change]").val(), e = $("#change-form").find("input[name=password]").val(), $.post("change", {
+            "" != a && (b = '<div id="signup-sppiner" style="width:100%;height:100%;background:#fff;position:absolute;left:0;top:0;z-index:999;">  <div class="text-center" style="margin-top:100px;overflow:hidden;dispaly:block;"> <img src="/libraries/zh_cn/images/spinner_42px_ffffff.gif" style="position:absolute;left:50%;top:100px; margin-left:-21px;"> </div><div class="clearfix"></div> <div class="text-center" style="margin-top:50px;">正在更改账户 ...</div></div>', $("#change").append(b), c = $("#change-form").find("input[name=email]").val(), d = $("#change-form").find("input[name=change]").val(), e = $("#change-form").find("input[name=password]").val(), $.post("index!changeEmail.sm", {
                 email: c,
                 change: d,
                 password: e
             },
             function(b) {
-                var e, c = $.parseJSON(b);
+//                var e, c = $.parseJSON(b);
+            	 var e, c = b;
                 $("#signup-sppiner").remove(),
-                "true" == c.returns ? (a = d, $("#activeEmail").text(a), window.location = "#/active") : ("email" == c.error ? ($("#change-form").find("input[name=change]").parent().find("label").length > 0 && $("#change-form").find("input[name=change]").parent().find("label").remove(), e = '<label for="change" generated="true" class="error">请输入新的电子邮件地址，成功更改后，此邮件地址将作为你的 SUBMSG 账号</label>', $("#change-form").find("input[name=change]").parent().append(e)) : "account" == c.error ? ($("#change-form").find("input[name=email]").parent().find("label").length > 0 && $("#change-form").find("input[name=email]").parent().find("label").remove(), e = '<label for="email" generated="true" class="error">账户名或密码错误</label>', $("#change-form").find("input[name=email]").parent().append(e)) : "accounted" == c.error ? window.location = "#/unchange": "used" == c.error ? ($("#change-form").find("input[name=change]").parent().find("label").length > 0 && $("#change-form").find("input[name=change]").parent().find("label").remove(), e = '<label for="change" generated="true" class="error">此邮件地址已被使用，请更换一个邮件地址</label>', $("#change-form").find("input[name=change]").parent().append(e)) : "equal" == c.error && ($("#change-form").find("input[name=change]").parent().find("label").length > 0 && $("#change-form").find("input[name=change]").parent().find("label").remove(), e = '<label for="change" generated="true" class="error">新的邮件地址不能与旧邮件地址相同，请更换后再试</label>', $("#change-form").find("input[name=change]").parent().append(e)), $("#change-form").effect("shake", {
+                "0" == c.flag ? (a = d, $("#activeEmail").text(a), window.location = "#/active") : ("1" == c.flag ? ($("#change-form").find("input[name=change]").parent().find("label").length > 0 && $("#change-form").find("input[name=change]").parent().find("label").remove(), e = '<label for="change" generated="true" class="error">请输入新的电子邮件地址，成功更改后，此邮件地址将作为你的 SUBMSG 账号</label>', $("#change-form").find("input[name=change]").parent().append(e)) : ("2" == c.flag|| "3" == c.flag ) ? ($("#change-form").find("input[name=email]").parent().find("label").length > 0 && $("#change-form").find("input[name=email]").parent().find("label").remove(), e = '<label for="email" generated="true" class="error">账户名或密码错误</label>', $("#change-form").find("input[name=email]").parent().append(e)) : "4" == c.flag ? window.location = "#/unchange": "5" == c.flag ? ($("#change-form").find("input[name=change]").parent().find("label").length > 0 && $("#change-form").find("input[name=change]").parent().find("label").remove(), e = '<label for="change" generated="true" class="error">此邮件地址已被使用，请更换一个邮件地址</label>', $("#change-form").find("input[name=change]").parent().append(e)) : "6" == c.flag && ($("#change-form").find("input[name=change]").parent().find("label").length > 0 && $("#change-form").find("input[name=change]").parent().find("label").remove(), e = '<label for="change" generated="true" class="error">新的邮件地址不能与旧邮件地址相同，请更换后再试</label>', $("#change-form").find("input[name=change]").parent().append(e)), $("#change-form").effect("shake", {
                     times: 3
                 },
                 300))
@@ -139,36 +141,42 @@ $(function() {
             $("#login").append(c),
             d = $("#login-form").find("input[name=email]").val(),
             e = $("#login-form").find("input[name=password]").val(),
-            $.post("signin", {
+            $.post("index!login.sm", {
                 email: d,
                 password: e
             },
             function(c) {
-                var e, f, g, h, d = $.parseJSON(c);
-                if ($("#signup-sppiner").remove(), "true" == d.returns) {
-                    if ("configure" == d.status) window.location = "/chs/account/configure";
-                    else if ("normal" == d.status) if (void 0 != b[2]) {
-                        for (e = BASE64.decoder(b[2]), f = "", g = 0, h = e.length; h > g; ++g) f += String.fromCharCode(e[g]);
-                        window.location = f
-                    } else window.location = "/chs/account/"
-                } else "false" == d.returns || ("active" == d.returns ? (a = d.email, $("#activeEmail").text(a), window.location = "#/active") : "status" == d.returns && (window.location = "#/locked")),
-                $("#login-form").effect("shake", {
-                    times: 3
-                },
-                300)
+                var e, f, g, h, k = c;
+                $("#signup-sppiner").remove();
+                if("0" == k.flag){
+                	alert("登录成功");
+                	return;
+                }else if("1" == k.flag||"2" == k.flag||"3" == k.flag){
+                    $("#login-form").effect("shake", {
+                        times: 3
+                    },
+                    300);
+                    return;
+                }else if("4" == k.flag){
+                	a = d;
+                	$("#activeEmail").text(a), window.location = "#/active";
+                }else if("5" == k.flag){
+                	window.location = "#/locked";
+                }
             })
         },
         forgot: function() {
             var c, b = '<div id="signup-sppiner" style="width:100%;height:100%;background:#fff;position:absolute;left:0;top:0;z-index:999;">  <div class="text-center" style="margin-top:50px;overflow:hidden;dispaly:block;"> <img src="/libraries/zh_cn/images/spinner_42px_ffffff.gif" style="position:absolute;left:50%;top:70px; margin-left:-21px;"> </div><div class="clearfix"></div> <div class="text-center" style="margin-top:0px;">正在发送重置密码邮件</div></div>';
             $("#forgot").append(b),
             c = $("#forgot-form").find("input[name=email]").val(),
-            $.post("pwdreset", {
+            $.post("index!pwdreset.sm", {
                 email: c
             },
             function(b) {
-                var e, d = $.parseJSON(b);
+               // var e, d = $.parseJSON(b);
+                var e, d = b;
                 $("#signup-sppiner").remove(),
-                "true" == d.returns ? (a = c, $("#password-reset").text(a), window.location = "#/reset") : ($("#forgot-form").find("input[name=email]").parent().find("label").length > 0 && $("#forgot-form").find("input[name=email]").parent().find("label").remove(), e = '<label for="email" generated="true" class="error">您所填写的电子邮件地址与我们的记录不匹配。请核对后重试。</label>', $("#forgot-form").find("input[name=email]").parent().append(e), $("#forgot-form").effect("shake", {
+                "0" == d.flag ? (a = c, $("#password-reset").text(a), window.location = "#/reset") : ($("#forgot-form").find("input[name=email]").parent().find("label").length > 0 && $("#forgot-form").find("input[name=email]").parent().find("label").remove(), e = '<label for="email" generated="true" class="error">您所填写的电子邮件地址与我们的记录不匹配。请核对后重试。</label>', $("#forgot-form").find("input[name=email]").parent().append(e), $("#forgot-form").effect("shake", {
                     times: 3
                 },
                 300))
@@ -181,16 +189,16 @@ $(function() {
             d = $("#reset-form").find("input[name=email]").val(),
             e = $("#reset-form").find("input[name=password]").val(),
             f = $("#reset-form").find("input[name=repassword]").val(),
-            $.post("reset", {
-                securityCode: c,
+            $.post("index!resetPwd.sm", {
+            	verifyCode: c,
                 email: d,
                 password: e,
                 repassword: f
             },
             function(b) {
-                var c = $.parseJSON(b);
+                var c = b;
                 $("#signup-sppiner").remove(),
-                "true" == c.returns ? (a = d, $("#password-reset").text(a), window.location = "#/resetsuccess") : "false" == c.returns ? (a = "", window.location = "#/login") : "code" == c.returns || "timesup" == c.returns ? (a = "", window.location = "#/resetimesup") : (a = "", window.location = "#/login")
+                "0" == c.flag ? (a = d, $("#password-reset").text(a), window.location = "#/resetsuccess") : "1" == c.flag ? (a = "", window.location = "#/resetimesup") : (a = "", window.location = "#/login")
             })
         }
     },

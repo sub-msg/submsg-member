@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="/common/taglib.jsp"%>
+<c:if test="${code==1}"><script type="text/javascript">alert("该账号已被激活。您可以直接登录该账户。",function(){history.go(-1);});</script></c:if>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
     <head>
@@ -159,7 +161,7 @@
                     </div>
                     <div class="row">
                         <div class="col-xs-12" style="margin-top:20px;">
-                        <p>SUBMSG 已将激活邮件发送至您的邮箱：<a id="activeEmail"></a> ,在进行账户配置之前，你需要从邮箱中激活此账户。</p>
+                         <p>SUBMSG 已将激活邮件发送至您的邮箱：<a id="activeEmail">${email}</a> ,在进行账户配置之前，你需要从邮箱中激活此账户。</p>
                         </div>
                     </div>
                     <div class="row">
