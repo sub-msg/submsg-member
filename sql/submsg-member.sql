@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50624
 File Encoding         : 65001
 
-Date: 2016-06-07 16:53:54
+Date: 2016-07-06 18:46:40
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -29,11 +29,17 @@ CREATE TABLE `api_req_error_log` (
   `req_ip` varchar(32) NOT NULL,
   `created_time` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of api_req_error_log
 -- ----------------------------
+INSERT INTO `api_req_error_log` VALUES ('1', '19', '1', 'xsend.json', '2', '签名校验不正确', '127.0.0.1', '2016-07-06 11:50:58');
+INSERT INTO `api_req_error_log` VALUES ('2', '19', '1', 'xsend.json', '6', '发送许可数量不足！', '127.0.0.1', '2016-07-06 11:51:23');
+INSERT INTO `api_req_error_log` VALUES ('3', '19', '1', 'xsend.json', '6', '发送许可数量不足！', '127.0.0.1', '2016-07-06 11:52:38');
+INSERT INTO `api_req_error_log` VALUES ('4', '19', '1', 'xsend.json', '6', '发送许可数量不足！', '127.0.0.1', '2016-07-06 11:54:55');
+INSERT INTO `api_req_error_log` VALUES ('5', '19', '1', 'xsend.json', '6', '发送许可数量不足！', '127.0.0.1', '2016-07-06 11:56:49');
+INSERT INTO `api_req_error_log` VALUES ('6', '19', '1', 'xsend.json', '6', '发送许可数量不足！', '127.0.0.1', '2016-07-06 11:59:32');
 
 -- ----------------------------
 -- Table structure for mall_products
@@ -126,39 +132,52 @@ CREATE TABLE `member_company` (
 -- ----------------------------
 DROP TABLE IF EXISTS `member_message_sign`;
 CREATE TABLE `member_message_sign` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
   `sign_content` text NOT NULL,
   `sign_status` int(11) NOT NULL DEFAULT '0',
   `sign_position` int(11) NOT NULL,
+  `sign_num` varchar(255) NOT NULL,
   `updated_time` datetime NOT NULL,
   `created_time` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of member_message_sign
 -- ----------------------------
+INSERT INTO `member_message_sign` VALUES ('1', '19', '积分游戏大平台', '1', '0', '02', '2016-07-06 11:00:00', '2016-07-06 11:00:03');
+INSERT INTO `member_message_sign` VALUES ('2', '19', '中国一川', '1', '0', '01', '2016-07-06 11:05:12', '2016-07-06 11:05:15');
+INSERT INTO `member_message_sign` VALUES ('3', '19', '广运商城', '1', '0', '03', '2016-07-06 11:05:44', '2016-07-06 11:05:46');
+INSERT INTO `member_message_sign` VALUES ('4', '19', '一币商城', '1', '0', '04', '2016-07-06 11:06:09', '2016-07-06 11:06:11');
 
 -- ----------------------------
 -- Table structure for member_message_temp
 -- ----------------------------
 DROP TABLE IF EXISTS `member_message_temp`;
 CREATE TABLE `member_message_temp` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
+  `app_id` int(11) NOT NULL,
   `temp_id` varchar(16) NOT NULL,
   `temp_title` varchar(255) NOT NULL,
   `temp_content` text NOT NULL,
   `temp_status` int(11) NOT NULL DEFAULT '0',
+  `sign_id` int(11) NOT NULL,
   `updated_time` datetime NOT NULL,
   `created_time` datetime NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`id`),
+  KEY `tempid` (`temp_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of member_message_temp
 -- ----------------------------
+INSERT INTO `member_message_temp` VALUES ('1', '19', '1', 'sUb981', '开户通知', '尊敬的@var(name)先生/女士：恭喜您成为中国一川（澳门）国际有限公司的理财客户，您所注册的账户资金为@var(numStr)，用户名为：@var(userName)，祝福您跨入了财富自由的大门。[中国一川（澳门）国际有限公司 @var(date)]', '1', '1', '2016-07-06 11:17:38', '2016-07-06 11:17:40');
+INSERT INTO `member_message_temp` VALUES ('2', '19', '1', 'BlQ9X', '卖出一币通知', '您卖出的一币对方已打款，请在48小时内登录用户中心确认,否则将扣除您一颗信誉星。5天后未进行操作将暂封您的一币卖出功能！', '1', '1', '2016-07-06 11:18:01', '2016-07-06 11:18:05');
+INSERT INTO `member_message_temp` VALUES ('3', '19', '1', 'R630D1', '卖出一币通知', '您有一笔交易的一币已失效（对方2小时内未付款），请登录用户中心处理该订单。', '1', '1', '2016-07-06 11:18:55', '2016-07-06 11:18:58');
+INSERT INTO `member_message_temp` VALUES ('4', '19', '1', 'WKkt32', '卖出一币通知', '您挂出的一币已被执行买入操作，请确认对方是否转款，如已转款请登录用户中心确认卖出操作。', '1', '1', '2016-07-06 11:19:33', '2016-07-06 11:19:35');
+INSERT INTO `member_message_temp` VALUES ('5', '19', '1', 'NFgnN3', '操作通知', '尊敬的@var(userName) 玩家：您正在进行@var(op)操作，验证码为：@var(code) ，如非本人操作请忽略', '1', '1', '2016-07-06 11:20:38', '2016-07-06 11:20:40');
 
 -- ----------------------------
 -- Table structure for member_msg_info
@@ -177,6 +196,7 @@ CREATE TABLE `member_msg_info` (
 -- ----------------------------
 -- Records of member_msg_info
 -- ----------------------------
+INSERT INTO `member_msg_info` VALUES ('19', '28', '0', '0', '0', '2016-07-06 11:52:27');
 
 -- ----------------------------
 -- Table structure for member_project
@@ -188,16 +208,17 @@ CREATE TABLE `member_project` (
   `project_name` varchar(32) NOT NULL,
   `project_key` varchar(32) NOT NULL,
   `max_send_num_daily` int(11) NOT NULL DEFAULT '-1',
-  `white_ip` text NOT NULL,
+  `white_ip` text,
   `status` int(11) NOT NULL DEFAULT '0',
   `updated_time` datetime NOT NULL,
   `created_time` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of member_project
 -- ----------------------------
+INSERT INTO `member_project` VALUES ('1', '19', '一川', 'bf8f897336973401f8d08fd5134c7464', '-1', '', '1', '2016-07-06 11:16:13', '2016-07-06 11:16:16');
 
 -- ----------------------------
 -- Table structure for member_verify
@@ -248,11 +269,11 @@ INSERT INTO `member_verify` VALUES ('30', '37d148b95cad1746', '19', '30', '1', '
 -- ----------------------------
 DROP TABLE IF EXISTS `msg_send_log`;
 CREATE TABLE `msg_send_log` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
   `project_id` int(11) NOT NULL,
   `send_id` varchar(32) NOT NULL,
-  `msg_id` varchar(64) NOT NULL,
+  `msg_id` varchar(64) DEFAULT NULL,
   `api_name` varchar(16) NOT NULL,
   `msg_content` text NOT NULL,
   `msg_sign` varchar(64) NOT NULL,
@@ -260,12 +281,21 @@ CREATE TABLE `msg_send_log` (
   `to_mobile` varchar(16) NOT NULL,
   `status` int(11) NOT NULL,
   `req_time` datetime NOT NULL,
-  `res_time` datetime NOT NULL,
-  `res_code` varchar(32) NOT NULL,
+  `send_time` datetime DEFAULT NULL,
+  `res_time` datetime DEFAULT NULL,
+  `res_code` varchar(32) DEFAULT NULL,
   `created_time` datetime NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`id`),
+  KEY `send_id` (`send_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of msg_send_log
 -- ----------------------------
+INSERT INTO `msg_send_log` VALUES ('1', '19', '1', '714a764164b3d9ee7dd9b5d5a7f80135', null, 'xsend.json', '【积分游戏大平台】尊敬的潮哥先生/女士：恭喜您成为中国一川（澳门）国际有限公司的理财客户，您所注册的账户资金为20，用户名为：dogdog7788，祝福您跨入了财富自由的大门。[中国一川（澳门）国际有限公司 2016-07-06]', '积分游戏大平台', '2', '18516632554', '0', '2016-07-06 12:12:19', null, null, null, '2016-07-06 12:12:19');
+INSERT INTO `msg_send_log` VALUES ('2', '19', '1', 'e34d0d013ee0a54171cc206797cb3f0e', null, 'xsend.json', '【积分游戏大平台】尊敬的潮哥先生/女士：恭喜您成为中国一川（澳门）国际有限公司的理财客户，您所注册的账户资金为20，用户名为：dogdog7788，祝福您跨入了财富自由的大门。[中国一川（澳门）国际有限公司 2016-07-06]', '积分游戏大平台', '2', '18516632554', '0', '2016-07-06 17:47:43', null, null, null, '2016-07-06 17:47:43');
+INSERT INTO `msg_send_log` VALUES ('3', '19', '1', '1ae672064797c8b62bb548e834107e31', null, 'xsend.json', '【积分游戏大平台】尊敬的潮哥先生/女士：恭喜您成为中国一川（澳门）国际有限公司的理财客户，您所注册的账户资金为20，用户名为：dogdog7788，祝福您跨入了财富自由的大门。[中国一川（澳门）国际有限公司 2016-07-06]', '积分游戏大平台', '2', '18516632554', '0', '2016-07-06 17:48:46', null, null, null, '2016-07-06 17:48:46');
+INSERT INTO `msg_send_log` VALUES ('4', '19', '1', 'fed7589c254812d7150067d47a81c90a', null, 'xsend.json', '【积分游戏大平台】尊敬的潮哥先生/女士：恭喜您成为中国一川（澳门）国际有限公司的理财客户，您所注册的账户资金为20，用户名为：dogdog7788，祝福您跨入了财富自由的大门。[中国一川（澳门）国际有限公司 2016-07-06]', '积分游戏大平台', '2', '18516632554', '3', '2016-07-06 17:49:57', '2016-07-06 17:50:00', '2016-07-06 17:50:01', null, '2016-07-06 17:49:57');
+INSERT INTO `msg_send_log` VALUES ('5', '19', '1', 'bd3564f7feef3eaf467549c228010ddc', null, 'xsend.json', '【积分游戏大平台】尊敬的潮哥先生/女士：恭喜您成为中国一川（澳门）国际有限公司的理财客户，您所注册的账户资金为20，用户名为：dogdog7788，祝福您跨入了财富自由的大门。[中国一川（澳门）国际有限公司 2016-07-06]', '积分游戏大平台', '2', '18516632554', '3', '2016-07-06 18:23:30', '2016-07-06 18:23:30', '2016-07-06 18:23:30', null, '2016-07-06 18:23:30');
+INSERT INTO `msg_send_log` VALUES ('6', '19', '1', '250b33770070beb9affb6888bdd6fc72', null, 'xsend.json', '【积分游戏大平台】尊敬的潮哥先生/女士：恭喜您成为中国一川（澳门）国际有限公司的理财客户，您所注册的账户资金为20，用户名为：dogdog7788，祝福您跨入了财富自由的大门。[中国一川（澳门）国际有限公司 2016-07-06]', '积分游戏大平台', '2', '18516632554', '3', '2016-07-06 18:26:11', '2016-07-06 18:26:15', '2016-07-06 18:26:15', null, '2016-07-06 18:26:11');
+INSERT INTO `msg_send_log` VALUES ('7', '19', '1', '80f5e69613f3452b869205679d05433f', null, 'xsend.json', '【积分游戏大平台】尊敬的潮哥先生/女士：恭喜您成为中国一川（澳门）国际有限公司的理财客户，您所注册的账户资金为20，用户名为：dogdog7788，祝福您跨入了财富自由的大门。[中国一川（澳门）国际有限公司 2016-07-06]', '积分游戏大平台', '2', '18516632554', '1', '2016-07-06 18:28:01', '2016-07-06 18:28:06', '2016-07-06 18:28:22', null, '2016-07-06 18:28:01');
