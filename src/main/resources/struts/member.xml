@@ -12,12 +12,31 @@
 	<package name="nologin" extends="noLoginInterceptor" namespace="/">
 		<action name="index" class="cn.submsg.member.action.IndexAction">
            <result name="index">/index.jsp</result>
-           <result name="sms">/sms.jsp</result>
-           <result name="mall">/mall.jsp</result>
-           <result name="account">/account.jsp</result>
-           <result name="noactive" type="redirect">/index!account.sm?email=${email}#/activeTimesup</result>
-           <result name="active" type="redirect">/index!account.sm?email=${email}#/actived</result>
 		</action>
+		<action name="login" class="cn.submsg.member.action.IndexAction" method="login"></action>
+		<action name="smsIndex" class="cn.submsg.member.action.IndexAction" method="smsIndex">
+		   <result name="sms">/sms.jsp</result>
+		</action>
+		<action name="mallIndex" class="cn.submsg.member.action.IndexAction" method="mallIndex">
+		   <result name="mall">/mall.jsp</result>
+		</action>
+        <action name="account" class="cn.submsg.member.action.IndexAction" method="account">
+		   <result name="account">/account.jsp</result>
+		</action>		
+        <action name="activeMember" class="cn.submsg.member.action.IndexAction" method="activeMember">
+		    <result name="noactive" type="redirect">/account.sm?email=${email}#/activeTimesup</result>
+		    <result name="active" type="redirect">/account.sm?email=${email}#/actived</result>
+		</action>		
+		<action name="resetPwd" class="cn.submsg.member.action.IndexAction" method="resetPwd">
+		</action>	
+		<action name="changeEmail" class="cn.submsg.member.action.IndexAction" method="changeEmail">
+		</action>
+		<action name="pwdreset" class="cn.submsg.member.action.IndexAction" method="pwdreset">
+		</action>
+		<action name="reSendActiveEmail" class="cn.submsg.member.action.IndexAction" method="reSendActiveEmail">
+		</action>
+		<action name="signup" class="cn.submsg.member.action.IndexAction" method="signup">
+		</action>								
 	</package>
 
 

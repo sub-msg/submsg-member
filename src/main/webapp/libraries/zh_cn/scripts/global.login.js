@@ -76,7 +76,7 @@ $(function() {
             d = $("#signup-form").find("input[name=lastname]").val(),
             e = $("#signup-form").find("input[name=email]").val(),
             f = $("#signup-form").find("input[name=password]").val(),
-            $.post("index!signup.sm", {
+            $.post("signup.sm", {
                 firstname: c,
                 lastname: d,
                 email: e,
@@ -111,7 +111,7 @@ $(function() {
         },
         resend: function() {
         	a = $("#activeEmail").text();
-            "" != a && ($("input[name=resend]").removeClass("btn-primary").removeClass("btn-success").addClass("btn-spn").attr("disable", "disable").val("正在发送"), $.post("/index!reSendActiveEmail.sm", {
+            "" != a && ($("input[name=resend]").removeClass("btn-primary").removeClass("btn-success").addClass("btn-spn").attr("disable", "disable").val("正在发送"), $.post("/reSendActiveEmail.sm", {
                 email: a
             },
             function(r) {
@@ -121,7 +121,7 @@ $(function() {
         },
         change: function() {
             var b, c, d, e;
-            "" != a && (b = '<div id="signup-sppiner" style="width:100%;height:100%;background:#fff;position:absolute;left:0;top:0;z-index:999;">  <div class="text-center" style="margin-top:100px;overflow:hidden;dispaly:block;"> <img src="/libraries/zh_cn/images/spinner_42px_ffffff.gif" style="position:absolute;left:50%;top:100px; margin-left:-21px;"> </div><div class="clearfix"></div> <div class="text-center" style="margin-top:50px;">正在更改账户 ...</div></div>', $("#change").append(b), c = $("#change-form").find("input[name=email]").val(), d = $("#change-form").find("input[name=change]").val(), e = $("#change-form").find("input[name=password]").val(), $.post("index!changeEmail.sm", {
+            "" != a && (b = '<div id="signup-sppiner" style="width:100%;height:100%;background:#fff;position:absolute;left:0;top:0;z-index:999;">  <div class="text-center" style="margin-top:100px;overflow:hidden;dispaly:block;"> <img src="/libraries/zh_cn/images/spinner_42px_ffffff.gif" style="position:absolute;left:50%;top:100px; margin-left:-21px;"> </div><div class="clearfix"></div> <div class="text-center" style="margin-top:50px;">正在更改账户 ...</div></div>', $("#change").append(b), c = $("#change-form").find("input[name=email]").val(), d = $("#change-form").find("input[name=change]").val(), e = $("#change-form").find("input[name=password]").val(), $.post("changeEmail.sm", {
                 email: c,
                 change: d,
                 password: e
@@ -141,7 +141,7 @@ $(function() {
             $("#login").append(c),
             d = $("#login-form").find("input[name=email]").val(),
             e = $("#login-form").find("input[name=password]").val(),
-            $.post("index!login.sm", {
+            $.post("login.sm", {
                 email: d,
                 password: e
             },
@@ -169,7 +169,7 @@ $(function() {
             var c, b = '<div id="signup-sppiner" style="width:100%;height:100%;background:#fff;position:absolute;left:0;top:0;z-index:999;">  <div class="text-center" style="margin-top:50px;overflow:hidden;dispaly:block;"> <img src="/libraries/zh_cn/images/spinner_42px_ffffff.gif" style="position:absolute;left:50%;top:70px; margin-left:-21px;"> </div><div class="clearfix"></div> <div class="text-center" style="margin-top:0px;">正在发送重置密码邮件</div></div>';
             $("#forgot").append(b),
             c = $("#forgot-form").find("input[name=email]").val(),
-            $.post("index!pwdreset.sm", {
+            $.post("pwdreset.sm", {
                 email: c
             },
             function(b) {
@@ -189,7 +189,7 @@ $(function() {
             d = $("#reset-form").find("input[name=email]").val(),
             e = $("#reset-form").find("input[name=password]").val(),
             f = $("#reset-form").find("input[name=repassword]").val(),
-            $.post("index!resetPwd.sm", {
+            $.post("resetPwd.sm", {
             	verifyCode: c,
                 email: d,
                 password: e,

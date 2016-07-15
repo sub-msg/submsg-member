@@ -42,7 +42,7 @@
 			</div>
 			<div class='row'>
 				<div class='col-lg-3 col-xs-12 col-sm-3 col-md-3'>
-					<a href='/index!mallIndex.sm#/all'
+					<a href='/mallIndex.sm#/all'
 						class=' d-sas-section d-sas-selected' id='d-sas-section'
 						title='all'>短信</a>
 				</div>
