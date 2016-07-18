@@ -5,7 +5,9 @@
     <constant name="struts.action.extension" value="sm"/>
     
 	<package name="auth" extends="memberAuthInterceptor" namespace="/member">
-		
+		<action name="index" class="cn.submsg.member.action.MemberAction">
+           <result name="success">/member/index.jsp</result>
+		</action>
 	</package>
 
 	<!-- 不用登录即可访问的界面 -->
@@ -55,7 +57,7 @@
 		<global-results>
 			<!-- 当没有登录的时候就会跳到首页要求其进行登录 -->
 			<result name="nologin" type="redirect">
-				/index
+				/index.sm
 			</result>
 		</global-results>	
 	</package>

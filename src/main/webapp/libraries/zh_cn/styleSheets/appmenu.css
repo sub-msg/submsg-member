@@ -1,0 +1,7 @@
+.appmenucontainer{width: 20px;height: 20px;position: absolute;left: 280px;top: 27px;z-index: 999;}
+.app-menu-container{width:310px;height:370px;padding:30px 20px;position:relative;}
+.app-menu-container .menu-section{width:33.3333%;height:130px;float:left;text-align:center;}
+.app-menu-container .menu-section>a{font-size:14px; text-align:center;display:inline-block; padding:0;}
+.app-menu-container .menu-section>a .app-icon{width:75px;height:75px;display:block;padding-bottom:5px;}
+.appmenu{border-radius: 6px 6px 6px 6px;-moz-border-radius: 6px 6px 6px 6px;-webkit-border-radius: 6px 6px 6px 6px;}
+.submenus_remenu{display:none;}

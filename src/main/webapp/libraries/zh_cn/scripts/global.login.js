@@ -150,6 +150,7 @@ $(function() {
                 $("#signup-sppiner").remove();
                 if("0" == k.flag){
                 	alert("登录成功");
+                	window.location = "/member/index.sm";
                 	return;
                 }else if("1" == k.flag||"2" == k.flag||"3" == k.flag){
                     $("#login-form").effect("shake", {

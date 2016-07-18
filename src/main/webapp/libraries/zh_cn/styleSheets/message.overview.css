@@ -1,0 +1,32 @@
+#message {background-color:#fff;}
+.content_header{width:100%;height:380px;background-color:#efefef;margin:0;padding:0;}
+.content_body{width:100%;min-height:300px;background-color:#fff;border-top:1px solid #17bf82;}
+.warp_container{max-width:1300px;min-width:992;margin:0 auto;}
+.warp_container .warp{padding:20px 40px 50px; position:relative;}
+.user_icon_container{width:140px;float:left; text-align:center;}
+.user_icon{border-radius:48px;margin-top:90px;}
+.overview_container{margin-left:-140;}
+.overview_container > .warp{padding:0;width:auto;height:auto; overflow:hidden;}
+.overview_section{width:33.33%; float:left;margin-top:70px;position:relative;}
+.overview_section .sideline{width:1px;height:180px;background-color:#e5e5e5;position:absolute;left:0px;top:0px;}
+.overview_section .title{font-size:13px;color:#17bf82; display:inline-block;}
+.overview_section .des-title{float:right;color:#666;font-size:13px;}
+.overview_section .subject{font-size:19px;line-height:50px; font-weight:300;color:#666;}
+.overview_section .subject span{color:#17bf82;}
+.overview_section ul{margin-top:20px;}
+.overview_section ul li a{font-size:15px; line-height:30px;}
+.overview_section .cretis{font-size:48px;color:#17bf82;line-height: 48px;    margin-top: 10px;    margin-bottom: 20px; font-family: goodlight;}
+.free-cretis-by-today{width:100%;height:10px;background-color:#999;position:relative;clear:both;margin-top:10px;margin-bottom:10px;}
+.free-cretis-by-today .free-cretis-by-today-used{width:30%;height:10px;background-color:#17bf82;}
+.content_body .warp_container .warp .title{font-size:17px;display:inline-block;}
+.content_body .warp_container .warp .des-title{float:right;font-size:17px;}
+.qprojects{margin-top:30px;margin-bottom:30px;overflow:hidden;width:100%;}
+.qprojects li{float:left;margin-top:10px;width:25%; display:block;position:relative; }
+.qprojects li a{width:100%;text-align:center; display:block;overflow:hidden; position:relative;}
+.qprojects li a:hover{text-decoration:none;}
+.qprojects li a p{font-size:17px;padding-top:10px;width:100%;height:20px;display:block;}
+.message_container_warp{text-align:left;width:200px;height:150px;font-size:14px;display:inline-block;overflow:hidden; position:relative;}
+.message_container_warp .warp{padding:10px;color:#fff;}
+.messageAro{position:absolute;width:14px; height:9px; display:block; overflow:hidden;  background:url(../images/icon&stylesheets_norepeat_message.png) no-repeat -432px -1763px; bottom:0px;margin-bottom:10px;margin-left:3px;right:4px; }
+.message_container_warp{line-height:16px; word-break:break-all;border-radius: 8px; -webkit-border-radius: 8px; -moz-border-radius: 8px; -o-border-radius: 8px; -khtml-border-radius: 8px; background:#00bc7c; color:#fff;}
+.img100{width: 100%;}
