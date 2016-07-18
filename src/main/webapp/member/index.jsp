@@ -100,28 +100,7 @@
                         </div>
                     </div>
                 </div>
-                 <div class="footer">
-                    <div class="bottomNav">
-                        <ul><li class="backhome"><a href="/chs/account/" title="返回我的 SubMail">返回我的 SubMSG</a></li>
-                            <li class="lr"></li>
-                            <li><a href="/chs/mail" title="Mail">邮件</a></li>
-                            <li class="lr"></li>
-                            <li><a href="/chs/message" title="Message">短信/语音</a></li>
-                            <li class="lr"></li>
-                            <li><a href="/chs/addressbook"  title="地址簿">地址簿</a></li>
-                            <li class="lr"></li>
-                            <li><a href="/chs/developer"  title="应用集成">应用集成</a></li>
-
-                        </ul>
-                    </div>
-                    
-                    <a class="submailfooter" href="http://submail.cn" title="Submail"></a>
-                    <div class="footerContainer">
-                        <p class="telHelp">需要任何协助，请致电 4008－753－365，SUBMAIL 的工程师将为您提供协助 <a href="/chs/feedback#/create" class="highLinkHack">在线交谈（工单）</a></p><p class="copyright"> Copyright © SUBMAIL  2016  |   <a href="http://submail.cn/chs/documents/info/8Ah141" target="_blank">使用条款</a>    |   <a href="http://submail.cn/chs/documents/info/dTHNB3" target="_blank">关于 SUBMAIL</a>
-                        </p>
-                    </div>
-
-                </div>
+<%@ include file="/member/cmessage/bottom.jsp"%>
                        </div>
     </body>
 </html>
