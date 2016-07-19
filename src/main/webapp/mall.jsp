@@ -131,19 +131,6 @@
 		</div>
 
 	</div>
-	<div class="sections sections-signupnow">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12 col-sm-12 col-xs-12">
-					<div class="col-lg-4 col-sm-3 col-xs-0"></div>
-					<div class="col-lg-4 col-sm-6 col-xs-12">
-						<a href="/chs/account/login#/signup"
-							class="btn btn-primary btn-lg btn-block">立即免费试用</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
 <script  type="text/javascript"
 	charset="utf-8">
 $("#d-sas-plus").live("click",function(){

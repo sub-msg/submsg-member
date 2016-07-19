@@ -14,7 +14,7 @@
                     
                     <a class="submailfooter" href="http://submsg.cn" title="SubMsg"></a>
                     <div class="footerContainer">
-                        <p class="telHelp">需要任何协助，请致电 4008－753－365，SUBMSG 的工程师将为您提供协助 </p><p class="copyright"> Copyright © SUBMSG  2016 
+                        <p class="telHelp">需要任何协助，请致电 ${siteCall} ，SUBMSG 的工程师将为您提供协助 </p><p class="copyright"> Copyright © SUBMSG  2016 
                         </p>
                     </div>
 

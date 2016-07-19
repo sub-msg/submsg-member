@@ -23,48 +23,10 @@
         <script src="${libUrl}PlugIns/eventdialog.js?2.5.0" type="text/javascript" charset="utf-8"></script>
         <script src="${libUrl}PlugIns/jquery.rotate.js?2.5.0" type="text/javascript" charset="utf-8"></script>
         <script src="${libUrl}zh_cn/scripts/sys_base.js?2.5.0" type="text/javascript" charset="utf-8"></script>
-        <script src="${libUrl}zh_cn/scripts/message.overview.js?2.5.0" type="text/javascript" charset="utf-8"></script>
-        <script src="${libUrl}zh_cn/scripts/addTips.js?2.5.0" type="text/javascript" charset="utf-8"></script>
         <script src="${libUrl}PlugIns/submenus/submenus.js" type="text/javascript" charset="utf-8"></script>
     </head>
     <body id="message">
-	<div class="header">
-		<div class="header_icon">
-			<p>
-				<a class="message_logo">SubMsg System</a>
-			</p>
-			<div class="topMenuContainer">
-				<ul class="appmenu">
-					<li class="create"><a href="/chs/message/applist">应用管理</a></li>
-					<li class="create"><a href="/chs/message/create">新建模板</a></li>
-					<li class="project"><a href="/chs/message/project">模板列表</a></li>
-					<li><a href="/chs/account/logs#/message">计费日志</a></li>
-				</ul>
-			</div>
-			<div class="headerBg"></div>
-		</div>
-		<div class="accounts">
-			<ul>
-				<li class="icon_account submenus_container"><a
-					href="javascript:void(0)" id="accountbtn"> <img
-						src="${libUrl}images/icon/icon64x64.jpg"
-						width="32" height="32" /> <span>孟 潮</span>
-				</a>
-					<div class="submenus_remenu">
-						<div class="account_overview">
-							<ul>
-								<li><a href="/chs/account/settings"><span>账户设置</span></a></li>
-								<li><a href="/chs/account/logout" class="logout">登出</a></li>
-							</ul>
-						</div>
-					</div></li>
-				<li class="lr"></li>
-				<li><a href="/chs/store">商店</a></li>
-				<li class="lr"></li>
-				<li><a href="/chs/">首页</a></li>
-			</ul>
-		</div>
-	</div>
+	<%@ include file="/member/cmessage/nav.jsp"%>
 
 	<div class="body_container">
             <div class="content_container">
@@ -80,8 +42,8 @@
                                         <div class="overview_section">
                                             <div class="warp">
                                                 <div class="title">短信发送许可</div>
-                                                <div class="des-title"><a href="/chs/store">购买发送许可</a></div>
-                                                <div class="cretis" id="overview_message_credis">0</div>
+                                                <div class="des-title"><a href="/mallIndex.sm">购买发送许可</a></div>
+                                                <div class="cretis" id="overview_message_credis">${msgInfo.msgNum}</div>
                                             </div>
                                         </div>
                                     </div>
@@ -93,9 +55,13 @@
                 <div class="content_body">
                     <div class="warp_container">
                         <div class="warp">
-                            <div class="title">最近使用的项目</div>
+                            <div class="title">最近使用的模板</div>
                             <div class="des-title"><a href="/chs/message/project" class="highlight" >查看全部模板</a></div>
                             <ul class="qprojects">
+                              <li><a href="/member/create.sm"><img src="${libUrl}images/add-new-message.jpg" /><p></p></a></li>
+                              <s:iterator var="data" value="msgTempList">
+                                 <li><a href="#"><div class="message_container_warp"><div class="warp">【${data.signContent}】${data.tempContent}</div></div><p></p></a></li>
+                              </s:iterator>
                              </ul>
                         </div>
                     </div>

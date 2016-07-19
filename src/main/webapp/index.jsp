@@ -141,8 +141,14 @@
                 </div>
             </div>
         </div>
+        
         <div class="sections color_blue last_sections last_sections_blue">
-            <a class="btn btn-primary try_btn_2 try_btn_mail" href="chs/account/login.html#/signup">立即免费试用</a>
+            <c:if test="${empty userName}">
+            <a class="btn btn-primary try_btn_2 try_btn_mail" href="account.sm#/signup">立即免费试用</a>
+            </c:if>
+             <c:if test="${not empty userName}">
+            <a class="btn btn-primary try_btn_2 try_btn_mail" href="/member/index.sm">立即免费试用</a>
+            </c:if>
             <c:if test="${not empty siteCall}"><p>业务咨询请致电：${siteCall}</p></c:if>
         </div>
         

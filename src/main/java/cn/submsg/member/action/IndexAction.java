@@ -15,6 +15,7 @@ import com.sr178.module.web.session.SessionManager;
 
 import cn.submsg.member.bo.MallProducts;
 import cn.submsg.member.bo.Member;
+import cn.submsg.member.constant.SessionAttrName;
 import cn.submsg.member.service.MemberService;
 /**
  * 主页action
@@ -27,6 +28,7 @@ public class IndexAction extends JsonBaseActionSupport{
 	
 	
 	private List<MallProducts> productList;
+	
 	
 	/**
 	 * 登录接口
@@ -45,12 +47,14 @@ public class IndexAction extends JsonBaseActionSupport{
 		if(member.getStatus()==Member.NOT_ACTIVED){
 			throw new ServiceException(4, "用户还没有激活");
 		}
-		
 		String sessionId = ServletActionContext.getRequest().getSession().getId();
 		Session session = new Session(member.getUserName(), System.currentTimeMillis(), sessionId);
+		session.setAttr(SessionAttrName.NAME, member.getFirstName()+member.getSecondName());
+		session.setAttr(SessionAttrName.USERID,member.getId());
 		SessionManager.ins().addSession(sessionId, session);
 		return this.renderSuccessResult();
 	}
+	
     /**
      * 首页
      */
@@ -207,5 +211,4 @@ public class IndexAction extends JsonBaseActionSupport{
 	public void setRepassword(String repassword) {
 		this.repassword = repassword;
 	}
-	
 }
