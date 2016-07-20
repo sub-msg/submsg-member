@@ -215,7 +215,7 @@ $(function() {
                 })
             }
             b.parents(".apps").find(".appConfigs").find(".channelContainer").html(' <div class="dropdown" style="width:130px;">                                                        <select id="edit_channel" class="dropdown-select">                                                            <option value="0">事务类邮件通道</option>                                                            <option value="1">推广类邮件通道</option>                                                        </select></div>'),
-            b.parents(".apps").find(".appConfigs").find(".ipbindContainer").html('<textarea style="width:100%;height:30px;" name="edit_bind">' + b.parents(".apps").find("input[name=bind]").val() + "</textarea>"),
+            b.parents(".apps").find(".appConfigs").find(".ipbindContainer").html('<textarea style="width:100%;height:30px;" name="edit_bind">' + b.parents(".apps").find("input[name=whiteIp]").val() + "</textarea>"),
             $("#edit_channel").find("option").each(function() {
                 $(this).val() == b.parents(".apps").find("input[name=channel]").val() && $(this).attr("selected", "true")
             }),
