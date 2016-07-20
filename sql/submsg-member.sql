@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50624
 File Encoding         : 65001
 
-Date: 2016-07-16 11:45:02
+Date: 2016-07-20 20:52:48
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -28,7 +28,8 @@ CREATE TABLE `api_req_error_log` (
   `error_desc` varchar(64) NOT NULL,
   `req_ip` varchar(32) NOT NULL,
   `created_time` datetime NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `user_id,project_id` (`user_id`,`project_id`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=4077 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -4210,7 +4211,8 @@ CREATE TABLE `member_message_sign` (
   `sign_num` varchar(255) NOT NULL,
   `updated_time` datetime NOT NULL,
   `created_time` datetime NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `user_id` (`user_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -4237,7 +4239,9 @@ CREATE TABLE `member_message_temp` (
   `updated_time` datetime NOT NULL,
   `created_time` datetime NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `tempid` (`temp_id`)
+  KEY `tempid` (`temp_id`),
+  KEY `user_id` (`user_id`),
+  KEY `sign_id` (`sign_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -4282,13 +4286,14 @@ CREATE TABLE `member_project` (
   `status` int(11) NOT NULL DEFAULT '0',
   `updated_time` datetime NOT NULL,
   `created_time` datetime NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `user_id` (`user_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of member_project
 -- ----------------------------
-INSERT INTO `member_project` VALUES ('1', '19', '一川', 'bf8f897336973401f8d08fd5134c7464', '-1', '', '1', '2016-07-06 11:16:13', '2016-07-06 11:16:16');
+INSERT INTO `member_project` VALUES ('1', '19', '一川', 'bf8f897336973401f8d08fd5134c7464', '-1', '', '0', '2016-07-06 11:16:13', '2016-07-06 11:16:16');
 
 -- ----------------------------
 -- Table structure for member_verify
@@ -4302,7 +4307,8 @@ CREATE TABLE `member_verify` (
   `type` int(11) NOT NULL,
   `verify_time` datetime DEFAULT NULL,
   `created_time` datetime NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `verify_str` (`verify_str`)
 ) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -4345,7 +4351,8 @@ CREATE TABLE `msg_delever_log` (
   `stat` varchar(32) NOT NULL,
   `destnation_id` varchar(32) NOT NULL,
   `created_time` datetime NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `msg_id` (`msg_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -4374,7 +4381,8 @@ CREATE TABLE `msg_send_log` (
   `res_code` varchar(32) DEFAULT NULL,
   `created_time` datetime NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `send_id` (`send_id`)
+  KEY `send_id` (`send_id`),
+  KEY `user_id` (`user_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6389 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
