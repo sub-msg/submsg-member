@@ -13,7 +13,6 @@
         <title>短信 - 我的 SUBMSG</title>
         <link rel="stylesheet" href="${libUrl}zh_cn/styleSheets/message_sys_base.css?2.5.0"  type="text/css" />
         <link rel="stylesheet" href="${libUrl}zh_cn/styleSheets/message.overview.css?2.5.0"  type="text/css" />
-        <link rel="stylesheet" href="${libUrl}zh_cn/styleSheets/addTips.css?2.5.0"  type="text/css" />
         <script src="${libUrl}PlugIns/jquery.js?2.5.0" type="text/javascript" charset="utf-8"></script>
         <script src="${libUrl}PlugIns/jquery-ui-1.10.4.custom.min.js?2.5.0" type="text/javascript" charset="utf-8" ></script>
         <script src="${libUrl}PlugIns/jquery.placeholder-1.1.9.js?2.5.0" type="text/javascript" charset="utf-8" ></script>
@@ -67,6 +66,7 @@
                     </div>
                 </div>
 <%@ include file="/member/cmessage/bottom.jsp"%>
+                       </div>
                        </div>
     </body>
 </html>

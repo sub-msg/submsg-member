@@ -8,7 +8,7 @@
 			</p>
 			<div class="topMenuContainer">
 				<ul class="appmenu">
-					<li class="create"><a href="/chs/message/applist">应用管理</a></li>
+					<li class="create"><a href="/member/appList.sm">应用管理</a></li>
 					<li class="create"><a href="/chs/message/create">新建模板</a></li>
 					<li class="project"><a href="/chs/message/project">模板列表</a></li>
 					<li><a href="/chs/account/logs#/message">计费日志</a></li>

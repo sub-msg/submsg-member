@@ -7,6 +7,7 @@ import com.sr178.module.web.action.JsonBaseActionSupport;
 
 import cn.submsg.member.bean.MsgTempBean;
 import cn.submsg.member.bo.MemberMsgInfo;
+import cn.submsg.member.bo.MemberProject;
 import cn.submsg.member.constant.SessionAttrName;
 import cn.submsg.member.service.MemberService;
 
@@ -29,6 +30,18 @@ public class MemberAction extends JsonBaseActionSupport {
 		return SUCCESS;
 	}
 	
+	public String appList(){
+		
+		return SUCCESS;
+	}
+	
+	public String getAppsList(){
+		this.setErrorResult(JSON);
+		MemberService memberService = ServiceCacheFactory.getService(MemberService.class);
+		int userId = this.getUserSession().getIntAttr(SessionAttrName.USERID);
+		List<MemberProject> projectList = memberService.getMemberProjectList(userId);
+		return this.renderListResult(projectList);
+	}
 	
 
 	public List<MsgTempBean> getMsgTempList() {

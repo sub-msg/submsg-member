@@ -8,6 +8,12 @@
 		<action name="index" class="cn.submsg.member.action.MemberAction">
            <result name="success">/member/index.jsp</result>
 		</action>
+		
+		<action name="appList" class="cn.submsg.member.action.MemberAction" method="appList">
+           <result name="success">/member/applist.jsp</result>
+		</action>
+		<action name="getAppsList" class="cn.submsg.member.action.MemberAction" method="getAppsList"></action>
+		
 	</package>
 
 	<!-- 不用登录即可访问的界面 -->

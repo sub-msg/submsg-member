@@ -83,10 +83,7 @@ input:placeholder, textarea:placeholder { color:#ccc; }
 .editeMod:active{ background-position:-300px -721px}
 
 
-.cancel{width:103px; height:31px; display:block;background:url(../images/icon&stylesheets_norepeat_message.png) no-repeat -520px -0px; border:0;text-indent:-9999px;}
-.cancel:hover{ background-position:-520px -31px}
-.cancel:active{ background-position:-520px -62px}
-.cancel:disabled{ background-position:-520px -62px}
+
 
 .option .save{width:97px; height:24px; display:block;background:url(../images/icon&stylesheets_norepeat_message.png) no-repeat -449px -1281px; border:0;text-indent:-9999px;}
 .option .save:hover{ background-position:-449px -1312px}
@@ -692,7 +689,7 @@ color: #17bf82;
 .opeatingpanel{position: absolute;top: 50%;left: 50%;margin-left: -400px;width: 720px;height: auto;background-color: #fff;border-radius:10px; -webkit-border-radius: 10px; -moz-border-radius: 10px; -o-border-radius: 10px; -khtml-border-radius: 10px;-moz-box-shadow: 0 1px 20px #333;box-shadow: 0 1px 20px #333;z-index: 99999;padding: 20px 40px;display: none;}
 .hrColor{width:100%; height:0px; display:block; overflow:hidden; border-top:1px solid #17bf82; clear:both; margin:10px 0;}
 
-.animatepanel{position: fixed;left: 0;top: 0;width: 100%;height: 100%;display: block;overflow: hidden;z-index: 99999;}
+
 .subtracking{width:74px; height:74px; display:block; position:absolute; left:-2px;top:-2px; background:url(../images/icon&stylesheets_norepeat_message.png) no-repeat -0px -1820px; }
 .subtracking:hover{opacity:0.5;}
 
