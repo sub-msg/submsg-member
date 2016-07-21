@@ -35,12 +35,47 @@ public class MemberAction extends JsonBaseActionSupport {
 		return SUCCESS;
 	}
 	
+	public String createApp(){
+		this.setErrorResult(JSON);
+		MemberService memberService = ServiceCacheFactory.getService(MemberService.class);
+		int userId = this.getUserSession().getIntAttr(SessionAttrName.USERID);
+		memberService.createMemberProject(userId, appname, sendlimt);
+		return this.renderSuccessResult();
+	}
+	
 	public String getAppsList(){
 		this.setErrorResult(JSON);
 		MemberService memberService = ServiceCacheFactory.getService(MemberService.class);
 		int userId = this.getUserSession().getIntAttr(SessionAttrName.USERID);
 		List<MemberProject> projectList = memberService.getMemberProjectList(userId);
 		return this.renderListResult(projectList);
+	}
+	private int appid;
+	private String appname;
+	private Integer enabel;
+	private Integer sendlimt;
+	private String bind;
+	public String editApp(){
+		this.setErrorResult(JSON);
+		MemberService memberService = ServiceCacheFactory.getService(MemberService.class);
+		int userId = this.getUserSession().getIntAttr(SessionAttrName.USERID);
+		memberService.updateMemberProject(userId,appid, appname, bind, sendlimt, enabel);
+		return this.renderObjectResult(memberService.getMemberProject(userId, appid));
+	}
+	
+	public String updateAppKey(){
+		this.setErrorResult(JSON);
+		MemberService memberService = ServiceCacheFactory.getService(MemberService.class);
+		int userId = this.getUserSession().getIntAttr(SessionAttrName.USERID);
+		return this.renderKeyValueResult("key", memberService.updateMemberProjectAppKey(userId, appid));
+	}
+	
+	public String deleteApp(){
+		this.setErrorResult(JSON);
+		MemberService memberService = ServiceCacheFactory.getService(MemberService.class);
+		int userId = this.getUserSession().getIntAttr(SessionAttrName.USERID);
+		memberService.deleteApp(userId, appid);
+		return this.renderSuccessResult();
 	}
 	
 
@@ -56,4 +91,46 @@ public class MemberAction extends JsonBaseActionSupport {
 	public void setMsgInfo(MemberMsgInfo msgInfo) {
 		this.msgInfo = msgInfo;
 	}
+
+	public int getAppid() {
+		return appid;
+	}
+
+	public void setAppid(int appid) {
+		this.appid = appid;
+	}
+
+	public String getAppname() {
+		return appname;
+	}
+
+	public void setAppname(String appname) {
+		this.appname = appname;
+	}
+
+	public Integer getEnabel() {
+		return enabel;
+	}
+
+	public void setEnabel(Integer enabel) {
+		this.enabel = enabel;
+	}
+
+	public Integer getSendlimt() {
+		return sendlimt;
+	}
+
+	public void setSendlimt(Integer sendlimt) {
+		this.sendlimt = sendlimt;
+	}
+
+	public String getBind() {
+		return bind;
+	}
+
+	public void setBind(String bind) {
+		this.bind = bind;
+	}
+
+	
 }

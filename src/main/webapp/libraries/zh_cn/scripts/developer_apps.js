@@ -16,7 +16,7 @@ $(function() {
     c = {
         setup: function() {
             var d, b = ""; 
-            d = ' <div class="emptyContainer" style="display:none;"></div>        <div class="animatepanel"><form id="createapps" method="post">            <div class="opeatingpanel">                <div class="warp" style="padding-top:0px;">                    <div class="createTitle">                        <h2>新建应用</h2>                        <hr>                    </div>                                        <div class="sections">                        <div class="title">应用</div>                        <div class="setting">                            <div class="editPanel">                               <div class="name">名称</div> <div class="panel"><input type="text" class="input" name="create_appname" id="appname" value="" placeholder="输入一个名字" /></div>                            </div>                            <p class="clear" style="margin-bottom:15px;"></p><p class="notes">为此应用输入一个名字，此名称仅作为该应用的标注。</p>                            <hr>                            <div class="editPanel">                                应用 ID                                    </div>                            <p class="notes">应用 ID 将在你创建此应用后自动分配。</p>                            <hr>                            <div class="editPanel">                                密匙                            </div>                             <p class="notes">应用密匙将在你创建此应用后自动创建，你可以随时更换密匙。</p>                                                   </div>                    </div>                     <hr>                     <div class="sections">                         <div class="title">配置选项</div>                         <div class="setting" id="app_settings">          ' + b + '                   <div class="editPanel">                                 <div class="name">每日发送配额</div> <div class="panel"><input type="text" class="input" name="create_sendlimt" id="sendlimt" value="0" placeholder="发送配额" style="width:180px;" /></div>                              </div>                             <p class="clear" style="margin-bottom:15px;"><p class="notes">此选项将限制此应用的每日邮件发送数量，“0”为无限制。</p>                             <hr>                             <div class="editPanel">                                 分析与跟踪 <div class="dropdown" style="width:120px;">                                     <select id="create_analyticsEnable" class="dropdown-select">                                         <option value="1" selected>启用</option>                                         <option value="0" >关闭</option>                                     </select>                                 </div>                                     </div>                             <p class="notes">此选项将开启或关闭分析与跟踪功能。</p>                         </div>                         </div>                     <div style="padding-top:20px;">                     <input type="submit" name="createApps" class="createApps" value="创建应用" />                     <a href="javascript:void(0)" title="取消" class="cancel">取消</a>                     </div>                </div>            </div>        </form></div>',
+            d = ' <div class="emptyContainer" style="display:none;"></div>        <div class="animatepanel"><form id="createapps" method="post">            <div class="opeatingpanel">                <div class="warp" style="padding-top:0px;">                    <div class="createTitle">                        <h2>新建应用</h2>                        <hr>                    </div>                                        <div class="sections">                        <div class="title">应用</div>                        <div class="setting">                            <div class="editPanel">                               <div class="name">名称</div> <div class="panel"><input type="text" class="input" name="create_appname" id="appname" value="" placeholder="输入一个名字" /></div>                            </div>                            <p class="clear" style="margin-bottom:15px;"></p><p class="notes">为此应用输入一个名字，此名称仅作为该应用的标注。</p>                            <hr>                            <div class="editPanel">                                应用 ID                                    </div>                            <p class="notes">应用 ID 将在你创建此应用后自动分配。</p>                            <hr>                            <div class="editPanel">                                密匙                            </div>                             <p class="notes">应用密匙将在你创建此应用后自动创建，你可以随时更换密匙。</p>                                                   </div>                    </div>                     <hr>                     <div class="sections">                         <div class="title">配置选项</div>                         <div class="setting" id="app_settings">          ' + b + '                   <div class="editPanel">                                 <div class="name">每日发送配额</div> <div class="panel"><input type="text" class="input" name="create_sendlimt" id="sendlimt" value="-1" placeholder="发送配额" style="width:180px;" /></div>                              </div>                             <p class="clear" style="margin-bottom:15px;"><p class="notes">此选项将限制此应用的每日邮件发送数量，“-1”为无限制。</p>                             <hr>                             <div class="editPanel">                                                                     </div>                                                   </div>                         </div>                     <div style="padding-top:20px;">                     <input type="submit" name="createApps" class="createApps" value="创建应用" />                     <a href="javascript:void(0)" title="取消" class="cancel">取消</a>                     </div>                </div>            </div>        </form></div>',
             $("body").append(d),
             "mobiledata" == a[1] && $("#app_settings").html("无"),
             $(".emptyContainer").fadeTo(500, .4),
@@ -51,7 +51,7 @@ $(function() {
                     },
                     create_sendlimt: {
                         required: !0,
-                        digits: !0
+                        number: !0
                     }
                 },
                 messages: {
@@ -62,7 +62,7 @@ $(function() {
                     },
                     create_sendlimt: {
                         required: "请输入一个整数。",
-                        digits: "请输入一个整数。"
+                        number: "请输入一个整数。"
                     }
                 },
                 invalidHandler: function() {
@@ -77,17 +77,14 @@ $(function() {
             $("input[name=createApps]").attr("disabled", !0),
             $("input[name=createApps]").val("正在创建");
             var b;
-            "mail" == a[1] || "" == a[1] || void 0 == a[1] ? b = "mail": "message" == a[1] ? b = "message": "voice" == a[1] ? b = "voice": "mobiledata" == a[1] && (b = "mobiledata"),
-            $.post("createApps", {
-                app: b,
-                name: $("input[name=create_appname]").val(),
+            $.post("createApp.sm", {
+                appname: $("input[name=create_appname]").val(),
                 sendlimt: parseInt($("input[name=create_sendlimt]").val()),
-                analyticsEnable: $("#create_analyticsEnable").find("option:selected").val(),
                 tim: Math.random()
             },
             function(a) {
-                var b = $.parseJSON(a);
-                "true" == b.returns ? ($("input[name=createApps]").val("正在完成"), c.cancel(), e.get()) : $("body").eventdialog({
+                var b = a;//$.parseJSON(a);
+                "0" == b.flag ? ($("input[name=createApps]").val("正在完成"), c.cancel(), e.get()) : $("body").eventdialog({
                     type: "warning",
                     title: "发生了一个错误！",
                     msg: b.returns,
@@ -97,7 +94,7 @@ $(function() {
                     marginTop: "-120",
                     marginBottom: "",
                     callback: function() {
-                        "session" == b.error ? window.location.reload() : ">10" == b.error && c.cancel()
+                    	b.flag == null && window.location.reload()
                     }
                 })
             })
@@ -158,7 +155,7 @@ $(function() {
                     	g=b.whiteIp;
                     }
                     d += '<li class="apps"><form class="appform">                                        <div class="head">                                            <div class="message apptitle">' + b.projectName + '</div>                                            <div class="status">                                                ' + c + '                                          </div>                                        </div>                                        <div class="appid">                                            <div class="IDtitle ">应用 ID</div>                                            <div class="IDvalue">                                                <input type="text" name="c_appid" value="' + b.id + '" disabled />                                            </div>                                        </div>                                        <div class="appKey">                                            <div class="KeyTitle">密匙</div>                                            <div class="KeyValue">                                                <input type="text" name="c_appkey" value="' + b.projectKey + '" readonly="readonly"  />                                                <a href="javascript:void(0)" class="copyAppKey" title="复制密匙">复制密匙</a>                                            </div>                                        </div>                                        <div class="appConfigs">                                            <ul>                                                <li>                                                    <p class="title">每日发送配额</p>                                                    <p class="status sendlimtContainer">' + e + '</p>                                                </li>                                                <li>                                                    <p class="title">黑名单限制</p>                                                    <p class="status blocklistContainer">禁用</p>                                                </li><li style="clear:both;width:100%;"><hr style="border: none;border-top: 1px solid #ccc;"></li><li style="width:100%;float:none;display:inline-block;"><p class="title" style="width:20%;margin-right:0;">IP白名单 </p><p class="status ipbindContainer" style="word-break: break-all;width: 80%;display: block;">' + g + '</p></li>                                            </ul>                                        </div>                                        <div class="options">                                            <ul>                                                <li class="last"><a href="javascript:void(0)" class="edit" title="编辑">编辑</a></li>                                            </ul></div>                                    ',
-                    d += '<input type="hidden" name="appName" value="' + b.projectName + '" /> <input type="hidden" name="appid" value="' + b.id + '" />  <input type="hidden" name="appkey" value="' + b.projectKey + '" /> <input type="hidden" name="enabel" value="' + b.status + '" /><input type="hidden" name="sendlimt" value="' + b.maxSendNumDaily + '" /><input type="hidden" name="analytics" value="" /><input type="hidden" name="whiteIp" value="' + b.whiteIp + '" /></form></li>'
+                    d += '<input type="hidden" name="appName" value="' + b.projectName + '" /> <input type="hidden" name="appid" value="' + b.id + '" />  <input type="hidden" name="appkey" value="' + b.projectKey + '" /> <input type="hidden" name="enabel" value="' + b.status + '" /><input type="hidden" name="sendlimt" value="' + b.maxSendNumDaily + '" /><input type="hidden" name="analytics" value="" /><input type="hidden" name="bind" value="' + b.whiteIp + '" /></form></li>'
                 }), $(".appsContainer").html('<ul class="appsul">' + d + '<p class="clear"></p></ul>'), e.initLyout()) : $("body").eventdialog({
                     type: "warning",
                     title: "发生了一个错误！",
@@ -169,7 +166,7 @@ $(function() {
                     marginTop: "-120",
                     marginBottom: "",
                     callback: function() {
-                        "session" == b.error && window.location.reload()
+                    	b.flag == null && window.location.reload()
                     }
                 })
             })
@@ -215,7 +212,7 @@ $(function() {
                 })
             }
             b.parents(".apps").find(".appConfigs").find(".channelContainer").html(' <div class="dropdown" style="width:130px;">                                                        <select id="edit_channel" class="dropdown-select">                                                            <option value="0">事务类邮件通道</option>                                                            <option value="1">推广类邮件通道</option>                                                        </select></div>'),
-            b.parents(".apps").find(".appConfigs").find(".ipbindContainer").html('<textarea style="width:100%;height:30px;" name="edit_bind">' + b.parents(".apps").find("input[name=whiteIp]").val() + "</textarea>"),
+            b.parents(".apps").find(".appConfigs").find(".ipbindContainer").html('<textarea style="width:100%;height:30px;" name="edit_bind">' + b.parents(".apps").find("input[name=bind]").val() + "</textarea>"),
             $("#edit_channel").find("option").each(function() {
                 $(this).val() == b.parents(".apps").find("input[name=channel]").val() && $(this).attr("selected", "true")
             }),
@@ -249,14 +246,14 @@ $(function() {
             })
         },
         deleting: function(a) {
-            $.post("deleteApps", {
+            $.post("deleteApp.sm", {
                 app: d.apps(),
                 appid: a.parents(".apps").find("input[name=appid]").val(),
                 tim: Math.random()
             },
             function(b) {
-                var c = $.parseJSON(b);
-                "true" == c.returns ? (removeSpinner(), setupRemoveScript(a.parents(".apps")), setTimeout(function() {
+                var c = b;//$.parseJSON(b);
+                "0" == c.flag ? (removeSpinner(), setupRemoveScript(a.parents(".apps")), setTimeout(function() {
                     a.parents(".apps").fadeTo(100, 0),
                     setTimeout(function() {
                         a.parents(".apps").remove()
@@ -273,7 +270,7 @@ $(function() {
                     marginTop: "-120",
                     marginBottom: "",
                     callback: function() {
-                        "session" == c.error && window.location.reload()
+                    	c.flag == null && window.location.reload()
                     }
                 })
             })
@@ -294,14 +291,14 @@ $(function() {
             })
         },
         changeAppKeying: function(a) {
-            $.post("changeAppKey", {
+            $.post("updateAppKey.sm", {
                 app: d.apps(),
                 appid: a.parents(".apps").find("input[name=appid]").val(),
                 tim: Math.random()
             },
             function(b) {
-                var c = $.parseJSON(b);
-                "true" == c.returns ? (a.parents(".apps").find("input[name='c_appkey']").val(c.key), a.parents(".apps").find("input[name='appkey']").val(c.key), a.text("已更改")) : $("body").eventdialog({
+                var c = b;//$.parseJSON(b);
+                "0" == c.flag ? (a.parents(".apps").find("input[name='c_appkey']").val(c.rc.key), a.parents(".apps").find("input[name='appkey']").val(c.rc.key), a.text("已更改")) : $("body").eventdialog({
                     type: "warning",
                     title: "发生了一个错误！",
                     msg: c.returns,
@@ -311,7 +308,7 @@ $(function() {
                     marginTop: "-120",
                     marginBottom: "",
                     callback: function() {
-                        "session" == c.error && window.location.reload()
+                    	c.flag == null && window.location.reload()
                     }
                 })
             })
@@ -320,22 +317,19 @@ $(function() {
             $("#editingApps").find("input[type=submit]").attr("disabled", "true");
             var a = 0;
             void 0 != $("#editingApps").find("#edit_channel").find("option:selected").val() && (a = $("#editingApps").find("#edit_channel").find("option:selected").val()),
-            $.post("edit", {
+            $.post("editApp.sm", {
                 app: d.apps(),
                 appid: $("#editingApps").find("input[name=appid]").val(),
                 channel: a,
                 appname: $("#editingApps").find("input[name=edit_appName]").val(),
                 enabel: $("#editingApps").find("#edit_enabel").find("option:selected").val(),
                 sendlimt: $("#editingApps").find("input[name=edit_sendlimt]").val(),
-                analytics: $("#editingApps").find("#edit_analytics").find("option:selected").val(),
                 bind: $("#editingApps").find("textarea[name=edit_bind]").val(),
-                block_list: $("#editingApps").find("#edit_blocklist").find("option:selected").val(),
-                block_list_name: $("#editingApps").find("#edit_blocklist").find("option:selected").text(),
                 tim: Math.random()
             },
             function(a) {
-                var b = $.parseJSON(a);
-                "true" == b.returns ? ($("#editingApps").find("input[name=appName]").val(b.app), $("#editingApps").find("input[name=enabel]").val(b.enabel), $("#editingApps").find("input[name=sendlimt]").val(b.send), $("#editingApps").find("input[name=channel]").val(b.channel), $("#editingApps").find("input[name=analytics]").val(b.analytics), $("#editingApps").find("input[name=bind]").val(b.bind), $("#editingApps").find("input[name=block_list]").val(b.block_list), $("#editingApps").find("input[name=block_list_name]").val(b.block_list_name), f.unbindedit()) : $("body").eventdialog({
+                var b = a;//$.parseJSON(a);
+                "0" == a.flag ? ($("#editingApps").find("input[name=appName]").val(b.rc.projectName), $("#editingApps").find("input[name=enabel]").val(b.rc.status), $("#editingApps").find("input[name=sendlimt]").val(b.rc.maxSendNumDaily),  $("#editingApps").find("input[name=bind]").val(b.rc.whiteIp),f.unbindedit()) : $("body").eventdialog({
                     type: "warning",
                     title: "发生了一个错误！",
                     msg: b.returns,
@@ -345,7 +339,7 @@ $(function() {
                     marginTop: "-120",
                     marginBottom: "",
                     callback: function() {
-                        "session" == b.error && window.location.reload()
+                    	b.flag == null && window.location.reload()
                     }
                 })
             })
@@ -379,7 +373,7 @@ $(function() {
                         number: "请输入一个整数。输入 -1则为无限制<span></span>"
                     },
                     edit_bind: {
-                        minlength: "请输入您要绑定的 IP 地址，多个 IP 请以英文半角分号';'分割，前后不需要空格，不支持CIDR模式。匹配全 IP 段，请输入0.0.0.0,<span></span>",
+                        minlength: "请输入您要绑定的 IP 地址，多个 IP 请以英文半角分号';'分割，前后不需要空格，匹配全 IP 段，请留空,<span></span>",
                         maxlength: "请将 IP 白名单控制在255个字符以内。<span></span>"
                     }
                 },
@@ -418,7 +412,7 @@ $(function() {
     }),
     $(".delete").live("click",
     function() {
-        f.delete($(this))
+    	f.delete($(this));
     }),
     $(".changeAppKey").live("click",
     function() {

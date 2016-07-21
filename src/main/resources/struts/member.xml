@@ -13,7 +13,10 @@
            <result name="success">/member/applist.jsp</result>
 		</action>
 		<action name="getAppsList" class="cn.submsg.member.action.MemberAction" method="getAppsList"></action>
-		
+		<action name="createApp" class="cn.submsg.member.action.MemberAction" method="createApp"></action>
+		<action name="editApp" class="cn.submsg.member.action.MemberAction" method="editApp"></action>
+		<action name="updateAppKey" class="cn.submsg.member.action.MemberAction" method="updateAppKey"></action>
+		<action name="deleteApp" class="cn.submsg.member.action.MemberAction" method="deleteApp"></action>
 	</package>
 
 	<!-- 不用登录即可访问的界面 -->
