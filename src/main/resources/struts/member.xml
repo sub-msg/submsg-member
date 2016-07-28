@@ -47,7 +47,10 @@
 		<action name="reSendActiveEmail" class="cn.submsg.member.action.IndexAction" method="reSendActiveEmail">
 		</action>
 		<action name="signup" class="cn.submsg.member.action.IndexAction" method="signup">
-		</action>								
+		</action>	
+		<action name="payMent" class="cn.submsg.member.action.IndexAction" method="payMent">
+		    <result name="success">/payment.jsp</result>
+		</action>							
 	</package>
 
 

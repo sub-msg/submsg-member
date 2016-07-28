@@ -151,6 +151,14 @@ public class IndexAction extends JsonBaseActionSupport{
 		memberService.signup(firstname, lastname, password, email);
 		return this.renderSuccessResult();
 	}
+	
+	/**
+	 * 支付
+	 * @return
+	 */
+	public String payMent(){
+		return SUCCESS;
+	}
 
 	public List<MallProducts> getProductList() {
 		return productList;

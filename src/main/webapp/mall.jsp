@@ -114,7 +114,7 @@
 							</div>
 						</div>
 						<div class="">
-							<a href="javascript:void(0);" class="d-sas-buybutton"
+							<a href="/payMent.sm" class="d-sas-buybutton"
 								id="d-sas-buybutton" name="oolTB4"><img
 								src="${libUrl}images/store-buyicon.png" class="d-sas-buyicon"
 								alt="submsg" />购买</a>
