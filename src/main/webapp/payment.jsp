@@ -67,7 +67,7 @@
                 <div class='row pay-top'>
                     <span class='pay-top-left'>安全结账</span>
                     <span class='pay-top-right'>订单合计：￥
-                    <span class="pay_top_right_price">1334.00</span>
+                    <span class="pay_top_right_price">${mp.price*num}</span>
                     </span>
                 </div>
             </div>
@@ -95,7 +95,7 @@
                             </div>
 
 
-                       <div class="shopcart-list" id="bcA9p3">
+                       <div class="shopcart-list" id="${mp.id}">
 						<div
 							class="col-xs-6 col-sm-3 col-md-3 col-lg-3 shopcart-item-pdd shopcart-item">
 							<div style="float: left;">
@@ -110,21 +110,21 @@
 								<path fill="#aaa"
 									d="M9.788,19.858c-0.847,0.266-1.668,0.53-2.7,0.874c0.132-0.557,0.211-0.926,0.291-1.297 c0.106-0.397,0.239-0.793,0.371-1.218c-0.238-0.397-0.476-0.796-0.688-1.191c-1.324-2.436-1.086-5.083,0.661-7.201 c3.125-3.839,9.637-3.892,12.813-0.08c2.118,2.542,2.065,5.982-0.132,8.472c-2.146,2.437-5.797,3.335-9.054,2.251 C10.874,20.283,10.396,20.071,9.788,19.858z"></path></g></svg>
 							</div>
-							<p class="shopcart-item-ct">20,000</p>
-							<span class="shopcart-item-ex">2万封短信发送许可</span>
+							<p class="shopcart-item-ct">${mp.nums}</p>
+							<span class="shopcart-item-ex"><c:if test="${mp.nums%10000!=0}"><fmt:formatNumber type="number" value="${mp.nums/10000}" pattern="0.0" maxFractionDigits="1" minFractionDigits="1"/></c:if><c:if test="${mp.nums%10000==0}"><fmt:formatNumber type="number" value="${mp.nums/10000}" pattern="0" maxFractionDigits="0" minFractionDigits="0"/></c:if>万封短信发送服务</span>
 						</div>
 						<div
 							class="col-xs-6  col-sm-3 col-md-3 col-lg-3 shopcart-item-pdd shopcart-item"
 							style="text-align: center; line-height: 40px;">
-							￥<span class="shopcart-mstyle">1059.00</span>
+							￥<span class="shopcart-mstyle">${mp.price}</span>
 						</div>
 						<div
 							class="col-xs-6  col-sm-3 col-md-3 col-lg-3 shopcart-item-pdd shopcart-item shopcart-item-count text-center"
-							style="font-size: 18px;">1</div>
+							style="font-size: 18px;">${num}</div>
 						<div
 							class="col-xs-6  col-sm-3 col-md-3 col-lg-3 shopcart-item-pdd shopcart-item text-center"
 							style="text-align: center; line-height: 40px;">
-							￥<span class="shopcart-mstyle">1059.00</span>
+							￥<span class="shopcart-mstyle">${mp.price*num}</span>
 						</div>
 					</div>
                         </div>
@@ -151,27 +151,15 @@
                         <div class='inv_addr_insert'>
                         </div>
                     </div>
-                    <div class='col-lg-12 col-xs-12 col-sm-12 col-md-12' style='margin-top:30px'>
-                         <span class='section-title section-title-selected'>代金券</span>
-                    </div>
-                    <div class='col-lg-12 col-xs-12 col-sm-12 col-md-12' style='margin-top:30px'>
-                         <div class='coupon'>
-                            <input type='text' name='coupon_input' placeholder='请输入代金券'/><a href='javascript:void(0);' class='coupon-insert'>添加</a>
-                            <input type='hidden' name='coupon_id' value='0'/>
-                         </div>
-                         <div class='coupon_info'>
-                         </div>
-                    </div>
+
                     <div class='col-lg-12 col-xs-12 col-sm-12 col-md-12'>
                         <div class='pay-operate-line' style='margin:30px auto;'> </div>
                         <div style='width:220px;background-color:#fff;'>
-                            <a href='javascript:void(0);' class='btn btn-lg btn-primary pay-next order_create_continue'>创建订单并继续</a>
+                            <a href='/member/creatOrder.sm' class='btn btn-lg btn-primary pay-next order_create_continue'>创建订单并继续</a>
                             <div style='clear:both;'></div>
                         </div>
                          <div style='clear:both;'></div>
-                      
                     </div>
-                  
                 </div>
             </div>
             <div class='row'>

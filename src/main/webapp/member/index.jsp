@@ -40,8 +40,8 @@
                                     <div class="sections">
                                         <div class="overview_section">
                                             <div class="warp">
-                                                <div class="title">短信发送许可</div>
-                                                <div class="des-title"><a href="/mallIndex.sm">购买发送许可</a></div>
+                                                <div class="title">短信发送服务</div>
+                                                <div class="des-title"><a href="/mallIndex.sm">购买发送服务</a></div>
                                                 <div class="cretis" id="overview_message_credis">${msgInfo.msgNum}</div>
                                             </div>
                                         </div>

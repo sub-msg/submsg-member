@@ -71,7 +71,7 @@
 				</div>
 				<div class='d-sas-text-title'>
 					<p style="margin-top: -3px;">短信</p>
-					<p class='d-sas-title-ex'>购买发送许可</p>
+					<p class='d-sas-title-ex'>购买发送服务</p>
 				</div>
 			</div>
 			<div class='d-sas-line2'></div>
@@ -84,7 +84,7 @@
 					<div class="d-sas-inline"></div>
 					<div class="d-sas-ptcolor">
 						<p class="d-sas-present-title">${data.nums}</p>
-						<p><c:if test="${data.nums%10000!=0}"><fmt:formatNumber type="number" value="${data.nums/10000}" pattern="0.0" maxFractionDigits="1" minFractionDigits="1"/></c:if><c:if test="${data.nums%10000==0}"><fmt:formatNumber type="number" value="${data.nums/10000}" pattern="0" maxFractionDigits="0" minFractionDigits="0"/></c:if>万 短信发送许可</p>
+						<p><c:if test="${data.nums%10000!=0}"><fmt:formatNumber type="number" value="${data.nums/10000}" pattern="0.0" maxFractionDigits="1" minFractionDigits="1"/></c:if><c:if test="${data.nums%10000==0}"><fmt:formatNumber type="number" value="${data.nums/10000}" pattern="0" maxFractionDigits="0" minFractionDigits="0"/></c:if>万 短信发送服务</p>
 					</div>
 					<div class="d-sas-inline"></div>
 					<div class="d-sas-pp">
@@ -106,6 +106,8 @@
 								<div style="display: inline-block">
 									<input type="text" value="1" name="d-sas-input"
 										class="d-sas-input" readonly="readonly" />
+										<input type="hidden" value="${data.id}" name="d-sas-input-id"
+										class="d-sas-input-id" readonly="readonly" />
 									<div class="d-sas-dpam">
 										<a href="javascript:void(0)" class="d-sas-pam" id="d-sas-plus">+</a><a
 											href="javascript:void(0)" class="d-sas-pam" id="d-sas-minus">-</a>
@@ -114,8 +116,8 @@
 							</div>
 						</div>
 						<div class="">
-							<a href="/payMent.sm" class="d-sas-buybutton"
-								id="d-sas-buybutton" name="oolTB4"><img
+							<a href="javascript:void(0)" class="d-sas-buybutton"
+								id="d-sas-buybutton"><img
 								src="${libUrl}images/store-buyicon.png" class="d-sas-buyicon"
 								alt="submsg" />购买</a>
 						</div>
@@ -137,6 +139,39 @@ $("#d-sas-plus").live("click",function(){
 	var a=parseInt($(this).parents(".d-sas-buyinput").find("input[name=d-sas-input]").val())+1;
 	$(this).parents(".d-sas-buyinput").find("input[name=d-sas-input]").val(a);
 })
+
+$("#d-sas-minus").live("click",function(){
+	var a=parseInt($(this).parents(".d-sas-buyinput").find("input[name=d-sas-input]").val())-1;
+	if(a<1){
+		a=1;
+	}
+	$(this).parents(".d-sas-buyinput").find("input[name=d-sas-input]").val(a);
+})
+
+
+$("#d-sas-buybutton").live("click",function(){
+	var num=parseInt($(this).parent().prev(".d-sas-buyinput").find("input[name=d-sas-input]").val());
+	var id = parseInt($(this).parent().prev(".d-sas-buyinput").find("input[name=d-sas-input-id]").val());
+    var action = "/payMent.sm";  
+    // 创建Form  
+    var form = $('<form></form>');  
+    // 设置属性  
+    form.attr('action', action);  
+    form.attr('method', 'post');  
+    // form的target属性决定form在哪个页面提交  
+    // _self -> 当前页面 _blank -> 新页面  
+    form.attr('target', '_self');  
+    // 创建Input  
+    var num_input = $('<input type="text" name="num" />');  
+    num_input.attr('value', num);  
+    form.append(num_input);  
+    var id_input = $('<input type="text" name="id" />');  
+    id_input.attr('value', id);  
+    form.append(id_input);
+    // 提交表单  
+    form.submit();  
+})
+
 </script>
 	<%@ include file="/member/common/bottom.jsp"%>
 </body>

@@ -17,6 +17,9 @@
 		<action name="editApp" class="cn.submsg.member.action.MemberAction" method="editApp"></action>
 		<action name="updateAppKey" class="cn.submsg.member.action.MemberAction" method="updateAppKey"></action>
 		<action name="deleteApp" class="cn.submsg.member.action.MemberAction" method="deleteApp"></action>
+		<action name="creatOrder" class="cn.submsg.member.action.PayMentAction" method="creatOrder">
+		    <result name="success">/member/creatorder.jsp</result>
+		</action>
 	</package>
 
 	<!-- 不用登录即可访问的界面 -->
@@ -69,7 +72,7 @@
 		<global-results>
 			<!-- 当没有登录的时候就会跳到首页要求其进行登录 -->
 			<result name="nologin" type="redirect">
-				/index.sm
+				/account.sm#/login
 			</result>
 		</global-results>	
 	</package>
