@@ -2,9 +2,9 @@ function matchMob(a) {
     var b = /1[0-9]{10}/;
     return 0 == b.test(a) ? !1 : !0
 }
-var libraries = "http://libraries.submsg.cn/",
-sublibraries = "http://libraries.submsg.cn/",
-images_libraries = "http://images.submsg.cn/",
+var libraries = "/libraries/",
+sublibraries = "/libraries/",
+images_libraries = "/images/",
 spinnerWiteContainer = '<div class="spinnerContainer"></div><div class="spinnerAnimate"><img src="' + sublibraries + '/images/subloading_0x1e_26px.gif" /></div>',
 setupSpinner = function(a) {
     a.css("position", "relative"),

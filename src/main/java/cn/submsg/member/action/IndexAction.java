@@ -152,18 +152,7 @@ public class IndexAction extends JsonBaseActionSupport{
 		return this.renderSuccessResult();
 	}
 	
-	/**
-	 * 支付
-	 * @return
-	 */
-	private int num;
-	private int id;
-	private MallProducts mp;
-	public String payMent(){
-		MemberService memberService = ServiceCacheFactory.getService(MemberService.class);
-		mp = memberService.getProductById(id);
-		return SUCCESS;
-	}
+
 
 	public List<MallProducts> getProductList() {
 		return productList;
@@ -223,29 +212,5 @@ public class IndexAction extends JsonBaseActionSupport{
 	}
 	public void setRepassword(String repassword) {
 		this.repassword = repassword;
-	}
-
-	public int getNum() {
-		return num;
-	}
-
-	public void setNum(int num) {
-		this.num = num;
-	}
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public MallProducts getMp() {
-		return mp;
-	}
-
-	public void setMp(MallProducts mp) {
-		this.mp = mp;
 	}
 }

@@ -24,9 +24,16 @@
 	charset="utf-8"></script>
 <script src="${libUrl}PlugIns/dist/js/bootstrap.min.js"
 	type="text/javascript" charset="utf-8"></script>
+<script src="${libUrl}PlugIns/jquery.validate.min.js" type="text/javascript" charset="utf-8"></script>
+	
 <script src="${libUrl}zh_cn/scripts/global.base.js"
 	type="text/javascript" charset="utf-8"></script>
-
+<script src="${libUrl}zh_cn/scripts/payments.js"
+	type="text/javascript" charset="utf-8"></script>
+<script src="${libUrl}zh_cn/scripts/cities.js"
+	type="text/javascript" charset="utf-8"></script>	
+<script src="${libUrl}PlugIns/eventdialog.js?2.5.0" type="text/javascript" charset="utf-8"></script>
+	
 <%@ include file="/member/common/com_head_element.jsp"%>
 </head>
 <body>
@@ -96,6 +103,7 @@
 
 
                        <div class="shopcart-list" id="${mp.id}">
+                       <input type="hidden" name="productId" id="productId" value="${mp.id}"/>
 						<div
 							class="col-xs-6 col-sm-3 col-md-3 col-lg-3 shopcart-item-pdd shopcart-item">
 							<div style="float: left;">
@@ -155,7 +163,7 @@
                     <div class='col-lg-12 col-xs-12 col-sm-12 col-md-12'>
                         <div class='pay-operate-line' style='margin:30px auto;'> </div>
                         <div style='width:220px;background-color:#fff;'>
-                            <a href='/member/creatOrder.sm' class='btn btn-lg btn-primary pay-next order_create_continue'>创建订单并继续</a>
+                            <a href='javascript:void(0)' class='btn btn-lg btn-primary pay-next order_create_continue'>创建订单并继续</a>
                             <div style='clear:both;'></div>
                         </div>
                          <div style='clear:both;'></div>

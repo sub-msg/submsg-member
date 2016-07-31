@@ -16,8 +16,8 @@
         <hr class="nav-hr visible-xs">
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li class="sms-nav"><a href="smsIndex.sm">短信</a></li>
-                <li class="store-nav"><a href="mallIndex.sm"><span class="hidden-sm">在线购买</span><span class="visible-sm">商店</span></a></li>
+                <li class="sms-nav"><a href="/smsIndex.sm">短信</a></li>
+                <li class="store-nav"><a href="/mallIndex.sm"><span class="hidden-sm">在线购买</span><span class="visible-sm">商店</span></a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                   <%
@@ -28,7 +28,7 @@
                     	 <%
                      }else{
                     	 %>
-                      <li><a href="account.sm#/login">登录</a></li><li><a href="account.sm#/signup" class="btn btn-primary navbar-btn" style="font-size: 14px;color:#fff; background: #007ffc;padding:6px 15px;margin-left:10px;margin-right:10px;">注册</a></li></ul>
+                      <li><a href="/account.sm#/login">登录</a></li><li><a href="/account.sm#/signup" class="btn btn-primary navbar-btn" style="font-size: 14px;color:#fff; background: #007ffc;padding:6px 15px;margin-left:10px;margin-right:10px;">注册</a></li></ul>
                     	 <%
                      }
                   %>

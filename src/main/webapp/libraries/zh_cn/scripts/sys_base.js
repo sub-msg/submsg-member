@@ -171,10 +171,10 @@ function initSidebar() {
     "" == a || "true" == a || void 0 == a ? sidebarModel = !0 : (sidebarModel = !1, $(".sideBarHiddenController").click()),
     setSideBarCookie()
 }
-var sidebarModel, baseUrl = "http://submail.cn/",
-sublibraries = "http://libraries.submail.cn/",
-subTracker = "http://subtracker.submail.cn/",
-imglibrary = "http://images.submail.cn/",
+var sidebarModel, baseUrl = "http://submsg.cn/",
+sublibraries = "/libraries/",
+subTracker = "/subtracker/",
+imglibrary = "/images/",
 eventSpinner = '<div class="eventEmpty"></div><div class="eventSpinner"></div>',
 notifContainer = '        <div id="notificationsContainer">            <div id="notifications">                <div class="title">通知</div>                <div class="notif"></div> <div class="notif_contents"></div>              <div class="btncontainer" style="border-top: 1px solid #ccc;width: 100%; height:50px;"><a class="left viewall_notif" href="/chs/account/notification#/notif">显示未读通知</a><a class="left clearall_notif " href="javascript:;">清除全部通知</a><a class="right closenotif" href="javascript:;">确定</a> </div>               <div class="options" style="float: none;"><a href="/chs/account/notification#/notif" class="closenotif">全部</a></div>            </div>        </div>',
 notifid = 0,

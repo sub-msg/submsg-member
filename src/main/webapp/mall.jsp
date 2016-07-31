@@ -152,7 +152,7 @@ $("#d-sas-minus").live("click",function(){
 $("#d-sas-buybutton").live("click",function(){
 	var num=parseInt($(this).parent().prev(".d-sas-buyinput").find("input[name=d-sas-input]").val());
 	var id = parseInt($(this).parent().prev(".d-sas-buyinput").find("input[name=d-sas-input-id]").val());
-    var action = "/payMent.sm";  
+    var action = "/member/payMent.sm";  
     // 创建Form  
     var form = $('<form></form>');  
     // 设置属性  

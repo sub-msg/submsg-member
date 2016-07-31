@@ -17,9 +17,20 @@
 		<action name="editApp" class="cn.submsg.member.action.MemberAction" method="editApp"></action>
 		<action name="updateAppKey" class="cn.submsg.member.action.MemberAction" method="updateAppKey"></action>
 		<action name="deleteApp" class="cn.submsg.member.action.MemberAction" method="deleteApp"></action>
-		<action name="creatOrder" class="cn.submsg.member.action.PayMentAction" method="creatOrder">
-		    <result name="success">/member/creatorder.jsp</result>
+		
+		<action name="payMent" class="cn.submsg.member.action.PayMentAction" method="payMent">
+		    <result name="success">/member/payment.jsp</result>
+		    <result name="back" type="redirect">/mallIndex.sm</result>
+		</action>			
+		<action name="creatOrder" class="cn.submsg.member.action.PayMentAction" method="creatOrder"></action>
+		<action name="getInvoiceList" class="cn.submsg.member.action.PayMentAction" method="getInvoiceList"></action>
+		<action name="createInvoice" class="cn.submsg.member.action.PayMentAction" method="createInvoice"></action>	
+		<action name="getInvoiceById" class="cn.submsg.member.action.PayMentAction" method="getInvoiceById"></action>			
+		<action name="deleteInvoice" class="cn.submsg.member.action.PayMentAction" method="deleteInvoice"></action>		
+		<action name="pay" class="cn.submsg.member.action.PayMentAction" method="pay">
+		    <result name="success">/member/pay.jsp</result>	
 		</action>
+		
 	</package>
 
 	<!-- 不用登录即可访问的界面 -->
@@ -51,9 +62,7 @@
 		</action>
 		<action name="signup" class="cn.submsg.member.action.IndexAction" method="signup">
 		</action>	
-		<action name="payMent" class="cn.submsg.member.action.IndexAction" method="payMent">
-		    <result name="success">/payment.jsp</result>
-		</action>							
+						
 	</package>
 
 
