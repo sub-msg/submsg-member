@@ -103,7 +103,7 @@
 
 
                        <div class="shopcart-list" id="${mp.id}">
-                       <input type="hidden" name="productId" id="productId" value="${mp.id}"/>
+                       <input type="hidden" name="productId" id="productId" value="${mp.id}"/> <input type="hidden" name="num" id="num" value="${num}"/>
 						<div
 							class="col-xs-6 col-sm-3 col-md-3 col-lg-3 shopcart-item-pdd shopcart-item">
 							<div style="float: left;">
@@ -119,7 +119,7 @@
 									d="M9.788,19.858c-0.847,0.266-1.668,0.53-2.7,0.874c0.132-0.557,0.211-0.926,0.291-1.297 c0.106-0.397,0.239-0.793,0.371-1.218c-0.238-0.397-0.476-0.796-0.688-1.191c-1.324-2.436-1.086-5.083,0.661-7.201 c3.125-3.839,9.637-3.892,12.813-0.08c2.118,2.542,2.065,5.982-0.132,8.472c-2.146,2.437-5.797,3.335-9.054,2.251 C10.874,20.283,10.396,20.071,9.788,19.858z"></path></g></svg>
 							</div>
 							<p class="shopcart-item-ct">${mp.nums}</p>
-							<span class="shopcart-item-ex"><c:if test="${mp.nums%10000!=0}"><fmt:formatNumber type="number" value="${mp.nums/10000}" pattern="0.0" maxFractionDigits="1" minFractionDigits="1"/></c:if><c:if test="${mp.nums%10000==0}"><fmt:formatNumber type="number" value="${mp.nums/10000}" pattern="0" maxFractionDigits="0" minFractionDigits="0"/></c:if>万封短信发送服务</span>
+							<span class="shopcart-item-ex"><c:if test="${mp.nums%10000!=0}"><fmt:formatNumber type="number" value="${mp.nums/10000}" pattern="0.0" maxFractionDigits="1" minFractionDigits="1"/></c:if><c:if test="${mp.nums%10000==0}"><fmt:formatNumber type="number" value="${mp.nums/10000}" pattern="0" maxFractionDigits="0" minFractionDigits="0"/></c:if>万次短信发送服务</span>
 						</div>
 						<div
 							class="col-xs-6  col-sm-3 col-md-3 col-lg-3 shopcart-item-pdd shopcart-item"

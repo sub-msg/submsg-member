@@ -1,14 +1,14 @@
 package cn.submsg.member.action;
 
-import java.util.List;
 
-import com.google.common.collect.Lists;
 import com.sr178.game.framework.context.ServiceCacheFactory;
 import com.sr178.module.web.action.JsonBaseActionSupport;
 
 import cn.submsg.member.bo.MallProducts;
-import cn.submsg.member.bo.MemberInvoice;
+import cn.submsg.member.bo.PaymentOrder;
+import cn.submsg.member.constant.SessionAttrName;
 import cn.submsg.member.service.MemberService;
+import cn.submsg.member.service.PayMentService;
 
 public class PayMentAction extends JsonBaseActionSupport{
 
@@ -39,14 +39,25 @@ public class PayMentAction extends JsonBaseActionSupport{
 	private int productId;
 	private int invoiceId;
 	public String creatOrder(){
-		return this.renderKeyValueResult("orderId", "CS11233445566");
+		PayMentService payMentService = ServiceCacheFactory.getService(PayMentService.class);
+		String orderId = payMentService.creatOrder(this.getUserId(), productId, num, invoiceId);
+		return this.renderKeyValueResult("orderId", orderId);
 	}
 	/**
 	 * 支付界面
 	 * @return
 	 */
 	private String orderId;
+	private PaymentOrder porder;
 	public String pay(){
+		PayMentService payMentService = ServiceCacheFactory.getService(PayMentService.class);
+		porder = payMentService.getPayMentOrderByOrderId(orderId);
+		if(porder!=null){
+			MemberService memberService = ServiceCacheFactory.getService(MemberService.class);
+			mp = memberService.getProductById(porder.getProductId());
+		}else{
+			return "back";
+		}
 		return SUCCESS;
 	}
 	/**
@@ -54,24 +65,16 @@ public class PayMentAction extends JsonBaseActionSupport{
 	 * @return
 	 */
 	public String getInvoiceList(){
-		List<MemberInvoice> result = Lists.newArrayList();
-		MemberInvoice invoice = new MemberInvoice();
-		invoice.setInvoiceType(1);
-		result.add(invoice);
-		
-		MemberInvoice invoice2 = new MemberInvoice();
-		invoice2.setInvoiceType(2);
-		result.add(invoice2);
-		return this.renderListResult(result);
+		PayMentService payMentService = ServiceCacheFactory.getService(PayMentService.class);
+		return this.renderListResult(payMentService.getUserInvoiceList(getUserId()));
 	}
 	/**
 	 * 获取单个发票信息
 	 * @return
 	 */
 	public String getInvoiceById(){
-		MemberInvoice invoice = new MemberInvoice();
-		invoice.setInvoiceType(2);
-		return this.renderObjectResult(invoice);
+		PayMentService payMentService = ServiceCacheFactory.getService(PayMentService.class);
+		return this.renderObjectResult(payMentService.getInvoiceById(id));
 	}
 	/**
 	 * 创建发票信息
@@ -94,18 +97,26 @@ public class PayMentAction extends JsonBaseActionSupport{
 	private String s_taxcode;//纳税人标识
 	
     public String createInvoice(){
+    	PayMentService payMentService = ServiceCacheFactory.getService(PayMentService.class);
+    	payMentService.createOrEditInvoice(getUserId(), id, type, title, firstname,lastname, provice, city, area, address, mob, s_address, s_mob, s_bank, s_account, s_taxcode);
     	return this.renderSuccessResult();
     }
+    
     /**
      * 删除发票信息
      * @return
      */
     public String deleteInvoice(){
+    	PayMentService payMentService = ServiceCacheFactory.getService(PayMentService.class);
+    	payMentService.deleteInvoiceById(id,this.getUserId());
     	return this.renderSuccessResult();
     }
     
     
 
+    private int getUserId(){
+    	return this.getUserSession().getIntAttr(SessionAttrName.USERID);
+    }
 
 	public int getNum() {
 		return num;
@@ -293,5 +304,10 @@ public class PayMentAction extends JsonBaseActionSupport{
 	public void setOrderId(String orderId) {
 		this.orderId = orderId;
 	}
-	
+	public PaymentOrder getPorder() {
+		return porder;
+	}
+	public void setPorder(PaymentOrder porder) {
+		this.porder = porder;
+	}
 }

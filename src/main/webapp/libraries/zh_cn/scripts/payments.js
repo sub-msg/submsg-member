@@ -316,10 +316,12 @@ $(function() {
             $(this).hasClass("selected") && (a = $("li[class=selected]").find("input[name=inv_id]").val())
         }),
         c = $("input[name=productId]").val(),
+        num = $("input[name=num]").val(),
         "false" != a ? (
         $(this).attr("disabled", "true"),$(this).text("正在创建订单"), $.post("/member/creatOrder.sm", {
         	productId:c,
             invoiceId: a,
+            num:num,
             tim: Math.random()
         },
         function(a) {

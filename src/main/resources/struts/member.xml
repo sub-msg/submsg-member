@@ -29,6 +29,7 @@
 		<action name="deleteInvoice" class="cn.submsg.member.action.PayMentAction" method="deleteInvoice"></action>		
 		<action name="pay" class="cn.submsg.member.action.PayMentAction" method="pay">
 		    <result name="success">/member/pay.jsp</result>	
+		    <result name="back" type="redirect">/mallIndex.sm</result>
 		</action>
 		
 	</package>
