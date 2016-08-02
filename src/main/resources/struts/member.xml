@@ -31,7 +31,14 @@
 		    <result name="success">/member/pay.jsp</result>	
 		    <result name="back" type="redirect">/mallIndex.sm</result>
 		</action>
-		
+		<action name="enterTempList" class="cn.submsg.member.action.TempAction" method="enterTempList">
+           <result name="success">/member/templist.jsp</result>
+		</action>		
+
+		<action name="tempList" class="cn.submsg.member.action.TempAction" method="tempList"></action>
+		<action name="enterCreateTemp" class="cn.submsg.member.action.TempAction" method="enterCreateTemp">
+		  <result name="success">/member/entercreatetemp.jsp</result>
+		</action>		
 	</package>
 
 	<!-- 不用登录即可访问的界面 -->
