@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50624
 File Encoding         : 65001
 
-Date: 2016-08-01 16:38:53
+Date: 2016-08-03 18:56:11
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -30,7 +30,7 @@ CREATE TABLE `api_req_error_log` (
   `created_time` datetime NOT NULL,
   PRIMARY KEY (`id`),
   KEY `user_id,project_id` (`user_id`,`project_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=4077 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of api_req_error_log
@@ -161,15 +161,16 @@ DROP TABLE IF EXISTS `member_message_sign`;
 CREATE TABLE `member_message_sign` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
-  `sign_content` text NOT NULL,
+  `sign_content` varchar(64) NOT NULL,
   `sign_status` int(11) NOT NULL DEFAULT '0',
   `sign_position` int(11) NOT NULL,
-  `sign_num` varchar(255) NOT NULL,
+  `sign_num` varchar(255) DEFAULT NULL,
   `updated_time` datetime NOT NULL,
   `created_time` datetime NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `user_id` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+  KEY `user_id` (`user_id`),
+  KEY `sign_content` (`sign_content`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of member_message_sign
@@ -178,6 +179,9 @@ INSERT INTO `member_message_sign` VALUES ('1', '19', '积分游戏大平台', '1
 INSERT INTO `member_message_sign` VALUES ('2', '19', '中国一川', '1', '0', '01', '2016-07-06 11:05:12', '2016-07-06 11:05:15');
 INSERT INTO `member_message_sign` VALUES ('3', '19', '广运商城', '1', '0', '03', '2016-07-06 11:05:44', '2016-07-06 11:05:46');
 INSERT INTO `member_message_sign` VALUES ('4', '19', '一币商城', '1', '0', '04', '2016-07-06 11:06:09', '2016-07-06 11:06:11');
+INSERT INTO `member_message_sign` VALUES ('5', '19', 'test1', '0', '0', '', '2016-08-03 17:05:14', '2016-08-03 17:05:16');
+INSERT INTO `member_message_sign` VALUES ('6', '19', '爱一生', '0', '0', null, '2016-08-03 17:06:37', '2016-08-03 17:06:37');
+INSERT INTO `member_message_sign` VALUES ('7', '19', '票一百', '0', '0', null, '2016-08-03 17:12:27', '2016-08-03 17:12:27');
 
 -- ----------------------------
 -- Table structure for member_message_temp
@@ -195,7 +199,7 @@ CREATE TABLE `member_message_temp` (
   `updated_time` datetime NOT NULL,
   `created_time` datetime NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `tempid` (`temp_id`),
+  UNIQUE KEY `tempid` (`temp_id`) USING BTREE,
   KEY `user_id` (`user_id`),
   KEY `sign_id` (`sign_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
@@ -339,7 +343,7 @@ CREATE TABLE `msg_send_log` (
   PRIMARY KEY (`id`),
   KEY `send_id` (`send_id`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6389 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of msg_send_log

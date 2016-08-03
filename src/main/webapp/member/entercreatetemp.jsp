@@ -40,14 +40,14 @@
                 <div class="content">
                     <h1 class="createTitle">新建短信项目</h1>
                     <p>在创建或者编辑一条短信项目（即短信模板）时，您可以在短信中插入<a href="/chs/documents/developer/oKraS3" target="_blank" class="highlight">自定义文本变量</a>，这些变量用来替换短信中的动态内容，如验证码、订单编号等。 </p>
-                    <p>在您发送任何项目之前您需要将短信内容提交至 SUBMAIL 进行人工审核，审核通过后，您随时可以进行发送。 </p>
+                    <p>在您发送任何项目之前您需要将短信内容提交至 SUBMSG 进行人工审核，审核通过后，您随时可以进行发送。 </p>
                     <p><a href="/chs/documents/developer/oKraS3" target="_blank" class="highLinkHack">短信模板编辑示例</a></p>
                     <p>&nbsp;</p>
                     <div class="createMessageContainer">
                         <div class="createContainer">
                             <div class="create">
                                 <p class="messageOptions createicon">编辑</p>
-                                <p class="editorLength">剩余 300 字</p>
+                                <p class="editorLength">剩余 500 字</p>
                                 <p class="clear"></p>
                                 <div class="messageEditor">
                                     <div class="editorContainer">
@@ -59,7 +59,6 @@
                                     <div class="editorOptions">
                                         <a class="signature" href="javascript:void(0);" title="插入签名">签名</a>
                                         <a class="symbol" href="javascript:void(0);" title="插入常用符号">常用符号</a>
-                                        <a class="sorturl" href="javascript:void(0);" title="插入短网址">短网址</a>
                                         <div class="optionPanel">
                                             <div class="signaturePanel">
                                                 <p>创建签名</p>
@@ -88,12 +87,6 @@
                                                     <ul>
                                                     </ul>
                                                 </div>
-                                            </div>
-                                            <div class="sortURLPanel">
-                                                <p>创建短网址</p>
-                                                <input type="text" name="sorturl" id="suburl" class="input" placeholder="在这里键入网址"/>
-                                                <a href="javascript:void(0)" class="write submitsorturl " title="创建">创建</a>
-                                                <p class="clear" ></p>
                                             </div>
                                             <p class="optionPanelAro"></p>
                                         </div>

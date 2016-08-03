@@ -34,11 +34,17 @@
 		<action name="enterTempList" class="cn.submsg.member.action.TempAction" method="enterTempList">
            <result name="success">/member/templist.jsp</result>
 		</action>		
-
 		<action name="tempList" class="cn.submsg.member.action.TempAction" method="tempList"></action>
 		<action name="enterCreateTemp" class="cn.submsg.member.action.TempAction" method="enterCreateTemp">
 		  <result name="success">/member/entercreatetemp.jsp</result>
-		</action>		
+		</action>	
+		<action name="updateTempTitle" class="cn.submsg.member.action.TempAction" method="updateTempTitle"></action>	
+		<action name="deleteTemp" class="cn.submsg.member.action.TempAction" method="deleteTemp"></action>
+		<action name="getSignList" class="cn.submsg.member.action.TempAction" method="getSignList"></action>
+		<action name="addTemp" class="cn.submsg.member.action.TempAction" method="addTemp"></action>
+		<action name="deleteSign" class="cn.submsg.member.action.TempAction" method="deleteSign"></action>
+		<action name="addSign" class="cn.submsg.member.action.TempAction" method="addSign"></action>
+		<action name="getMsgTempBean" class="cn.submsg.member.action.TempAction" method="getMsgTempBean"></action>
 	</package>
 
 	<!-- 不用登录即可访问的界面 -->

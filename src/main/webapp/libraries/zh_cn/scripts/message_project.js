@@ -1,3 +1,4 @@
+var sublibraries = "/libraries/";
 $(function() {
     var b, c, d, e, f, g, h, i, j, k, l, m, n, a = function() {
         $("body").eventdialog({
@@ -117,18 +118,18 @@ $(function() {
         $(this).select()
     }),
     h = function(b, c) {
-        $.post("/chs/message/set_project_title", {
-            t: b,
-            id: c,
+        $.post("/member/updateTempTitle.sm", {
+        	tempTitle: b,
+        	tempId: c,
             tim: Math.random()
         },
         function(b) {
             try {
-                var c = $.parseJSON(b)
+                var c = b;//$.parseJSON(b)
             } catch(d) {
                 a()
             }
-            "true" != c.returns && $("body").eventdialog({
+            "0" != c.flag && $("body").eventdialog({
                 type: "alert",
                 title: "发生了一个错误！",
                 msg: c.returns,
@@ -139,7 +140,7 @@ $(function() {
                 marginBottom: "",
                 callback: function() {
                     removeSpinner(),
-                    "session" == c.error && window.location.reload()
+                    null == c.flag && window.location.reload()
                 }
             })
         })
@@ -208,7 +209,7 @@ $(function() {
                     n = 1 == m ? "tag_red": 2 == m ? "tag_pur": 3 == m ? "tag_ble": 4 == m ? "tag_blu": 5 == m ? "tag_gre": 6 == m ? "tag_yel": "no_tag",
                     o = "双击这里添加标题",
                     o = "" == b.tempTitle || null == b.tempTitle ? "双击这里添加标题": b.tempTitle,
-                    f += '<li class="messagelist" ' + c + '> <div class="message_project_title ' + n + '"><div class="title_tags"><a href="javascript:void(0)" title="设置或清除标签" class="set_tag"><span></span></a></div><div class="title_text">' + o + '</div> <div class="edit_tag_container"><a href="javascript:void(0)" class="edit_tag edit_no_tag" style="margin-left:8px;" data="0"><span></span></a><a href="javascript:void(0)" class="edit_tag edit_tag_red" data="1"><span></span></a><a href="javascript:void(0)" class="edit_tag edit_tag_pur" data="2"><span></span></a><a href="javascript:void(0)" data="3" class="edit_tag edit_tag_ble"><span></span></a><a href="javascript:void(0)" data="4" class="edit_tag edit_tag_blu"><span></span></a><a href="javascript:void(0)" data="5" class="edit_tag edit_tag_gre"><span></span></a><a href="javascript:void(0)" data="6" class="edit_tag edit_tag_yel"><span></span></a></div></div>     <div class="projectContainer"> <div class="container"><p class="timer">短信/彩信<br />最后编辑 ' + b.updatedTime + '</p><div class="messageContainer ' + g + '"><p class="message">' + l + '</p><p class="messageAro"></p></div></div><div class="options"><p class="clear"></p><div class="sysoptions floatl"><ul><li><a href="create#/edit/' + b.tempId + '" class="edit" title="编辑"><span class="img"></span></a></li><li><a href="create#/send/' + b.tempId + '" class="send" title="发送"><span class="img"></span></a></li><li class="sign_container"><div class="developer_sign"><input type="text" value="' + b.tempId + '" readonly="true"/></div><span class="sign_icon"></span></li>' + h + '</ul></div><div class="sysoptions floatr"><ul><li><a href="javascript:void(0)" class="delete" title="删除" id="' + b.tempId + '"><span class="img"></span></a></li></ul></div><p class="clear"></p></div>' + d + "</div>" + k + "</li>"
+                    f += '<li class="messagelist" ' + c + '> <div class="message_project_title ' + n + '"><div class="title_tags"><a href="javascript:void(0)" title="设置或清除标签" class="set_tag"><span></span></a></div><div class="title_text">' + o + '</div> <div class="edit_tag_container"><a href="javascript:void(0)" class="edit_tag edit_no_tag" style="margin-left:8px;" data="0"><span></span></a><a href="javascript:void(0)" class="edit_tag edit_tag_red" data="1"><span></span></a><a href="javascript:void(0)" class="edit_tag edit_tag_pur" data="2"><span></span></a><a href="javascript:void(0)" data="3" class="edit_tag edit_tag_ble"><span></span></a><a href="javascript:void(0)" data="4" class="edit_tag edit_tag_blu"><span></span></a><a href="javascript:void(0)" data="5" class="edit_tag edit_tag_gre"><span></span></a><a href="javascript:void(0)" data="6" class="edit_tag edit_tag_yel"><span></span></a></div></div>     <div class="projectContainer"> <div class="container"><p class="timer">短信/彩信<br />最后编辑 ' + b.updatedTime + '</p><div class="messageContainer ' + g + '"><p class="message">' + l + '</p><p class="messageAro"></p></div></div><div class="options"><p class="clear"></p><div class="sysoptions floatl"><ul><li><a href="enterCreateTemp.sm#/edit/' + b.tempId + '" class="edit" title="编辑"><span class="img"></span></a></li><li><a href="create#/send/' + b.tempId + '" class="send" title="发送"><span class="img"></span></a></li><li class="sign_container"><div class="developer_sign"><input type="text" value="' + b.tempId + '" readonly="true"/></div><span class="sign_icon"></span></li>' + h + '</ul></div><div class="sysoptions floatr"><ul><li><a href="javascript:void(0)" class="delete" title="删除" id="' + b.tempId + '"><span class="img"></span></a></li></ul></div><p class="clear"></p></div>' + d + "</div>" + k + "</li>"
                 }), g = 0 != 0 ? '<input type="hidden" name="next" value="0"/>': '<input type="hidden" name="next" value="0"/>', "" != c && "1" != c ? $("#messageProject").append(f) : $("#messageProject").html(f), "search" == a && ($(".searchSpinner").hide(), $(".reset").show(), $(".projectTitle h2:eq(0)").text("搜索结果")), $(".messageProject").append(g), n("#messageProject", 260, 12), k = !1, $(".loader").remove()) : "search" == a ? ($(".searchSpinner").hide(), $(".reset").show(), $(".projectTitle h2:eq(0)").text("未找到匹配结果"), $("#messageProject").html("")) : ("false" != d.returns && $("body").eventdialog({
                     type: "alert",
                     title: "发生了一个错误！",
@@ -280,10 +281,10 @@ $(function() {
         $.ajax({
             type: "get",
             datatype: "json",
-            url: "/chs/mail/delProject?t=" + b,
+            url: "/member/deleteTempError?tempId=" + b,
             success: function(b) {
-                var c = $.parseJSON(b);
-                "true" == c.returns ? (removeSpinner(), setupRemoveScript(a.parents(".projectItemContainer")), setTimeout(function() {
+                var c = b;//$.parseJSON(b);
+                "0" == c.flag ? (removeSpinner(), setupRemoveScript(a.parents(".projectItemContainer")), setTimeout(function() {
                     a.parents(".projectItemContainer").fadeTo(100, 0),
                     setTimeout(function() {
                         a.parents(".projectItemContainer").remove()
@@ -345,10 +346,10 @@ $(function() {
         $.ajax({
             type: "get",
             datatype: "json",
-            url: "delete?t=" + b,
+            url: "/member/deleteTemp.sm?tempId=" + b,
             success: function(b) {
-                var c = $.parseJSON(b);
-                "true" == c.returns ? (removeSpinner(), setupRemoveScript(a.parents(".messagelist")), setTimeout(function() {
+                var c = b;//$.parseJSON(b);
+                "0" == c.flag ? (removeSpinner(), setupRemoveScript(a.parents(".messagelist")), setTimeout(function() {
                     a.parents(".messagelist").fadeTo(100, 0),
                     setTimeout(function() {
                         a.parents(".messagelist").remove(),

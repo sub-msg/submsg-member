@@ -39,6 +39,7 @@ public class PayMentAction extends JsonBaseActionSupport{
 	private int productId;
 	private int invoiceId;
 	public String creatOrder(){
+		this.setErrorResult(JSON);
 		PayMentService payMentService = ServiceCacheFactory.getService(PayMentService.class);
 		String orderId = payMentService.creatOrder(this.getUserId(), productId, num, invoiceId);
 		return this.renderKeyValueResult("orderId", orderId);
@@ -65,6 +66,7 @@ public class PayMentAction extends JsonBaseActionSupport{
 	 * @return
 	 */
 	public String getInvoiceList(){
+		this.setErrorResult(JSON);
 		PayMentService payMentService = ServiceCacheFactory.getService(PayMentService.class);
 		return this.renderListResult(payMentService.getUserInvoiceList(getUserId()));
 	}
@@ -73,6 +75,7 @@ public class PayMentAction extends JsonBaseActionSupport{
 	 * @return
 	 */
 	public String getInvoiceById(){
+		this.setErrorResult(JSON);
 		PayMentService payMentService = ServiceCacheFactory.getService(PayMentService.class);
 		return this.renderObjectResult(payMentService.getInvoiceById(id));
 	}
@@ -97,6 +100,7 @@ public class PayMentAction extends JsonBaseActionSupport{
 	private String s_taxcode;//纳税人标识
 	
     public String createInvoice(){
+    	this.setErrorResult(JSON);
     	PayMentService payMentService = ServiceCacheFactory.getService(PayMentService.class);
     	payMentService.createOrEditInvoice(getUserId(), id, type, title, firstname,lastname, provice, city, area, address, mob, s_address, s_mob, s_bank, s_account, s_taxcode);
     	return this.renderSuccessResult();
@@ -107,6 +111,7 @@ public class PayMentAction extends JsonBaseActionSupport{
      * @return
      */
     public String deleteInvoice(){
+    	this.setErrorResult(JSON);
     	PayMentService payMentService = ServiceCacheFactory.getService(PayMentService.class);
     	payMentService.deleteInvoiceById(id,this.getUserId());
     	return this.renderSuccessResult();

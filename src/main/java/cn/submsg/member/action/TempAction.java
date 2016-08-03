@@ -1,5 +1,6 @@
 package cn.submsg.member.action;
 
+import com.google.common.base.Strings;
 import com.sr178.game.framework.context.ServiceCacheFactory;
 import com.sr178.module.web.action.JsonBaseActionSupport;
 
@@ -29,6 +30,7 @@ public class TempAction extends JsonBaseActionSupport{
 	private String t;//tag  all 所有 unsendverify 没有送审的 verifying 正在送审核的  verifyed 审核通过的  unverifyed 审核不通过的 
 	private Integer p;//页数  1第一页
 	public String tempList(){
+		this.setErrorResult(JSON);
 		MemberService memberService = ServiceCacheFactory.getService(MemberService.class);
 		String searchString = null;
 		String typeString = null;
@@ -38,7 +40,85 @@ public class TempAction extends JsonBaseActionSupport{
 		}else{
 			typeString = t;
 		}
-		return this.renderListResult(memberService.getUserMsgTempListByPage(getUserId(), 8, p-1, typeString, searchString));
+		return this.renderListResult(memberService.getUserMsgTempListByPage(getUserId(), 20, 0, typeString, searchString));
+	}
+	/**
+	 * 更新模板标题
+	 * @return
+	 */
+	private String tempId;
+	private String tempTitle;
+	public String updateTempTitle(){
+		this.setErrorResult(JSON);
+		MemberService memberService = ServiceCacheFactory.getService(MemberService.class);
+		memberService.updateTempTitle(this.getUserId(), tempId, tempTitle);
+		return this.renderSuccessResult();
+	}
+	/**
+	 * 删除模板
+	 * @return
+	 */
+	public String deleteTemp(){
+		this.setErrorResult(JSON);
+		MemberService memberService = ServiceCacheFactory.getService(MemberService.class);
+		memberService.deleteTempByTempId(getUserId(), tempId);
+		return this.renderSuccessResult();
+	}
+	/**
+	 * 获取用户签名列表
+	 * @return
+	 */
+	public String getSignList(){
+		this.setErrorResult(JSON);
+		MemberService memberService = ServiceCacheFactory.getService(MemberService.class);
+		return this.renderListResult(memberService.getMemberSignList(this.getUserId()));
+	}
+	/*
+	 * 添加短信模板
+	 */
+	private String tempContent;
+	private int tempStatus;
+	private int signId;
+	public String addTemp(){
+		this.setErrorResult(JSON);
+		MemberService memberService = ServiceCacheFactory.getService(MemberService.class);
+		
+		if(!Strings.isNullOrEmpty(tempId)){
+			memberService.editTemp(tempId, getUserId(), signId, tempContent, tempStatus);
+		}else{
+			memberService.addTemp(getUserId(), signId, tempContent, tempStatus);
+		}
+		return this.renderSuccessResult();
+	}
+	
+	/**
+	 * 删除签名
+	 * @return
+	 */
+	public String deleteSign(){
+		this.setErrorResult(JSON);
+		MemberService memberService = ServiceCacheFactory.getService(MemberService.class);
+		memberService.deleteMemberSign(getUserId(), signId);
+		return this.renderSuccessResult();
+	}
+	/**
+	 * 添加签名
+	 */
+    private String signContent;
+	public String addSign(){
+		this.setErrorResult(JSON);
+		MemberService memberService = ServiceCacheFactory.getService(MemberService.class);
+		memberService.addMemberSign(getUserId(), signContent);
+		return this.renderSuccessResult();
+	}
+	/**
+	 * 获取单个用户模板信息
+	 * @return
+	 */
+	public String getMsgTempBean(){
+		this.setErrorResult(JSON);
+		MemberService memberService = ServiceCacheFactory.getService(MemberService.class);
+		return this.renderObjectResult(memberService.getMsgTempBean(getUserId(), tempId));
 	}
 	/**
 	 * 进入新建模版界面
@@ -68,5 +148,41 @@ public class TempAction extends JsonBaseActionSupport{
 	}
 	public void setP(Integer p) {
 		this.p = p;
+	}
+	public String getTempId() {
+		return tempId;
+	}
+	public void setTempId(String tempId) {
+		this.tempId = tempId;
+	}
+	public String getTempTitle() {
+		return tempTitle;
+	}
+	public void setTempTitle(String tempTitle) {
+		this.tempTitle = tempTitle;
+	}
+	public String getTempContent() {
+		return tempContent;
+	}
+	public void setTempContent(String tempContent) {
+		this.tempContent = tempContent;
+	}
+	public int getTempStatus() {
+		return tempStatus;
+	}
+	public void setTempStatus(int tempStatus) {
+		this.tempStatus = tempStatus;
+	}
+	public int getSignId() {
+		return signId;
+	}
+	public void setSignId(int signId) {
+		this.signId = signId;
+	}
+	public String getSignContent() {
+		return signContent;
+	}
+	public void setSignContent(String signContent) {
+		this.signContent = signContent;
 	}
 }
