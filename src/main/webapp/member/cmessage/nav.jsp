@@ -11,7 +11,7 @@
 					<li class="create"><a href="/member/appList.sm">应用管理</a></li>
 					<li class="create"><a href="/member/enterCreateTemp.sm">新建模板</a></li>
 					<li class="project"><a href="/member/enterTempList.sm">模板列表</a></li>
-					<li><a href="/chs/account/logs#/message">计费日志</a></li>
+					<li><a href="/member/enterLog.sm">计费日志</a></li>
 				</ul>
 			</div>
 			<div class="headerBg"></div>
@@ -26,7 +26,7 @@
 					<div class="submenus_remenu">
 						<div class="account_overview">
 							<ul>
-								<li><a href="/chs/account/settings"><span>账户设置</span></a></li>
+								<!-- <li><a href="/chs/account/settings"><span>账户设置</span></a></li> -->
 								<li><a href="/member/logout.sm" class="logout">登出</a></li>
 							</ul>
 						</div>

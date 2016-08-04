@@ -8,7 +8,9 @@
 		<action name="index" class="cn.submsg.member.action.MemberAction">
            <result name="success">/member/index.jsp</result>
 		</action>
-		
+		<action name="logout" class="cn.submsg.member.action.MemberAction" method="logout">
+           <result name="success" type="redirect">/index.sm</result>
+		</action>
 		<action name="appList" class="cn.submsg.member.action.MemberAction" method="appList">
            <result name="success">/member/applist.jsp</result>
 		</action>
@@ -45,6 +47,11 @@
 		<action name="deleteSign" class="cn.submsg.member.action.TempAction" method="deleteSign"></action>
 		<action name="addSign" class="cn.submsg.member.action.TempAction" method="addSign"></action>
 		<action name="getMsgTempBean" class="cn.submsg.member.action.TempAction" method="getMsgTempBean"></action>
+		<action name="enterLog" class="cn.submsg.member.action.LogAction" method="enterLog">
+		   <result name="success">/member/log.jsp</result>
+		</action>
+		<action name="getlogs" class="cn.submsg.member.action.LogAction" method="getlogs"></action>
+		<action name="getOrders" class="cn.submsg.member.action.PayMentAction" method="getOrders"></action>
 	</package>
 
 	<!-- 不用登录即可访问的界面 -->

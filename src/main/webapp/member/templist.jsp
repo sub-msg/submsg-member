@@ -25,6 +25,7 @@
         <script src="${libUrl}PlugIns/jquery.client.js?2.5.0" type="text/javascript" charset="utf-8"></script>
         <script src="${libUrl}zh_cn/scripts/sys_base.js?2.5.0" type="text/javascript" charset="utf-8"></script>
         <script src="${libUrl}PlugIns/submenus/submenus.js" type="text/javascript" charset="utf-8"></script>
+        <script src="${libUrl}PlugIns/jquery-dateFormat.js?2.5.0" type="text/javascript" charset="utf-8"></script>
         <script src="${libUrl}zh_cn/scripts/message_project.js?2.5.0" type="text/javascript" charset="utf-8"></script>
     </head>
     <body id="project">

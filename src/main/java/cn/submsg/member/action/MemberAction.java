@@ -2,8 +2,11 @@ package cn.submsg.member.action;
 
 import java.util.List;
 
+import org.apache.struts2.ServletActionContext;
+
 import com.sr178.game.framework.context.ServiceCacheFactory;
 import com.sr178.module.web.action.JsonBaseActionSupport;
+import com.sr178.module.web.session.SessionManager;
 
 import cn.submsg.member.bean.MsgTempBean;
 import cn.submsg.member.bo.MemberMsgInfo;
@@ -29,6 +32,16 @@ public class MemberAction extends JsonBaseActionSupport {
 		msgInfo = memberService.getMemberMsgInfo(userId);
 		return SUCCESS;
 	}
+	/**
+	 * 登出
+	 * @return
+	 */
+	public String logout(){
+		String sessionId = ServletActionContext.getRequest().getSession().getId();
+		SessionManager.ins().removeSession(sessionId);
+		return SUCCESS;
+	}
+	
 	
 	public String appList(){
 		

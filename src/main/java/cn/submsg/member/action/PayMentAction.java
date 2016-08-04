@@ -2,9 +2,12 @@ package cn.submsg.member.action;
 
 
 import com.sr178.game.framework.context.ServiceCacheFactory;
+import com.sr178.game.framework.exception.ServiceException;
 import com.sr178.module.web.action.JsonBaseActionSupport;
 
+import cn.submsg.member.bean.OrderInfo;
 import cn.submsg.member.bo.MallProducts;
+import cn.submsg.member.bo.MemberInvoice;
 import cn.submsg.member.bo.PaymentOrder;
 import cn.submsg.member.constant.SessionAttrName;
 import cn.submsg.member.service.MemberService;
@@ -60,6 +63,30 @@ public class PayMentAction extends JsonBaseActionSupport{
 			return "back";
 		}
 		return SUCCESS;
+	}
+	/**
+	 * 获取订单信息
+	 * @return
+	 */
+	public String getOrders(){
+		this.setErrorResult(JSON);
+		PayMentService payMentService = ServiceCacheFactory.getService(PayMentService.class);
+		PaymentOrder porder = payMentService.getPayMentOrderByOrderId(orderId);
+		OrderInfo orderInfo = new OrderInfo();
+		orderInfo.setPorder(porder);
+		if(porder!=null){
+			MemberService memberService = ServiceCacheFactory.getService(MemberService.class);
+			MallProducts mp = memberService.getProductById(porder.getProductId());
+			orderInfo.setMp(mp);
+			if(porder.getInvoiceId().intValue()!=0){
+				MemberInvoice invoice = payMentService.getInvoiceById(porder.getInvoiceId());
+				orderInfo.setInvoice(invoice);
+			}
+			
+		}else{
+			throw new ServiceException(1,"订单错误");
+		}
+		return this.renderObjectResult(orderInfo);
 	}
 	/**
 	 * 获取用户发票信息列表
