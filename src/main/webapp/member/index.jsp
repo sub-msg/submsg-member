@@ -23,6 +23,7 @@
         <script src="${libUrl}PlugIns/jquery.rotate.js?2.5.0" type="text/javascript" charset="utf-8"></script>
         <script src="${libUrl}zh_cn/scripts/sys_base.js?2.5.0" type="text/javascript" charset="utf-8"></script>
         <script src="${libUrl}PlugIns/submenus/submenus.js" type="text/javascript" charset="utf-8"></script>
+        <%@ include file="/member/common/com_head_element.jsp"%>
     </head>
     <body id="message">
 	<%@ include file="/member/cmessage/nav.jsp"%>

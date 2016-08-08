@@ -152,6 +152,10 @@ public class IndexAction extends JsonBaseActionSupport{
 		return this.renderSuccessResult();
 	}
 	
+	
+	public String upgrade(){
+		return SUCCESS;
+	}
 
 
 	public List<MallProducts> getProductList() {

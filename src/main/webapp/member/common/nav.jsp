@@ -18,6 +18,7 @@
             <ul class="nav navbar-nav">
                 <li class="sms-nav"><a href="/smsIndex.sm">短信</a></li>
                 <li class="store-nav"><a href="/mallIndex.sm"><span class="hidden-sm">在线购买</span><span class="visible-sm">商店</span></a></li>
+                <li class="developer-nav"><a href="/doc/index.sm">开发文档</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                   <%

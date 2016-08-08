@@ -26,7 +26,11 @@
 	type="text/javascript" charset="utf-8"></script>
 <script src="${libUrl}zh_cn/scripts/global.base.js"
 	type="text/javascript" charset="utf-8"></script>
-
+     <script type="text/javascript" charset="utf-8">
+                $(function(){
+                  $('.store-nav').addClass('active');
+                  });
+                </script>
 <%@ include file="/member/common/com_head_element.jsp"%>
 </head>
 <body>

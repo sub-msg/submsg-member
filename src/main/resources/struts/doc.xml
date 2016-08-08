@@ -1,0 +1,12 @@
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+    
+    <package name="document" extends="noLoginInterceptor" namespace="/doc">
+        <action name="index" class="cn.submsg.member.action.DocAction" method="index">
+           <result name="success">/doc/index.jsp</result>
+		</action>
+       
+    </package>
+</struts>

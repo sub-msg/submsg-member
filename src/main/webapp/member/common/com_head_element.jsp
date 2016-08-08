@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
             <!--[if lt IE 8 ]>
              <script type="text/javascript" charset="utf-8">
-             window.location.href="/chs/welcome/UpgradeYourBrowser";
+             window.location.href="/upgrade.sm";
              </script>
              <![endif]-->
 

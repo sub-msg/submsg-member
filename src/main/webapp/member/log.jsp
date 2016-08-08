@@ -35,6 +35,7 @@
         <script src="${libUrl}PlugIns/submenus/submenus.js" type="text/javascript" charset="utf-8"></script>
         <link rel="stylesheet" href="${libUrl}zh_cn/styleSheets/addTips.css?2.5.0"  type="text/css" />
         <script src="${libUrl}zh_cn/scripts/addTips.js?2.5.0" type="text/javascript" charset="utf-8"></script>
+        <%@ include file="/member/common/com_head_element.jsp"%>
     </head>
     <body id="logs">
        <%@ include file="/member/cmessage/nav.jsp"%>

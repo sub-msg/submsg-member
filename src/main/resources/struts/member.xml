@@ -56,6 +56,9 @@
 
 	<!-- 不用登录即可访问的界面 -->
 	<package name="nologin" extends="noLoginInterceptor" namespace="/">
+		<action name="upgrade" class="cn.submsg.member.action.IndexAction" method="upgrade">
+           <result name="success">/common/upgrade.jsp</result>
+		</action>
 		<action name="index" class="cn.submsg.member.action.IndexAction">
            <result name="index">/index.jsp</result>
 		</action>

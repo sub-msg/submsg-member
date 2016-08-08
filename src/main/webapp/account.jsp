@@ -24,6 +24,7 @@
             <script src="${libUrl}zh_cn/scripts/global.base.js" type="text/javascript" charset="utf-8"></script>
             <script src="${libUrl}zh_cn/scripts/global.login.js" type="text/javascript" charset="utf-8"></script>
              <script src="${libUrl}PlugIns/base64.js" type="text/javascript" charset="utf-8"></script>
+            <%@ include file="/member/common/com_head_element.jsp"%>
             </head>
     <body>
         <%@ include file="/member/common/nav.jsp"%>
