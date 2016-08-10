@@ -1,22 +1,22 @@
 /*
-Navicat MySQL Data Transfer
+ Navicat MySQL Data Transfer
 
-Source Server         : 127.0.0.1
-Source Server Version : 50624
-Source Host           : localhost:3306
-Source Database       : submsg-member
+ Source Server         : localhost
+ Source Server Version : 50630
+ Source Host           : localhost
+ Source Database       : submsg-member
 
-Target Server Type    : MYSQL
-Target Server Version : 50624
-File Encoding         : 65001
+ Target Server Version : 50630
+ File Encoding         : utf-8
 
-Date: 2016-08-04 18:41:30
+ Date: 08/11/2016 00:03:51 AM
 */
 
-SET FOREIGN_KEY_CHECKS=0;
+SET NAMES utf8;
+SET FOREIGN_KEY_CHECKS = 0;
 
 -- ----------------------------
--- Table structure for api_req_error_log
+--  Table structure for `api_req_error_log`
 -- ----------------------------
 DROP TABLE IF EXISTS `api_req_error_log`;
 CREATE TABLE `api_req_error_log` (
@@ -33,11 +33,48 @@ CREATE TABLE `api_req_error_log` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records of api_req_error_log
+--  Table structure for `doc`
 -- ----------------------------
+DROP TABLE IF EXISTS `doc`;
+CREATE TABLE `doc` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `doc_id` varchar(16) DEFAULT NULL,
+  `doc_title` varchar(128) NOT NULL,
+  `doc_contnet` text,
+  `type` int(11) NOT NULL,
+  `level` int(11) NOT NULL DEFAULT '0' COMMENT '0 一级目录  1 二级目录',
+  `parent_id` int(11) NOT NULL DEFAULT '0' COMMENT '父id',
+  `order_num` int(11) NOT NULL,
+  `admin_user` varchar(255) DEFAULT NULL,
+  `updated_time` datetime NOT NULL,
+  `created_time` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Table structure for mall_products
+--  Records of `doc`
+-- ----------------------------
+BEGIN;
+INSERT INTO `doc` VALUES ('1', null, 'SUBMSG API基础知识', null, '1', '0', '0', '1', null, '2016-08-09 18:18:16', '2016-08-09 18:18:18'), ('2', null, '开始', null, '1', '0', '0', '2', null, '2016-08-09 18:20:10', '2016-08-09 18:20:13'), ('3', null, '变量和内置变量', null, '1', '0', '0', '3', null, '2016-08-09 18:21:01', '2016-08-09 18:21:03'), ('4', null, '短信API', null, '1', '0', '0', '4', null, '2016-08-09 18:21:38', '2016-08-09 18:21:40'), ('5', null, 'DEBUG', null, '1', '0', '0', '5', null, '2016-08-09 18:22:14', '2016-08-09 18:22:16'), ('6', null, 'SDK开发包下载', null, '1', '0', '0', '5', null, '2016-08-09 18:22:48', '2016-08-09 18:22:50'), ('7', 'fWVfw3', '什么是SUBMSG API', '<h2>什么是SUBMSG API</h2>\n\n<p>&nbsp;</p>\n\n<div><a class=\"res-title table-title btn-block\" href=\"javascript:void(0)\"><strong>&nbsp; &nbsp;概览</strong></a>\n\n<div class=\"res-table\">\n<p>SUBMSG API 是基于云端的短信服务接口。用户通过接入和集成 SUBMSG API 可以方便、高效地向用户发送短信。不仅如此，SUBMSG 具备强大的数据分析与用户行为跟踪功能，让接入方轻松、高效地，以超低成本费用构建自己的系统。</p>\n\n<p>&nbsp;</p>\n</div>\n</div>\n\n<div><a class=\"res-title table-title btn-block\" href=\"javascript:void(0)\"><strong>&nbsp; &nbsp;SUBMSG API 为哪些客户服务</strong></a>\n\n<div class=\"res-table\">\n<p>SUBMSG API 为所有在中国大陆地区具有合法经营资质的企业和机构提供短信服务（短信服务对个人用户暂不开放）。</p>\n\n<p>&nbsp;</p>\n\n<p>此外，SUBMSG 的垃圾内容过滤机制是短信服务高送达率的保证，SUBMSG 对于尝试发送垃圾短信的用户进行限制。</p>\n\n<p>&nbsp;</p>\n</div>\n</div>', '1', '1', '1', '1', null, '2016-08-09 18:24:07', '2016-08-09 18:24:09'), ('8', 'k6PQb2', '欣明 SUBMSG 开发者公约', null, '1', '1', '1', '2', null, '2016-08-10 15:26:58', '2016-08-10 15:27:01'), ('9', '0nEKR4', '获取开发者身份', null, '1', '1', '1', '3', null, '2016-08-10 15:27:35', '2016-08-10 15:27:37'), ('10', 'ApyTd2', '短信发送机制', null, '1', '1', '1', '4', null, '2016-08-10 15:29:08', '2016-08-10 15:29:11'), ('11', 'LHJvQ', '账户违规使用惩罚机制', null, '1', '1', '1', '5', null, '2016-08-10 15:29:45', '2016-08-10 15:29:47'), ('12', 'f706A2', '概览', null, '1', '1', '2', '1', null, '2016-08-10 15:30:30', '2016-08-10 15:30:32'), ('13', 'b1hC31', '创建应用', null, '1', '1', '2', '2', null, '2016-08-10 15:31:04', '2016-08-10 15:31:06'), ('14', 'gbibb3', 'API 授权与验证机制', null, '1', '1', '2', '3', null, '2016-08-10 15:31:38', '2016-08-10 15:31:40'), ('15', 'MmSw12', '获取开发者标识', null, '1', '1', '2', '4', null, '2016-08-10 15:32:26', '2016-08-10 15:32:28'), ('16', 'oKraS3', '文本变量', null, '1', '1', '3', '1', null, '2016-08-10 15:43:24', '2016-08-10 15:43:26'), ('17', 't2f1J2', 'Message/xsend', null, '1', '1', '4', '1', null, '2016-08-10 15:45:22', '2016-08-10 15:45:24'), ('18', 'jXMkj3', 'service/timestamp', null, '1', '1', '4', '2', null, '2016-08-10 15:46:11', '2016-08-10 15:46:13'), ('19', 'c8ujr', '错误代码与描述', null, '1', '1', '5', '1', null, '2016-08-10 15:46:52', '2016-08-10 15:46:55'), ('20', 'yQZyA', 'Java', null, '1', '1', '6', '1', null, '2016-08-10 15:47:46', '2016-08-10 15:47:48'), ('21', 'BSx2b3', 'PHP', null, '1', '1', '6', '2', null, '2016-08-10 15:48:23', '2016-08-10 15:48:25'), ('22', null, '关于SUBMSG', null, '2', '0', '0', '1', null, '2016-08-10 15:59:18', '2016-08-10 15:59:20'), ('23', null, '购买与付款', null, '2', '0', '0', '2', null, '2016-08-10 15:59:51', '2016-08-10 15:59:54'), ('24', null, '服务协议', null, '2', '0', '0', '3', null, '2016-08-10 16:00:26', '2016-08-10 16:00:29'), ('25', null, '加入我们', null, '2', '0', '0', '4', null, '2016-08-10 16:00:56', '2016-08-10 16:00:58'), ('26', 'dTHNB3', '公司简介', null, '2', '1', '22', '1', null, '2016-08-10 16:02:51', '2016-08-10 16:02:53'), ('27', '7Zm1y2', '联系我们', null, '2', '1', '22', '2', null, '2016-08-10 16:03:24', '2016-08-10 16:03:27'), ('28', 'pOjYF4', '大客户服务', null, '2', '1', '22', '3', null, '2016-08-10 16:03:56', '2016-08-10 16:03:58'), ('29', '0o64G', '关注我们', null, '2', '1', '22', '4', null, '2016-08-10 16:04:33', '2016-08-10 16:04:35'), ('30', 'VozyF', '支付方式', null, '2', '1', '23', '1', null, '2016-08-10 16:05:26', '2016-08-10 16:05:28'), ('31', '6utoQ2', '关于发票', null, '2', '1', '23', '2', null, '2016-08-10 16:07:02', '2016-08-10 16:07:05'), ('32', 'r4isU', '欣明 SUBMSG 开发者公约', null, '2', '1', '24', '1', null, '2016-08-10 16:08:05', '2016-08-10 16:08:08'), ('33', '8Ah141', '欣明 SUBMSG 网站使用协议', null, '2', '1', '24', '2', null, '2016-08-10 16:09:27', '2016-08-10 16:09:31'), ('34', 'QTvOw3', '欣明 SUBMSG 短信服务协议', null, '2', '1', '24', '3', null, '2016-08-10 16:10:56', '2016-08-10 16:10:59'), ('35', 'lko6U1', '账户违规使用惩罚机制', null, '2', '1', '24', '4', null, '2016-08-10 16:12:31', '2016-08-10 16:12:34'), ('36', 'xwFOk3', '产品研发部', null, '2', '1', '25', '1', null, '2016-08-10 16:13:41', '2016-08-10 16:13:45'), ('37', 'vvJod4', '客户服务部', null, '2', '1', '25', '2', null, '2016-08-10 16:14:21', '2016-08-10 16:14:24'), ('38', 'Ho3G44', '行政与人力资源部', null, '2', '1', '25', '3', null, '2016-08-10 16:15:24', '2016-08-10 16:15:28');
+COMMIT;
+
+-- ----------------------------
+--  Table structure for `doc_reply`
+-- ----------------------------
+DROP TABLE IF EXISTS `doc_reply`;
+CREATE TABLE `doc_reply` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `doc_key_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `name` varchar(16) NOT NULL,
+  `reply_id` int(11) NOT NULL,
+  `repl_content` text NOT NULL,
+  `created_time` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+--  Table structure for `mall_products`
 -- ----------------------------
 DROP TABLE IF EXISTS `mall_products`;
 CREATE TABLE `mall_products` (
@@ -50,16 +87,14 @@ CREATE TABLE `mall_products` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records of mall_products
+--  Records of `mall_products`
 -- ----------------------------
-INSERT INTO `mall_products` VALUES ('1', '5000', '275', 'images/store-icon01.png', '2016-06-01 12:10:10');
-INSERT INTO `mall_products` VALUES ('2', '20000', '1059', 'images/store-icon02.png', '2016-06-01 12:11:23');
-INSERT INTO `mall_products` VALUES ('3', '100000', '4999', 'images/store-icon03.png', '2016-06-01 12:11:57');
-INSERT INTO `mall_products` VALUES ('4', '500000', '23999', 'images/store-icon04.png', '2016-06-01 13:32:56');
-INSERT INTO `mall_products` VALUES ('5', '2000000', '89999', 'images/store-icon05.png', '2016-06-01 13:33:22');
+BEGIN;
+INSERT INTO `mall_products` VALUES ('1', '5000', '275', 'images/store-icon01.png', '2016-06-01 12:10:10'), ('2', '20000', '1059', 'images/store-icon02.png', '2016-06-01 12:11:23'), ('3', '100000', '4999', 'images/store-icon03.png', '2016-06-01 12:11:57'), ('4', '500000', '23999', 'images/store-icon04.png', '2016-06-01 13:32:56'), ('5', '2000000', '89999', 'images/store-icon05.png', '2016-06-01 13:33:22');
+COMMIT;
 
 -- ----------------------------
--- Table structure for member
+--  Table structure for `member`
 -- ----------------------------
 DROP TABLE IF EXISTS `member`;
 CREATE TABLE `member` (
@@ -89,12 +124,14 @@ CREATE TABLE `member` (
 ) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records of member
+--  Records of `member`
 -- ----------------------------
+BEGIN;
 INSERT INTO `member` VALUES ('19', 'dogdog7788@qq.com', 'd08fed5671cca518c3bfda017f63c928', '孟', '潮', null, null, null, null, 'dogdog7788@qq.com', null, null, null, null, null, null, null, null, null, '0', '2016-06-03 17:30:40', '2016-06-03 17:30:40');
+COMMIT;
 
 -- ----------------------------
--- Table structure for member_company
+--  Table structure for `member_company`
 -- ----------------------------
 DROP TABLE IF EXISTS `member_company`;
 CREATE TABLE `member_company` (
@@ -119,11 +156,7 @@ CREATE TABLE `member_company` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records of member_company
--- ----------------------------
-
--- ----------------------------
--- Table structure for member_invoice
+--  Table structure for `member_invoice`
 -- ----------------------------
 DROP TABLE IF EXISTS `member_invoice`;
 CREATE TABLE `member_invoice` (
@@ -149,13 +182,14 @@ CREATE TABLE `member_invoice` (
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records of member_invoice
+--  Records of `member_invoice`
 -- ----------------------------
-INSERT INTO `member_invoice` VALUES ('2', '19', '欣明信息科技（深圳）有限公司', '2', '1125884452', '深圳市翻身路新厦苑一栋新怡阁6c', '0755-27898854', '中国银行', '5588774455566554', '孟', '潮哥', '广东', '深圳', '宝安区', '翻身路新厦苑新怡阁6C', '15919820372', '2016-08-01 15:32:46');
-INSERT INTO `member_invoice` VALUES ('3', '19', '测试公司地址', '1', null, null, null, null, null, '黄', '明', '广东', '深圳', '福田区', '少时诵诗书', '13534277314', '2016-08-01 16:01:18');
+BEGIN;
+INSERT INTO `member_invoice` VALUES ('2', '19', '欣明信息科技（深圳）有限公司', '2', '1125884452', '深圳市翻身路新厦苑一栋新怡阁6c', '0755-27898854', '中国银行', '5588774455566554', '孟', '潮哥', '广东', '深圳', '宝安区', '翻身路新厦苑新怡阁6C', '15919820372', '2016-08-01 15:32:46'), ('3', '19', '测试公司地址', '1', null, null, null, null, null, '黄', '明', '广东', '深圳', '福田区', '少时诵诗书', '13534277314', '2016-08-01 16:01:18');
+COMMIT;
 
 -- ----------------------------
--- Table structure for member_message_sign
+--  Table structure for `member_message_sign`
 -- ----------------------------
 DROP TABLE IF EXISTS `member_message_sign`;
 CREATE TABLE `member_message_sign` (
@@ -173,18 +207,14 @@ CREATE TABLE `member_message_sign` (
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records of member_message_sign
+--  Records of `member_message_sign`
 -- ----------------------------
-INSERT INTO `member_message_sign` VALUES ('1', '19', '积分游戏大平台', '1', '0', '02', '2016-07-06 11:00:00', '2016-07-06 11:00:03');
-INSERT INTO `member_message_sign` VALUES ('2', '19', '中国一川', '1', '0', '01', '2016-07-06 11:05:12', '2016-07-06 11:05:15');
-INSERT INTO `member_message_sign` VALUES ('3', '19', '广运商城', '1', '0', '03', '2016-07-06 11:05:44', '2016-07-06 11:05:46');
-INSERT INTO `member_message_sign` VALUES ('4', '19', '一币商城', '1', '0', '04', '2016-07-06 11:06:09', '2016-07-06 11:06:11');
-INSERT INTO `member_message_sign` VALUES ('5', '19', '幸福100商城', '1', '0', '05', '2016-08-03 17:05:14', '2016-08-03 17:05:16');
-INSERT INTO `member_message_sign` VALUES ('6', '19', 'SUBMSG', '1', '0', '06', '2016-08-03 17:06:37', '2016-08-03 17:06:37');
-INSERT INTO `member_message_sign` VALUES ('7', '19', '幸福100', '0', '0', null, '2016-08-03 17:12:27', '2016-08-03 17:12:27');
+BEGIN;
+INSERT INTO `member_message_sign` VALUES ('1', '19', '积分游戏大平台', '1', '0', '02', '2016-07-06 11:00:00', '2016-07-06 11:00:03'), ('2', '19', '中国一川', '1', '0', '01', '2016-07-06 11:05:12', '2016-07-06 11:05:15'), ('3', '19', '广运商城', '1', '0', '03', '2016-07-06 11:05:44', '2016-07-06 11:05:46'), ('4', '19', '一币商城', '1', '0', '04', '2016-07-06 11:06:09', '2016-07-06 11:06:11'), ('5', '19', '幸福100商城', '1', '0', '05', '2016-08-03 17:05:14', '2016-08-03 17:05:16'), ('6', '19', 'SUBMSG', '1', '0', '06', '2016-08-03 17:06:37', '2016-08-03 17:06:37'), ('7', '19', '幸福100', '1', '0', '07', '2016-08-03 17:12:27', '2016-08-03 17:12:27');
+COMMIT;
 
 -- ----------------------------
--- Table structure for member_message_temp
+--  Table structure for `member_message_temp`
 -- ----------------------------
 DROP TABLE IF EXISTS `member_message_temp`;
 CREATE TABLE `member_message_temp` (
@@ -192,7 +222,7 @@ CREATE TABLE `member_message_temp` (
   `user_id` int(11) NOT NULL,
   `app_id` int(11) NOT NULL,
   `temp_id` varchar(16) NOT NULL,
-  `temp_title` varchar(255) NOT NULL,
+  `temp_title` varchar(255) DEFAULT NULL,
   `temp_content` text NOT NULL,
   `temp_status` int(11) NOT NULL DEFAULT '0',
   `sign_id` int(11) NOT NULL,
@@ -205,16 +235,14 @@ CREATE TABLE `member_message_temp` (
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records of member_message_temp
+--  Records of `member_message_temp`
 -- ----------------------------
-INSERT INTO `member_message_temp` VALUES ('1', '19', '1', 'sUb981', '开户通知', '尊敬的@var(name)先生/女士：恭喜您成为中国一川（澳门）国际有限公司的理财客户，您所注册的账户资金为@var(numStr)，用户名为：@var(userName)，祝福您跨入了财富自由的大门。[中国一川（澳门）国际有限公司 @var(date)]', '1', '1', '2016-07-06 11:17:38', '2016-07-06 11:17:40');
-INSERT INTO `member_message_temp` VALUES ('2', '19', '1', 'BlQ9X', '卖出一币通知', '您卖出的一币对方已打款，请在48小时内登录用户中心确认,否则将扣除您一颗信誉星。5天后未进行操作将暂封您的一币卖出功能！', '1', '1', '2016-07-06 11:18:01', '2016-07-06 11:18:05');
-INSERT INTO `member_message_temp` VALUES ('3', '19', '1', 'R630D1', '卖出一币通知', '您有一笔交易的一币已失效（对方2小时内未付款），请登录用户中心处理该订单。', '1', '1', '2016-07-06 11:18:55', '2016-07-06 11:18:58');
-INSERT INTO `member_message_temp` VALUES ('4', '19', '1', 'WKkt32', '卖出一币通知', '您挂出的一币已被执行买入操作，请确认对方是否转款，如已转款请登录用户中心确认卖出操作。', '1', '1', '2016-07-06 11:19:33', '2016-07-06 11:19:35');
-INSERT INTO `member_message_temp` VALUES ('5', '19', '1', 'NFgnN3', '操作通知', '尊敬的@var(userName) 玩家：您正在进行@var(op)操作，验证码为：@var(code) ，如非本人操作请忽略', '1', '1', '2016-07-06 11:20:38', '2016-07-06 11:20:40');
+BEGIN;
+INSERT INTO `member_message_temp` VALUES ('1', '19', '1', 'sUb981', '开户通知', '尊敬的@var(name)先生/女士：恭喜您成为中国一川（澳门）国际有限公司的理财客户，您所注册的账户资金为@var(numStr)，用户名为：@var(userName)，祝福您跨入了财富自由的大门。[中国一川（澳门）国际有限公司 @var(date)]', '1', '1', '2016-07-06 11:17:38', '2016-07-06 11:17:40'), ('2', '19', '1', 'BlQ9X', '卖出一币通知', '您卖出的一币对方已打款，请在48小时内登录用户中心确认,否则将扣除您一颗信誉星。5天后未进行操作将暂封您的一币卖出功能！', '1', '1', '2016-07-06 11:18:01', '2016-07-06 11:18:05'), ('3', '19', '1', 'R630D1', '卖出一币通知', '您有一笔交易的一币已失效（对方2小时内未付款），请登录用户中心处理该订单。', '1', '1', '2016-07-06 11:18:55', '2016-07-06 11:18:58'), ('4', '19', '1', 'WKkt32', '卖出一币通知', '您挂出的一币已被执行买入操作，请确认对方是否转款，如已转款请登录用户中心确认卖出操作。', '1', '1', '2016-07-06 11:19:33', '2016-07-06 11:19:35'), ('5', '19', '1', 'NFgnN3', '操作通知', '尊敬的@var(userName) 玩家：您正在进行@var(op)操作，验证码为：@var(code) ，如非本人操作请忽略', '1', '1', '2016-07-06 11:20:38', '2016-07-06 11:20:40');
+COMMIT;
 
 -- ----------------------------
--- Table structure for member_msg_info
+--  Table structure for `member_msg_info`
 -- ----------------------------
 DROP TABLE IF EXISTS `member_msg_info`;
 CREATE TABLE `member_msg_info` (
@@ -228,12 +256,14 @@ CREATE TABLE `member_msg_info` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records of member_msg_info
+--  Records of `member_msg_info`
 -- ----------------------------
+BEGIN;
 INSERT INTO `member_msg_info` VALUES ('19', '2245', '0', '0', '0', '2016-07-06 11:52:27');
+COMMIT;
 
 -- ----------------------------
--- Table structure for member_project
+--  Table structure for `member_project`
 -- ----------------------------
 DROP TABLE IF EXISTS `member_project`;
 CREATE TABLE `member_project` (
@@ -251,12 +281,14 @@ CREATE TABLE `member_project` (
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records of member_project
+--  Records of `member_project`
 -- ----------------------------
+BEGIN;
 INSERT INTO `member_project` VALUES ('6', '19', '6你好', '5f677f6e642a114504ac12e3571ee456', '-1', '', '1', '2016-07-21 17:55:34', '2016-07-21 17:55:34');
+COMMIT;
 
 -- ----------------------------
--- Table structure for member_verify
+--  Table structure for `member_verify`
 -- ----------------------------
 DROP TABLE IF EXISTS `member_verify`;
 CREATE TABLE `member_verify` (
@@ -272,37 +304,14 @@ CREATE TABLE `member_verify` (
 ) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records of member_verify
+--  Records of `member_verify`
 -- ----------------------------
-INSERT INTO `member_verify` VALUES ('4', 'd28905c4ed7d9af0', '6', '180', '1', null, '2016-06-02 19:08:03');
-INSERT INTO `member_verify` VALUES ('5', '66a71328bd0e8614', '7', '180', '1', null, '2016-06-02 19:10:08');
-INSERT INTO `member_verify` VALUES ('7', '80010d8b469698ab', '9', '180', '1', '2016-06-02 19:20:53', '2016-06-02 19:15:19');
-INSERT INTO `member_verify` VALUES ('9', '053ad3a336ac66a8', '11', '180', '1', '2016-06-03 14:47:58', '2016-06-03 14:46:44');
-INSERT INTO `member_verify` VALUES ('10', '2c00d7fdad7b0e99', '12', '180', '1', null, '2016-06-03 14:57:34');
-INSERT INTO `member_verify` VALUES ('11', '4b174793867a02c0', '13', '180', '1', null, '2016-06-03 15:24:01');
-INSERT INTO `member_verify` VALUES ('12', 'dfbd1ccd46f0db02', '13', '180', '2', null, '2016-06-03 16:30:30');
-INSERT INTO `member_verify` VALUES ('13', '952d9f51dc94bbbf', '13', '180', '2', '2016-06-03 16:34:13', '2016-06-03 16:33:52');
-INSERT INTO `member_verify` VALUES ('14', 'edba9f09f7652f4b', '13', '180', '2', '2016-06-03 16:39:20', '2016-06-03 16:38:27');
-INSERT INTO `member_verify` VALUES ('15', 'f553a3d75032dbaf', '14', '180', '1', null, '2016-06-03 16:41:04');
-INSERT INTO `member_verify` VALUES ('16', '008c68c455484d9c', '15', '180', '1', null, '2016-06-03 16:45:25');
-INSERT INTO `member_verify` VALUES ('17', '639a80dd66907e2c', '15', '180', '1', null, '2016-06-03 16:45:36');
-INSERT INTO `member_verify` VALUES ('18', 'dec62403f9bf3dcd', '15', '180', '1', null, '2016-06-03 16:45:50');
-INSERT INTO `member_verify` VALUES ('19', 'd46fc0eab15dceb7', '15', '180', '2', null, '2016-06-03 16:51:14');
-INSERT INTO `member_verify` VALUES ('20', '170b3a6c7433815d', '16', '180', '1', null, '2016-06-03 16:52:30');
-INSERT INTO `member_verify` VALUES ('21', '523e0912408e61f9', '16', '180', '1', null, '2016-06-03 16:53:23');
-INSERT INTO `member_verify` VALUES ('22', 'abeadbb5118f67e9', '17', '30', '1', null, '2016-06-03 17:09:10');
-INSERT INTO `member_verify` VALUES ('23', '1f96f92a42b45e7b', '17', '30', '1', '2016-06-03 17:13:27', '2016-06-03 17:09:35');
-INSERT INTO `member_verify` VALUES ('24', 'ca3ca7ea5c2d5a91', '18', '30', '1', '2016-06-03 17:24:28', '2016-06-03 17:24:21');
-INSERT INTO `member_verify` VALUES ('25', '9140c746e42cf4ab', '19', '30', '1', null, '2016-06-03 17:30:40');
-INSERT INTO `member_verify` VALUES ('26', '12906a965f13d724', '19', '30', '1', null, '2016-06-03 17:30:50');
-INSERT INTO `member_verify` VALUES ('27', '597a854ecd125482', '19', '30', '1', null, '2016-06-03 17:33:23');
-INSERT INTO `member_verify` VALUES ('28', '3001109d393a4cfa', '19', '30', '1', null, '2016-06-03 17:35:03');
-INSERT INTO `member_verify` VALUES ('29', '5b0fa82ca53ffd4f', '19', '30', '1', '2016-06-03 17:36:26', '2016-06-03 17:36:17');
-INSERT INTO `member_verify` VALUES ('30', '37d148b95cad1746', '19', '30', '1', '2016-06-03 18:35:10', '2016-06-03 18:35:01');
-INSERT INTO `member_verify` VALUES ('31', 'bcaa3093afabb67c', '19', '30', '2', '2016-07-16 11:30:59', '2016-07-16 11:30:22');
+BEGIN;
+INSERT INTO `member_verify` VALUES ('4', 'd28905c4ed7d9af0', '6', '180', '1', null, '2016-06-02 19:08:03'), ('5', '66a71328bd0e8614', '7', '180', '1', null, '2016-06-02 19:10:08'), ('7', '80010d8b469698ab', '9', '180', '1', '2016-06-02 19:20:53', '2016-06-02 19:15:19'), ('9', '053ad3a336ac66a8', '11', '180', '1', '2016-06-03 14:47:58', '2016-06-03 14:46:44'), ('10', '2c00d7fdad7b0e99', '12', '180', '1', null, '2016-06-03 14:57:34'), ('11', '4b174793867a02c0', '13', '180', '1', null, '2016-06-03 15:24:01'), ('12', 'dfbd1ccd46f0db02', '13', '180', '2', null, '2016-06-03 16:30:30'), ('13', '952d9f51dc94bbbf', '13', '180', '2', '2016-06-03 16:34:13', '2016-06-03 16:33:52'), ('14', 'edba9f09f7652f4b', '13', '180', '2', '2016-06-03 16:39:20', '2016-06-03 16:38:27'), ('15', 'f553a3d75032dbaf', '14', '180', '1', null, '2016-06-03 16:41:04'), ('16', '008c68c455484d9c', '15', '180', '1', null, '2016-06-03 16:45:25'), ('17', '639a80dd66907e2c', '15', '180', '1', null, '2016-06-03 16:45:36'), ('18', 'dec62403f9bf3dcd', '15', '180', '1', null, '2016-06-03 16:45:50'), ('19', 'd46fc0eab15dceb7', '15', '180', '2', null, '2016-06-03 16:51:14'), ('20', '170b3a6c7433815d', '16', '180', '1', null, '2016-06-03 16:52:30'), ('21', '523e0912408e61f9', '16', '180', '1', null, '2016-06-03 16:53:23'), ('22', 'abeadbb5118f67e9', '17', '30', '1', null, '2016-06-03 17:09:10'), ('23', '1f96f92a42b45e7b', '17', '30', '1', '2016-06-03 17:13:27', '2016-06-03 17:09:35'), ('24', 'ca3ca7ea5c2d5a91', '18', '30', '1', '2016-06-03 17:24:28', '2016-06-03 17:24:21'), ('25', '9140c746e42cf4ab', '19', '30', '1', null, '2016-06-03 17:30:40'), ('26', '12906a965f13d724', '19', '30', '1', null, '2016-06-03 17:30:50'), ('27', '597a854ecd125482', '19', '30', '1', null, '2016-06-03 17:33:23'), ('28', '3001109d393a4cfa', '19', '30', '1', null, '2016-06-03 17:35:03'), ('29', '5b0fa82ca53ffd4f', '19', '30', '1', '2016-06-03 17:36:26', '2016-06-03 17:36:17'), ('30', '37d148b95cad1746', '19', '30', '1', '2016-06-03 18:35:10', '2016-06-03 18:35:01'), ('31', 'bcaa3093afabb67c', '19', '30', '2', '2016-07-16 11:30:59', '2016-07-16 11:30:22');
+COMMIT;
 
 -- ----------------------------
--- Table structure for msg_delever_log
+--  Table structure for `msg_delever_log`
 -- ----------------------------
 DROP TABLE IF EXISTS `msg_delever_log`;
 CREATE TABLE `msg_delever_log` (
@@ -316,11 +325,7 @@ CREATE TABLE `msg_delever_log` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records of msg_delever_log
--- ----------------------------
-
--- ----------------------------
--- Table structure for msg_send_log
+--  Table structure for `msg_send_log`
 -- ----------------------------
 DROP TABLE IF EXISTS `msg_send_log`;
 CREATE TABLE `msg_send_log` (
@@ -346,144 +351,14 @@ CREATE TABLE `msg_send_log` (
 ) ENGINE=InnoDB AUTO_INCREMENT=1529 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records of msg_send_log
+--  Records of `msg_send_log`
 -- ----------------------------
-INSERT INTO `msg_send_log` VALUES ('1', '19', '6', '9f9b3f2b344c4a8d1253a61b1f9f2dfe', null, 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '2', '2016-08-04 17:06:49', null, null, null, '2016-08-04 17:06:49');
-INSERT INTO `msg_send_log` VALUES ('2', '19', '6', 'e74910c237a92b4b1485055deb853cf7', null, 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '2', '2016-08-04 17:07:34', null, null, null, '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('3', '19', '6', 'a3179bf45bba1278ca219d2bde9ef07d', null, 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '2', '2016-08-04 17:07:34', null, null, null, '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('4', '19', '6', 'bdecc9262fb6c97c8bdf0ed34ec7aa45', null, 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '2', '2016-08-04 17:07:34', null, null, null, '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('5', '19', '6', '30da47cad2fb46864254c8a58bbf5536', null, 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '3', '2016-08-04 17:07:34', null, null, null, '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('6', '19', '6', 'd90a111c40394023f4a30497ec53f70f', null, 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '3', '2016-08-04 17:07:34', null, null, null, '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('7', '19', '6', '45d1fa6c1fa24e9ae35109b7b71eae93', null, 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '3', '2016-08-04 17:07:34', null, null, null, '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1403', '19', '6', '9f9b3f2b344c4a8d1253a61b1f9f2dfe', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:06:49', null, null, '', '2016-08-04 17:06:49');
-INSERT INTO `msg_send_log` VALUES ('1404', '19', '6', 'e74910c237a92b4b1485055deb853cf7', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1405', '19', '6', 'a3179bf45bba1278ca219d2bde9ef07d', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1406', '19', '6', 'bdecc9262fb6c97c8bdf0ed34ec7aa45', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1407', '19', '6', '30da47cad2fb46864254c8a58bbf5536', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1408', '19', '6', 'd90a111c40394023f4a30497ec53f70f', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1409', '19', '6', '45d1fa6c1fa24e9ae35109b7b71eae93', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1410', '19', '6', '9f9b3f2b344c4a8d1253a61b1f9f2dfe', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:06:49', null, null, '', '2016-08-04 17:06:49');
-INSERT INTO `msg_send_log` VALUES ('1411', '19', '6', 'e74910c237a92b4b1485055deb853cf7', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1412', '19', '6', 'a3179bf45bba1278ca219d2bde9ef07d', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1413', '19', '6', 'bdecc9262fb6c97c8bdf0ed34ec7aa45', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1414', '19', '6', '30da47cad2fb46864254c8a58bbf5536', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1415', '19', '6', 'd90a111c40394023f4a30497ec53f70f', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1416', '19', '6', '45d1fa6c1fa24e9ae35109b7b71eae93', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1417', '19', '6', '9f9b3f2b344c4a8d1253a61b1f9f2dfe', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:06:49', null, null, '', '2016-08-04 17:06:49');
-INSERT INTO `msg_send_log` VALUES ('1418', '19', '6', 'e74910c237a92b4b1485055deb853cf7', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1419', '19', '6', 'a3179bf45bba1278ca219d2bde9ef07d', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1420', '19', '6', 'bdecc9262fb6c97c8bdf0ed34ec7aa45', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1421', '19', '6', '30da47cad2fb46864254c8a58bbf5536', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1422', '19', '6', 'd90a111c40394023f4a30497ec53f70f', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1423', '19', '6', '45d1fa6c1fa24e9ae35109b7b71eae93', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1424', '19', '6', '9f9b3f2b344c4a8d1253a61b1f9f2dfe', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:06:49', null, null, '', '2016-08-04 17:06:49');
-INSERT INTO `msg_send_log` VALUES ('1425', '19', '6', 'e74910c237a92b4b1485055deb853cf7', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1426', '19', '6', 'a3179bf45bba1278ca219d2bde9ef07d', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1427', '19', '6', 'bdecc9262fb6c97c8bdf0ed34ec7aa45', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1428', '19', '6', '30da47cad2fb46864254c8a58bbf5536', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1429', '19', '6', 'd90a111c40394023f4a30497ec53f70f', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1430', '19', '6', '45d1fa6c1fa24e9ae35109b7b71eae93', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1431', '19', '6', '9f9b3f2b344c4a8d1253a61b1f9f2dfe', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:06:49', null, null, '', '2016-08-04 17:06:49');
-INSERT INTO `msg_send_log` VALUES ('1432', '19', '6', 'e74910c237a92b4b1485055deb853cf7', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1433', '19', '6', 'a3179bf45bba1278ca219d2bde9ef07d', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1434', '19', '6', 'bdecc9262fb6c97c8bdf0ed34ec7aa45', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1435', '19', '6', '30da47cad2fb46864254c8a58bbf5536', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1436', '19', '6', 'd90a111c40394023f4a30497ec53f70f', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1437', '19', '6', '45d1fa6c1fa24e9ae35109b7b71eae93', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1438', '19', '6', '9f9b3f2b344c4a8d1253a61b1f9f2dfe', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:06:49', null, null, '', '2016-08-04 17:06:49');
-INSERT INTO `msg_send_log` VALUES ('1439', '19', '6', 'e74910c237a92b4b1485055deb853cf7', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1440', '19', '6', 'a3179bf45bba1278ca219d2bde9ef07d', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1441', '19', '6', 'bdecc9262fb6c97c8bdf0ed34ec7aa45', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1442', '19', '6', '30da47cad2fb46864254c8a58bbf5536', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1443', '19', '6', 'd90a111c40394023f4a30497ec53f70f', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1444', '19', '6', '45d1fa6c1fa24e9ae35109b7b71eae93', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1445', '19', '6', '9f9b3f2b344c4a8d1253a61b1f9f2dfe', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:06:49', null, null, '', '2016-08-04 17:06:49');
-INSERT INTO `msg_send_log` VALUES ('1446', '19', '6', 'e74910c237a92b4b1485055deb853cf7', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1447', '19', '6', 'a3179bf45bba1278ca219d2bde9ef07d', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1448', '19', '6', 'bdecc9262fb6c97c8bdf0ed34ec7aa45', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1449', '19', '6', '30da47cad2fb46864254c8a58bbf5536', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1450', '19', '6', 'd90a111c40394023f4a30497ec53f70f', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1451', '19', '6', '45d1fa6c1fa24e9ae35109b7b71eae93', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1452', '19', '6', '9f9b3f2b344c4a8d1253a61b1f9f2dfe', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:06:49', null, null, '', '2016-08-04 17:06:49');
-INSERT INTO `msg_send_log` VALUES ('1453', '19', '6', 'e74910c237a92b4b1485055deb853cf7', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1454', '19', '6', 'a3179bf45bba1278ca219d2bde9ef07d', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1455', '19', '6', 'bdecc9262fb6c97c8bdf0ed34ec7aa45', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1456', '19', '6', '30da47cad2fb46864254c8a58bbf5536', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1457', '19', '6', 'd90a111c40394023f4a30497ec53f70f', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1458', '19', '6', '45d1fa6c1fa24e9ae35109b7b71eae93', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1459', '19', '6', '9f9b3f2b344c4a8d1253a61b1f9f2dfe', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:06:49', null, null, '', '2016-08-04 17:06:49');
-INSERT INTO `msg_send_log` VALUES ('1460', '19', '6', 'e74910c237a92b4b1485055deb853cf7', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1461', '19', '6', 'a3179bf45bba1278ca219d2bde9ef07d', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1462', '19', '6', 'bdecc9262fb6c97c8bdf0ed34ec7aa45', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1463', '19', '6', '30da47cad2fb46864254c8a58bbf5536', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1464', '19', '6', 'd90a111c40394023f4a30497ec53f70f', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1465', '19', '6', '45d1fa6c1fa24e9ae35109b7b71eae93', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1466', '19', '6', '9f9b3f2b344c4a8d1253a61b1f9f2dfe', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:06:49', null, null, '', '2016-08-04 17:06:49');
-INSERT INTO `msg_send_log` VALUES ('1467', '19', '6', 'e74910c237a92b4b1485055deb853cf7', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1468', '19', '6', 'a3179bf45bba1278ca219d2bde9ef07d', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1469', '19', '6', 'bdecc9262fb6c97c8bdf0ed34ec7aa45', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1470', '19', '6', '30da47cad2fb46864254c8a58bbf5536', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1471', '19', '6', 'd90a111c40394023f4a30497ec53f70f', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1472', '19', '6', '45d1fa6c1fa24e9ae35109b7b71eae93', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1473', '19', '6', '9f9b3f2b344c4a8d1253a61b1f9f2dfe', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:06:49', null, null, '', '2016-08-04 17:06:49');
-INSERT INTO `msg_send_log` VALUES ('1474', '19', '6', 'e74910c237a92b4b1485055deb853cf7', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1475', '19', '6', 'a3179bf45bba1278ca219d2bde9ef07d', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1476', '19', '6', 'bdecc9262fb6c97c8bdf0ed34ec7aa45', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1477', '19', '6', '30da47cad2fb46864254c8a58bbf5536', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1478', '19', '6', 'd90a111c40394023f4a30497ec53f70f', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1479', '19', '6', '45d1fa6c1fa24e9ae35109b7b71eae93', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1480', '19', '6', '9f9b3f2b344c4a8d1253a61b1f9f2dfe', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:06:49', null, null, '', '2016-08-04 17:06:49');
-INSERT INTO `msg_send_log` VALUES ('1481', '19', '6', 'e74910c237a92b4b1485055deb853cf7', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1482', '19', '6', 'a3179bf45bba1278ca219d2bde9ef07d', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1483', '19', '6', 'bdecc9262fb6c97c8bdf0ed34ec7aa45', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1484', '19', '6', '30da47cad2fb46864254c8a58bbf5536', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1485', '19', '6', 'd90a111c40394023f4a30497ec53f70f', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1486', '19', '6', '45d1fa6c1fa24e9ae35109b7b71eae93', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1487', '19', '6', '9f9b3f2b344c4a8d1253a61b1f9f2dfe', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:06:49', null, null, '', '2016-08-04 17:06:49');
-INSERT INTO `msg_send_log` VALUES ('1488', '19', '6', 'e74910c237a92b4b1485055deb853cf7', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1489', '19', '6', 'a3179bf45bba1278ca219d2bde9ef07d', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1490', '19', '6', 'bdecc9262fb6c97c8bdf0ed34ec7aa45', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1491', '19', '6', '30da47cad2fb46864254c8a58bbf5536', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1492', '19', '6', 'd90a111c40394023f4a30497ec53f70f', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1493', '19', '6', '45d1fa6c1fa24e9ae35109b7b71eae93', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1494', '19', '6', '9f9b3f2b344c4a8d1253a61b1f9f2dfe', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:06:49', null, null, '', '2016-08-04 17:06:49');
-INSERT INTO `msg_send_log` VALUES ('1495', '19', '6', 'e74910c237a92b4b1485055deb853cf7', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1496', '19', '6', 'a3179bf45bba1278ca219d2bde9ef07d', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1497', '19', '6', 'bdecc9262fb6c97c8bdf0ed34ec7aa45', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1498', '19', '6', '30da47cad2fb46864254c8a58bbf5536', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1499', '19', '6', 'd90a111c40394023f4a30497ec53f70f', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1500', '19', '6', '45d1fa6c1fa24e9ae35109b7b71eae93', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1501', '19', '6', '9f9b3f2b344c4a8d1253a61b1f9f2dfe', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:06:49', null, null, '', '2016-08-04 17:06:49');
-INSERT INTO `msg_send_log` VALUES ('1502', '19', '6', 'e74910c237a92b4b1485055deb853cf7', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1503', '19', '6', 'a3179bf45bba1278ca219d2bde9ef07d', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1504', '19', '6', 'bdecc9262fb6c97c8bdf0ed34ec7aa45', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1505', '19', '6', '30da47cad2fb46864254c8a58bbf5536', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1506', '19', '6', 'd90a111c40394023f4a30497ec53f70f', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1507', '19', '6', '45d1fa6c1fa24e9ae35109b7b71eae93', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1508', '19', '6', '9f9b3f2b344c4a8d1253a61b1f9f2dfe', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:06:49', null, null, '', '2016-08-04 17:06:49');
-INSERT INTO `msg_send_log` VALUES ('1509', '19', '6', 'e74910c237a92b4b1485055deb853cf7', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1510', '19', '6', 'a3179bf45bba1278ca219d2bde9ef07d', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1511', '19', '6', 'bdecc9262fb6c97c8bdf0ed34ec7aa45', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1512', '19', '6', '30da47cad2fb46864254c8a58bbf5536', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1513', '19', '6', 'd90a111c40394023f4a30497ec53f70f', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1514', '19', '6', '45d1fa6c1fa24e9ae35109b7b71eae93', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1515', '19', '6', '9f9b3f2b344c4a8d1253a61b1f9f2dfe', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:06:49', null, null, '', '2016-08-04 17:06:49');
-INSERT INTO `msg_send_log` VALUES ('1516', '19', '6', 'e74910c237a92b4b1485055deb853cf7', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1517', '19', '6', 'a3179bf45bba1278ca219d2bde9ef07d', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1518', '19', '6', 'bdecc9262fb6c97c8bdf0ed34ec7aa45', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1519', '19', '6', '30da47cad2fb46864254c8a58bbf5536', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1520', '19', '6', 'd90a111c40394023f4a30497ec53f70f', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1521', '19', '6', '45d1fa6c1fa24e9ae35109b7b71eae93', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1522', '19', '6', '9f9b3f2b344c4a8d1253a61b1f9f2dfe', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:06:49', null, null, '', '2016-08-04 17:06:49');
-INSERT INTO `msg_send_log` VALUES ('1523', '19', '6', 'e74910c237a92b4b1485055deb853cf7', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1524', '19', '6', 'a3179bf45bba1278ca219d2bde9ef07d', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1525', '19', '6', 'bdecc9262fb6c97c8bdf0ed34ec7aa45', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1526', '19', '6', '30da47cad2fb46864254c8a58bbf5536', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1527', '19', '6', 'd90a111c40394023f4a30497ec53f70f', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
-INSERT INTO `msg_send_log` VALUES ('1528', '19', '6', '45d1fa6c1fa24e9ae35109b7b71eae93', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
+BEGIN;
+INSERT INTO `msg_send_log` VALUES ('1', '19', '6', '9f9b3f2b344c4a8d1253a61b1f9f2dfe', null, 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '2', '2016-08-04 17:06:49', null, null, null, '2016-08-04 17:06:49'), ('2', '19', '6', 'e74910c237a92b4b1485055deb853cf7', null, 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '2', '2016-08-04 17:07:34', null, null, null, '2016-08-04 17:07:34'), ('3', '19', '6', 'a3179bf45bba1278ca219d2bde9ef07d', null, 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '2', '2016-08-04 17:07:34', null, null, null, '2016-08-04 17:07:34'), ('4', '19', '6', 'bdecc9262fb6c97c8bdf0ed34ec7aa45', null, 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '2', '2016-08-04 17:07:34', null, null, null, '2016-08-04 17:07:34'), ('5', '19', '6', '30da47cad2fb46864254c8a58bbf5536', null, 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '3', '2016-08-04 17:07:34', null, null, null, '2016-08-04 17:07:34'), ('6', '19', '6', 'd90a111c40394023f4a30497ec53f70f', null, 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '3', '2016-08-04 17:07:34', null, null, null, '2016-08-04 17:07:34'), ('7', '19', '6', '45d1fa6c1fa24e9ae35109b7b71eae93', null, 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '3', '2016-08-04 17:07:34', null, null, null, '2016-08-04 17:07:34'), ('1403', '19', '6', '9f9b3f2b344c4a8d1253a61b1f9f2dfe', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:06:49', null, null, '', '2016-08-04 17:06:49'), ('1404', '19', '6', 'e74910c237a92b4b1485055deb853cf7', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1405', '19', '6', 'a3179bf45bba1278ca219d2bde9ef07d', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1406', '19', '6', 'bdecc9262fb6c97c8bdf0ed34ec7aa45', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1407', '19', '6', '30da47cad2fb46864254c8a58bbf5536', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1408', '19', '6', 'd90a111c40394023f4a30497ec53f70f', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1409', '19', '6', '45d1fa6c1fa24e9ae35109b7b71eae93', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1410', '19', '6', '9f9b3f2b344c4a8d1253a61b1f9f2dfe', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:06:49', null, null, '', '2016-08-04 17:06:49'), ('1411', '19', '6', 'e74910c237a92b4b1485055deb853cf7', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1412', '19', '6', 'a3179bf45bba1278ca219d2bde9ef07d', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1413', '19', '6', 'bdecc9262fb6c97c8bdf0ed34ec7aa45', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1414', '19', '6', '30da47cad2fb46864254c8a58bbf5536', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1415', '19', '6', 'd90a111c40394023f4a30497ec53f70f', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1416', '19', '6', '45d1fa6c1fa24e9ae35109b7b71eae93', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1417', '19', '6', '9f9b3f2b344c4a8d1253a61b1f9f2dfe', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:06:49', null, null, '', '2016-08-04 17:06:49'), ('1418', '19', '6', 'e74910c237a92b4b1485055deb853cf7', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1419', '19', '6', 'a3179bf45bba1278ca219d2bde9ef07d', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1420', '19', '6', 'bdecc9262fb6c97c8bdf0ed34ec7aa45', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1421', '19', '6', '30da47cad2fb46864254c8a58bbf5536', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1422', '19', '6', 'd90a111c40394023f4a30497ec53f70f', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1423', '19', '6', '45d1fa6c1fa24e9ae35109b7b71eae93', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1424', '19', '6', '9f9b3f2b344c4a8d1253a61b1f9f2dfe', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:06:49', null, null, '', '2016-08-04 17:06:49'), ('1425', '19', '6', 'e74910c237a92b4b1485055deb853cf7', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1426', '19', '6', 'a3179bf45bba1278ca219d2bde9ef07d', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1427', '19', '6', 'bdecc9262fb6c97c8bdf0ed34ec7aa45', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1428', '19', '6', '30da47cad2fb46864254c8a58bbf5536', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1429', '19', '6', 'd90a111c40394023f4a30497ec53f70f', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1430', '19', '6', '45d1fa6c1fa24e9ae35109b7b71eae93', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1431', '19', '6', '9f9b3f2b344c4a8d1253a61b1f9f2dfe', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:06:49', null, null, '', '2016-08-04 17:06:49'), ('1432', '19', '6', 'e74910c237a92b4b1485055deb853cf7', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1433', '19', '6', 'a3179bf45bba1278ca219d2bde9ef07d', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1434', '19', '6', 'bdecc9262fb6c97c8bdf0ed34ec7aa45', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1435', '19', '6', '30da47cad2fb46864254c8a58bbf5536', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1436', '19', '6', 'd90a111c40394023f4a30497ec53f70f', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1437', '19', '6', '45d1fa6c1fa24e9ae35109b7b71eae93', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1438', '19', '6', '9f9b3f2b344c4a8d1253a61b1f9f2dfe', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:06:49', null, null, '', '2016-08-04 17:06:49'), ('1439', '19', '6', 'e74910c237a92b4b1485055deb853cf7', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1440', '19', '6', 'a3179bf45bba1278ca219d2bde9ef07d', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1441', '19', '6', 'bdecc9262fb6c97c8bdf0ed34ec7aa45', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1442', '19', '6', '30da47cad2fb46864254c8a58bbf5536', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1443', '19', '6', 'd90a111c40394023f4a30497ec53f70f', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1444', '19', '6', '45d1fa6c1fa24e9ae35109b7b71eae93', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1445', '19', '6', '9f9b3f2b344c4a8d1253a61b1f9f2dfe', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:06:49', null, null, '', '2016-08-04 17:06:49'), ('1446', '19', '6', 'e74910c237a92b4b1485055deb853cf7', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1447', '19', '6', 'a3179bf45bba1278ca219d2bde9ef07d', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1448', '19', '6', 'bdecc9262fb6c97c8bdf0ed34ec7aa45', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1449', '19', '6', '30da47cad2fb46864254c8a58bbf5536', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1450', '19', '6', 'd90a111c40394023f4a30497ec53f70f', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1451', '19', '6', '45d1fa6c1fa24e9ae35109b7b71eae93', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1452', '19', '6', '9f9b3f2b344c4a8d1253a61b1f9f2dfe', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:06:49', null, null, '', '2016-08-04 17:06:49'), ('1453', '19', '6', 'e74910c237a92b4b1485055deb853cf7', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1454', '19', '6', 'a3179bf45bba1278ca219d2bde9ef07d', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1455', '19', '6', 'bdecc9262fb6c97c8bdf0ed34ec7aa45', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1456', '19', '6', '30da47cad2fb46864254c8a58bbf5536', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1457', '19', '6', 'd90a111c40394023f4a30497ec53f70f', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1458', '19', '6', '45d1fa6c1fa24e9ae35109b7b71eae93', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1459', '19', '6', '9f9b3f2b344c4a8d1253a61b1f9f2dfe', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:06:49', null, null, '', '2016-08-04 17:06:49'), ('1460', '19', '6', 'e74910c237a92b4b1485055deb853cf7', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1461', '19', '6', 'a3179bf45bba1278ca219d2bde9ef07d', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1462', '19', '6', 'bdecc9262fb6c97c8bdf0ed34ec7aa45', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1463', '19', '6', '30da47cad2fb46864254c8a58bbf5536', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1464', '19', '6', 'd90a111c40394023f4a30497ec53f70f', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1465', '19', '6', '45d1fa6c1fa24e9ae35109b7b71eae93', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1466', '19', '6', '9f9b3f2b344c4a8d1253a61b1f9f2dfe', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:06:49', null, null, '', '2016-08-04 17:06:49'), ('1467', '19', '6', 'e74910c237a92b4b1485055deb853cf7', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1468', '19', '6', 'a3179bf45bba1278ca219d2bde9ef07d', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1469', '19', '6', 'bdecc9262fb6c97c8bdf0ed34ec7aa45', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1470', '19', '6', '30da47cad2fb46864254c8a58bbf5536', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1471', '19', '6', 'd90a111c40394023f4a30497ec53f70f', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1472', '19', '6', '45d1fa6c1fa24e9ae35109b7b71eae93', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1473', '19', '6', '9f9b3f2b344c4a8d1253a61b1f9f2dfe', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:06:49', null, null, '', '2016-08-04 17:06:49'), ('1474', '19', '6', 'e74910c237a92b4b1485055deb853cf7', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1475', '19', '6', 'a3179bf45bba1278ca219d2bde9ef07d', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1476', '19', '6', 'bdecc9262fb6c97c8bdf0ed34ec7aa45', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1477', '19', '6', '30da47cad2fb46864254c8a58bbf5536', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1478', '19', '6', 'd90a111c40394023f4a30497ec53f70f', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1479', '19', '6', '45d1fa6c1fa24e9ae35109b7b71eae93', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1480', '19', '6', '9f9b3f2b344c4a8d1253a61b1f9f2dfe', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:06:49', null, null, '', '2016-08-04 17:06:49'), ('1481', '19', '6', 'e74910c237a92b4b1485055deb853cf7', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1482', '19', '6', 'a3179bf45bba1278ca219d2bde9ef07d', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1483', '19', '6', 'bdecc9262fb6c97c8bdf0ed34ec7aa45', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1484', '19', '6', '30da47cad2fb46864254c8a58bbf5536', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1485', '19', '6', 'd90a111c40394023f4a30497ec53f70f', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1486', '19', '6', '45d1fa6c1fa24e9ae35109b7b71eae93', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1487', '19', '6', '9f9b3f2b344c4a8d1253a61b1f9f2dfe', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:06:49', null, null, '', '2016-08-04 17:06:49'), ('1488', '19', '6', 'e74910c237a92b4b1485055deb853cf7', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1489', '19', '6', 'a3179bf45bba1278ca219d2bde9ef07d', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1490', '19', '6', 'bdecc9262fb6c97c8bdf0ed34ec7aa45', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1491', '19', '6', '30da47cad2fb46864254c8a58bbf5536', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1492', '19', '6', 'd90a111c40394023f4a30497ec53f70f', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1493', '19', '6', '45d1fa6c1fa24e9ae35109b7b71eae93', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1494', '19', '6', '9f9b3f2b344c4a8d1253a61b1f9f2dfe', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:06:49', null, null, '', '2016-08-04 17:06:49'), ('1495', '19', '6', 'e74910c237a92b4b1485055deb853cf7', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1496', '19', '6', 'a3179bf45bba1278ca219d2bde9ef07d', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1497', '19', '6', 'bdecc9262fb6c97c8bdf0ed34ec7aa45', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1498', '19', '6', '30da47cad2fb46864254c8a58bbf5536', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1499', '19', '6', 'd90a111c40394023f4a30497ec53f70f', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1500', '19', '6', '45d1fa6c1fa24e9ae35109b7b71eae93', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1501', '19', '6', '9f9b3f2b344c4a8d1253a61b1f9f2dfe', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:06:49', null, null, '', '2016-08-04 17:06:49'), ('1502', '19', '6', 'e74910c237a92b4b1485055deb853cf7', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1503', '19', '6', 'a3179bf45bba1278ca219d2bde9ef07d', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1504', '19', '6', 'bdecc9262fb6c97c8bdf0ed34ec7aa45', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1505', '19', '6', '30da47cad2fb46864254c8a58bbf5536', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1506', '19', '6', 'd90a111c40394023f4a30497ec53f70f', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1507', '19', '6', '45d1fa6c1fa24e9ae35109b7b71eae93', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1508', '19', '6', '9f9b3f2b344c4a8d1253a61b1f9f2dfe', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:06:49', null, null, '', '2016-08-04 17:06:49'), ('1509', '19', '6', 'e74910c237a92b4b1485055deb853cf7', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1510', '19', '6', 'a3179bf45bba1278ca219d2bde9ef07d', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1511', '19', '6', 'bdecc9262fb6c97c8bdf0ed34ec7aa45', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1512', '19', '6', '30da47cad2fb46864254c8a58bbf5536', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1513', '19', '6', 'd90a111c40394023f4a30497ec53f70f', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1514', '19', '6', '45d1fa6c1fa24e9ae35109b7b71eae93', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1515', '19', '6', '9f9b3f2b344c4a8d1253a61b1f9f2dfe', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:06:49', null, null, '', '2016-08-04 17:06:49'), ('1516', '19', '6', 'e74910c237a92b4b1485055deb853cf7', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1517', '19', '6', 'a3179bf45bba1278ca219d2bde9ef07d', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1518', '19', '6', 'bdecc9262fb6c97c8bdf0ed34ec7aa45', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1519', '19', '6', '30da47cad2fb46864254c8a58bbf5536', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1520', '19', '6', 'd90a111c40394023f4a30497ec53f70f', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1521', '19', '6', '45d1fa6c1fa24e9ae35109b7b71eae93', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1522', '19', '6', '9f9b3f2b344c4a8d1253a61b1f9f2dfe', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:06:49', null, null, '', '2016-08-04 17:06:49'), ('1523', '19', '6', 'e74910c237a92b4b1485055deb853cf7', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1524', '19', '6', 'a3179bf45bba1278ca219d2bde9ef07d', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1525', '19', '6', 'bdecc9262fb6c97c8bdf0ed34ec7aa45', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1526', '19', '6', '30da47cad2fb46864254c8a58bbf5536', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1527', '19', '6', 'd90a111c40394023f4a30497ec53f70f', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34'), ('1528', '19', '6', '45d1fa6c1fa24e9ae35109b7b71eae93', '', 'xsend.json', '【积分游戏大平台】尊敬的ddbk789 玩家：您正在进行卖出积分操作，验证码为：125356 ，如非本人操作请忽略', '积分游戏大平台', '1', '15919820372', '0', '2016-08-04 17:07:34', null, null, '', '2016-08-04 17:07:34');
+COMMIT;
 
 -- ----------------------------
--- Table structure for payment_order
+--  Table structure for `payment_order`
 -- ----------------------------
 DROP TABLE IF EXISTS `payment_order`;
 CREATE TABLE `payment_order` (
@@ -507,10 +382,10 @@ CREATE TABLE `payment_order` (
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records of payment_order
+--  Records of `payment_order`
 -- ----------------------------
-INSERT INTO `payment_order` VALUES ('1', 'SM201608011533271001', '19', '2', '1', '购买数量：20000', '1059.00', '0', '1', null, null, null, null, '2016-08-01 15:33:28');
-INSERT INTO `payment_order` VALUES ('2', 'SM201608011535341002', '19', '3', '3', '购买数量：100000', '14997.00', '2', '1', null, null, null, null, '2016-08-01 15:35:35');
-INSERT INTO `payment_order` VALUES ('3', 'SM201608011601491003', '19', '2', '1', '购买数量：20000', '1059.00', '3', '1', null, null, null, null, '2016-08-01 16:01:49');
-INSERT INTO `payment_order` VALUES ('4', 'SM201608011616051001', '19', '3', '1', '购买数量：100000', '4999.00', '0', '0', null, null, null, null, '2016-08-01 16:16:05');
-INSERT INTO `payment_order` VALUES ('5', 'SM201608011621391002', '19', '3', '1', '购买数量：100000', '4999.00', '3', '0', null, null, null, null, '2016-08-01 16:21:39');
+BEGIN;
+INSERT INTO `payment_order` VALUES ('1', 'SM201608011533271001', '19', '2', '1', '购买数量：20000', '1059.00', '0', '1', null, null, null, null, '2016-08-01 15:33:28'), ('2', 'SM201608011535341002', '19', '3', '3', '购买数量：100000', '14997.00', '2', '1', null, null, null, null, '2016-08-01 15:35:35'), ('3', 'SM201608011601491003', '19', '2', '1', '购买数量：20000', '1059.00', '3', '1', null, null, null, null, '2016-08-01 16:01:49'), ('4', 'SM201608011616051001', '19', '3', '1', '购买数量：100000', '4999.00', '0', '0', null, null, null, null, '2016-08-01 16:16:05'), ('5', 'SM201608011621391002', '19', '3', '1', '购买数量：100000', '4999.00', '3', '0', null, null, null, null, '2016-08-01 16:21:39');
+COMMIT;
+
+SET FOREIGN_KEY_CHECKS = 1;
