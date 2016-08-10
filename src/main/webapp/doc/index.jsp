@@ -34,21 +34,27 @@
     <body>
         <%@ include file="/member/common/nav.jsp"%>
            <div id="contents-container" class="container" >
-            
             <div class="row">
-                <%@ include file="/doc/common/left.jsp"%>
+                <%@ include file="/doc/common/left.jsp" %>
                 <div  class="col-xs-12  col-lg-9 col-sm-12 col-md-9">
-                     <%@ include file="/doc/common/nav.jsp"%>
-                    <div class="row">
-                            <div  class="col-xs-12 col-sm-12 col-md-12  col-lg-12 text-center" id="no-results">
-                            <h1 style="margin-top:100px;">欢迎使用 SUBMSG 开发者文档</h1>
-                            
-                            <h4 style="color:#999;">选择目录中的主题或搜索主题。</h4>
-                            <img src="${libUrl}images/dev-doc-icon.png" alt="欢迎使用 SUBMSG 开发者帮助文档" style="margin:50px auto;"/>
-                            
-                        </div>
-                    </div>
-                </div>
+                     <%@ include file="/doc/common/nav.jsp" %>
+				<div class="row">
+					<div class="col-xs-12 col-sm-12 col-md-12  col-lg-12 text-center"
+						id="no-results">
+						<h1 style="margin-top: 100px;">欢迎使用 SUBMSG 开发者文档</h1>
+
+						<h4 style="color: #999;">选择目录中的主题或搜索主题。</h4>
+						<img src="${libUrl}images/dev-doc-icon.png"
+							alt="欢迎使用 SUBMSG 开发者帮助文档" style="margin: 50px auto;" />
+
+					</div>
+					<div class="col-xs-12 col-sm-12 col-md-12  col-lg-12 "
+						id="contents">
+						<div id="content_container"></div>
+					</div>
+					
+				</div>
+			</div>
             </div>
         </div>
         

@@ -16,7 +16,7 @@ public class DocAction extends JsonBaseActionSupport {
 	 * 开发文档首页
 	 * @return
 	 */
-	private int type;
+	private int type=1;
 	public String index(){
 		return SUCCESS;
 	}

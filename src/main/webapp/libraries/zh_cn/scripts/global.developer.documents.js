@@ -1,5 +1,6 @@
 $(function() {
     var a, b, c, d, e;
+    var docId;
     $(".developer-nav").addClass("active"),
     $("#contents").find(".pre_container").each(function() {
         var a = $(this).html();
@@ -14,24 +15,26 @@ $(function() {
     b = {
         guide: function() {
             $(".bs-sidenav > li > ul").find("li").each(function() {
-                $(this).find("a").attr("href") == "#/" + a[1] ? ($(this).addClass("active"), $(this).parent("ul").parent("li").addClass("active")) : $(this).removeClass("active")
+            	//alert($(this).find("a").attr("id"));
+                $(this).find("a").attr("id") == docId ? ($(this).addClass("active"), $(this).parent("ul").parent("li").addClass("active")): $(this).removeClass("active")
             })
         },
         getContents: function() {
-        	alert("start getContents~~"+a[1]);
             $("body").animate({
                 scrollTop: "0px"
             },
             100),
-            $.get("getContents", {
-                id: a[1]
+            $.get("/doc/getContent.sm", {
+            	docId: docId
             },
             function(a) {
-                var c = $.parseJSON(a);
-                "true" == c.returns ? ($("#no-results").hide(), $("title").text(c.titleCN + " - 开发者文档 － SUBMAIL - 触发邮件和短信云端服务提供商"), $("#content_container").html(c.contents), $("#contents").show(), $("#contents").find(".pre_container").each(function() {
+                var c = a;//$.parseJSON(a);
+                //alert(JSON.stringify(c));
+                0 == c.flag ? ($("#no-results").hide(), $("title").text(c.rc.docTitle + " - 开发者文档 － SUBMSG - 短信云端服务提供商"), $("#content_container").html(c.rc.docContnet), $("#contents").show(), $("#contents").find(".pre_container").each(function() {
                     var a = $(this).html();
                     $(this).replaceWith("<pre>" + a + "</pre>")
-                }), $("pre").addClass("prettyprint"), prettyPrint(), d(1), b.init()) : ($("#no-results").show(), $("#contents").hide())
+                }), $("pre").addClass("prettyprint"), prettyPrint(), d(1), b.init()) : ($("#no-results").show(), $("#contents").hide());
+                b.guide();
             })
         },
         search: function(a) {
@@ -64,7 +67,7 @@ $(function() {
     },
     $(".bs-sidenav > li > ul > li > a").live("click",
     function() {
-    	alert($(this).attr("id"));
+    	docId = $(this).attr("id");
         "fixed" == $(".sidebar").css("position") && $(".sidebar").animate({
             left: "-500px"
         },
@@ -74,7 +77,11 @@ $(function() {
             $(".sidebar").removeAttr("style"),
             $(".nav-masker").hide(),
             $(this).css("left", "auto")
-        })
+        });
+        if(docId!=""){
+        	b.getContents();
+        }
+        
     }),
     $(".bs-sidenav > li > a").live("click",
     function() {
