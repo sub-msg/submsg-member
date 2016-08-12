@@ -151,8 +151,13 @@ public class IndexAction extends JsonBaseActionSupport{
 		memberService.signup(firstname, lastname, password, email);
 		return this.renderSuccessResult();
 	}
-	
-	
+	/**
+	 * 发送测试短信
+	 * @return
+	 */
+	public String sendTest(){
+		return this.renderErrorResult("验证码不正确！");
+	}
 	public String upgrade(){
 		return SUCCESS;
 	}

@@ -86,7 +86,8 @@
 		</action>
 		<action name="signup" class="cn.submsg.member.action.IndexAction" method="signup">
 		</action>	
-						
+		<action name="sendTest" class="cn.submsg.member.action.IndexAction" method="sendTest">
+		</action>					
 	</package>
 
 

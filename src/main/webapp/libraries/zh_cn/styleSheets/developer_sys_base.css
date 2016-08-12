@@ -115,20 +115,21 @@ input:placeholder, textarea:placeholder { color:#ccc; }
 
 .header{height:75px;width:100%;position:relative; z-index:1000; border-bottom:0px solid #d9d9d9;}
 
-.headerBg{position:absolute; z-index:-1; background-color:#fff; width:100%; height:75px; display:block;-webkit-box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.25);-moz-box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.25);box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.25);}
+.headerBg{position:absolute; z-index:-1; background-color:#fff; width:100%; height:75px; display:block;-webkit-box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.25);
+    -moz-box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.25);
+    box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.25);}
 
 .header_icon{height:75px; float:left;width:704px; }
 .header_icon p{ width:275px; display:block; overflow:hidden; float:left;}
 .header_icon .logo{width:232px; height:54px; background:url(../images/icon&stylesheets_norepeat.png) no-repeat -18px -157px; display:block; overflow:hidden; margin:5px 0 0 20px; text-indent:-9999px}
 .header_icon .mail_logo{width:213px; height:46px; display:block; overflow:hidden; background:url(../images/icon&stylesheets_norepeat.png) no-repeat -18px -222px;margin:15px 0 0 20px; text-indent:-9999px; float:left;}
-.header_icon .message_logo{width:275px; height:56px; display:block; overflow:hidden; background:url(../images/icon&stylesheets_norepeat.png) no-repeat -18px -285px;margin:10px 0 0 20px; text-indent:-9999px; float:left;}
+.header_icon .message_logo{width:275px; height:56px; display:block; overflow:hidden; background:url(../images/menus/sms_logo.svg) no-repeat;margin:10px 0 0 20px; text-indent:-9999px; float:left;}
 .header_icon .addressBook_logo{width:245px; height:43px; display:block; overflow:hidden; background:url(../images/icon&stylesheets_norepeat.png) no-repeat -18px -354px;margin:20px 0 0 20px; text-indent:-9999px; float:left;}
-.header_icon .developer_logo{width:275px; height:56px; display:block; overflow:hidden; background:url(../images/menus/developer_logo.svg) no-repeat;margin:10px 0 0 20px; text-indent:-9999px; float:left;}
 .header_icon span{width:1px;height:75px; display:block; float:left; background:#d9d9d9; margin-left:15px; margin-top:0px;}
-.header_icon .appmenu{  margin-top:20px; width:auto;height:auto;  display:inline-block; position:absolute; top:0px;}
+.header_icon .appmenu{  margin-top:27px; width:auto;height:auto;  display:inline-block; position:absolute; top:0px; font-size:13px;}
 .header_icon .appmenu li{ float:left; margin-left:20px;}
-.header_icon .appmenu li a span{width:24px; height:24px; display:block; overflow:hidden; background:url(../images/icon&stylesheets_norepeat_developer.png) no-repeat;margin:0 0;}
-.header_icon .appmenu li a:hover{text-decoration:none;color:#ff6699;}
+.header_icon .appmenu li a span{width:24px; height:24px; display:block; overflow:hidden; background:url(../images/icon&stylesheets_norepeat_message.png) no-repeat;margin:0 0;}
+.header_icon .appmenu li a:hover{text-decoration:none;color: #01CB98;}
 .header_icon .appmenu li a b{white-space:nowrap;font-weight:normal;}
 .header_icon .appmenu .create a span{ background-position:-17px -564px;}
 .header_icon .appmenu .create a:hover span{ background-position:-73px -564px;}
@@ -235,21 +236,19 @@ input:placeholder, textarea:placeholder { color:#ccc; }
 .header_icon .topMenuContainer .topMenu li .account .icon{width:33px;height:30px;display: inline-block;overflow: hidden;margin: 15px auto 7px auto; background-position:-174px -107px;}
 
 
-.header .accounts{height:75px; width:auto;display:block;float:right; margin-right:20px;position: relative;}
+.header .accounts{height:75px; width:auto;display:block; float:right; margin-right:20px;position: relative;}
 .header .accounts ul{margin-top:24px; font-size:14px;}
 .header .accounts ul li{ float:left; height:25px; margin-right:8px; margin-top:4px;}
 .header .accounts ul .icon_account a {position:relative;}
-.header .accounts ul .icon_account a img{border-radius: 40px; -webkit-border-radius: 40px; -moz-border-radius: 40px; -o-border-radius: 40px; -khtml-border-radius: 40px; border:1px solid #ff6699; position:absolute;top:-10px;}
-
-.header .accounts ul .icon_account a span{ padding-left:38px; display:block;white-space: nowrap;color:#ff6699;}
+.header .accounts ul .icon_account a img{border-radius: 40px; -webkit-border-radius: 40px; -moz-border-radius: 40px; -o-border-radius: 40px; -khtml-border-radius: 40px; border:1px solid #17bf82; position:absolute;top:-10px;}
+.header .accounts ul .icon_account a span{ padding-left:38px; display:block;white-space: nowrap;color:#17bf82;}
 .header .accounts ul .icon_account a:hover img{border:1px solid #0063cc;}
 .header .accounts ul .icon_account a:hover span{color:#0063cc;}
-.header .accounts ul li a{color:#ff6699;}
+.header .accounts ul li a{color:#17bf82;}
 .header .accounts ul li a:hover{ text-decoration:none; color:#0063cc;}
 .header .accounts ul .lr{height:28px; width:1px; background-color:#d9d9d9; display:block; overflow:hidden;margin-top:-1px;}
-.header .accounts ul .help a{ width:26px; height:27px; display:block; overflow:hidden; text-indent:-9999px; background:url(../images/icon&stylesheets_norepeat_developer.png) no-repeat -78px -66px; margin-top:-5px;}
-.header .accounts ul .help a:hover{ background-position:-26px -66px}
-.header .accounts ul .help a:active{background-position:-0px -66px}
+.header .accounts ul .help a{ width:26px; height:27px; display:block; overflow:hidden; text-indent:-9999px; background:url(../images/icon&stylesheets_norepeat_message.png) no-repeat -78px -66px; margin-top:-5px;}
+
 
 
 .dropboxshadow{-webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.5); -moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.5); box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.5);}

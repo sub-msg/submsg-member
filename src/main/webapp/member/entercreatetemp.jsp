@@ -39,9 +39,9 @@
             <div class="content_container">
                 <div class="content">
                     <h1 class="createTitle">新建短信项目</h1>
-                    <p>在创建或者编辑一条短信项目（即短信模板）时，您可以在短信中插入<a href="/chs/documents/developer/oKraS3" target="_blank" class="highlight">自定义文本变量</a>，这些变量用来替换短信中的动态内容，如验证码、订单编号等。 </p>
+                    <p>在创建或者编辑一条短信项目（即短信模板）时，您可以在短信中插入<a href="/doc/index.sm#oKraS3" target="_blank" class="highlight">自定义文本变量</a>，这些变量用来替换短信中的动态内容，如验证码、订单编号等。 </p>
                     <p>在您发送任何项目之前您需要将短信内容提交至 SUBMSG 进行人工审核，审核通过后，您随时可以进行发送。 </p>
-                    <p><a href="/chs/documents/developer/oKraS3" target="_blank" class="highLinkHack">短信模板编辑示例</a></p>
+                    <p><a href="/doc/index.sm#oKraS3" target="_blank" class="highLinkHack">短信模板编辑示例</a></p>
                     <p>&nbsp;</p>
                     <div class="createMessageContainer">
                         <div class="createContainer">
@@ -326,7 +326,7 @@
                                     <h2 class="edit-tips-icon">常见问题与解答</h2>
                                     <p class="clear" ></p>
                                     <p class="qa-title">常用模板如何编写？动态内容如何处理？</p>
-                                    <p class="qa-content">编辑常用的短信模板，例如验证码，订单通知，各类通知、提醒时，请在编辑中填写短信模板的实际内容，动态内容部分使用文本变量进行替换，API发送时使用vars参数替换这些变量。如验证码模板：<span class="highlight">“您的验证码：@var(code)，请在30分钟内输入，如非本人操作请忽略。”</span>，其中 <span class="highlight">@var(code)</span> 为文本变量，可使用脚本动态替换改变量的内容，<span class="highlight">文本变量支持中文、英文和数字</span>。<a href="/chs/documents/developer/oKraS3" target="_blank" class="highLinkHack">阅读文本变量申明方法文档</a></p>
+                                    <p class="qa-content">编辑常用的短信模板，例如验证码，订单通知，各类通知、提醒时，请在编辑中填写短信模板的实际内容，动态内容部分使用文本变量进行替换，API发送时使用vars参数替换这些变量。如验证码模板：<span class="highlight">“您的验证码：@var(code)，请在30分钟内输入，如非本人操作请忽略。”</span>，其中 <span class="highlight">@var(code)</span> 为文本变量，可使用脚本动态替换改变量的内容，<span class="highlight">文本变量支持中文、英文和数字</span>。<a href="/doc/index.sm#oKraS3" target="_blank" class="highLinkHack">阅读文本变量申明方法文档</a></p>
                                     <p class="qa-content"><span class="highlight">常用事务类短信模板示例</span>：</p>
                                     <p class="qa-content">验证码类模板示例：您的验证码：@var(code)，请在30分钟内输入，如非本人操作请忽略。</p>
                                     <p class="qa-content">订单类模板示例：您在海尔商城预订的咕咚洗衣机暂未付款，订单号：@var(order_number)。谢谢您的订购。</p>
@@ -334,15 +334,12 @@
                                     <p class="qa-content">通知类模板示例：尊敬的用户，我们已经收到了订单“@var(order_number)”的发票申请，已将该订单的发票使用“@var(express)”发出。@var(express)编号：@var(express_number)，请登录@var(express)官网查询快递进度。</p>
                                     
                                     <p class="clear hr" ></p>
-                                    <p class="qa-title">什么是短信签名？自定义签名和固定签名的区别是什么？</p>
-                                    <p class="qa-content">依据运营商相关规定，您的短信必须包含一个签名。短信签名可以是您的公司名称缩写、企事业单位名称缩写、政府部门或机构名称缩写、网站名称、应用名称、APP名称、或产品名称等等，您可以自定义2-8个字符的签名（自定义签名仅支持事务类短信模板，如验证码，订单通知，各类通知、提醒等），<span class="highlight">您还可以申请固定签名，固定签名拥有更宽松短信模板审核政策，并支持营销类短信（如促销、打折活动、推广类短信）</span>，<a href="/chs/blog/view/29" target="_blank" class="highLinkHack">固定签名申请方法与流程</a>。</p>
+                                    <p class="qa-title">什么是短信签名？</p>
+                                    <p class="qa-content">依据运营商相关规定，您的短信必须包含一个签名。短信签名可以是您的公司名称缩写、企事业单位名称缩写、政府部门或机构名称缩写、网站名称、应用名称、APP名称、或产品名称等等，您可以自定义2-8个字符的签名（自定义签名仅支持事务类短信模板，如验证码，订单通知，各类通知、提醒等）。</p>
                                     <p class="qa-content">要添加短信签名，请单击编辑框下方<span class="highlight">“签名”</span> 按钮，并在签名创建文本框内输入您的签名，并单击右侧<span class="highlight">“笔”</span> 状图标，创建后<span class="highlight">单击您创建的签名</span> 即可为您的短信模板添加该签名。</p>
                                     <p class="clear hr" ></p>
                                     <p class="qa-title">短信模板的人工审核需要多久？</p>
-                                    <p class="qa-content">短信模板审核时间一般为工作日（周一至周五）：上午8：00-凌晨12：00； 国定假期和双休日：上午11：00-凌晨12：00，审核时间一般为2-5分钟以内。如遇紧急情况，请致电 SUBMSG 。</p>
-                                    <p class="clear hr" ></p>
-                                    <p class="qa-title">我可以在线发送短信吗？</p>
-                                    <p class="qa-content">短信提供在线发送方式，创建完短信模板并审核通过后，即可前往“项目”页面，点击该短信模板工具栏中的“发送”按钮，即可进入发送页面。发送页面支持使用地址薄模式群发、文件导入和手动输入等方式进行在线发送。</p>
+                                    <p class="qa-content">短信模板审核时间一般为工作日（周一至周五）：上午8：00-凌晨12：00； 国定假期和双休日：上午11：00-凌晨12：00，如过是使用新签名，审核时间2-3天，如果是使用已审核通过的签名，审核时间一般为2-5分钟以内。如遇紧急情况，请致电 SUBMSG 。</p>
                                     <p class="clear hr" ></p>
                                 </div>
                             </div>

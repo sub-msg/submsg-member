@@ -5,31 +5,31 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-3 col-sm-3 col-xs-6 text-center">
-                <a href="chs/documents/info/index.html" class="btn btn-default btn-block">关于 SUBMSG</a>
-                <a href="chs/documents/info/7Zm1y2.html" class="btn btn-default btn-child btn-block">联系我们</a>
-                <a href="chs/documents/info/pOjYF4.html" class="btn btn-default btn-child btn-block">大客户服务</a>
-                <a href="chs/documents/info/xwFOk3.html" class="btn btn-default btn-child btn-block">加入我们</a>
+                <a href="/doc/index.sm?type=2#dTHNB3" class="btn btn-default btn-block">关于 SUBMSG</a>
+                <a href="/doc/index.sm?type=2#7Zm1y2" class="btn btn-default btn-child btn-block">联系我们</a>
+                <a href="/doc/index.sm?type=2#pOjYF4" class="btn btn-default btn-child btn-block">大客户服务</a>
+                <a href="/doc/index.sm?type=2#xwFOk3" class="btn btn-default btn-child btn-block">加入我们</a>
             </div>
             
             <div class="col-lg-3 col-sm-3 col-xs-6 text-center">
-                <a href="chs/store.html" class="btn btn-default btn-block">购买与付款</a>
-                <a href="chs/documents/info/VozyF.html" class="btn btn-default btn-child btn-block">支付方式</a>
-                <a href="chs/documents/info/6utoQ2.html" class="btn btn-default btn-child btn-block">关于发票</a>
-                <a href="chs/documents/help/suYXk3.html" class="btn btn-default btn-child btn-block">定价与计费</a>
+                <a href="/doc/index.sm?type=2#VozyF" class="btn btn-default btn-block">购买与付款</a>
+                <a href="/doc/index.sm?type=2#VozyF" class="btn btn-default btn-child btn-block">支付方式</a>
+                <a href="/doc/index.sm?type=2#6utoQ2" class="btn btn-default btn-child btn-block">关于发票</a>
+                <a href="/doc/index.sm?type=3#suYXk3" class="btn btn-default btn-child btn-block">定价与计费</a>
                 
             </div>
             <div class="clearfix visible-xs"></div>
             <div class="col-lg-3 col-sm-3 col-xs-6 text-center">
-                <a href="chs/documents/help/index.html" class="btn btn-default btn-block">帮助与支持</a>
-                <a href="chs/documents/help/sRZDd2.html" class="btn btn-default btn-child btn-block">视频指导</a>
-                <a href="chs/documents/developer/index.html" class="btn btn-default btn-child btn-block">开发者文档</a>
-                <a href="chs/account/login.html" class="btn btn-default btn-child btn-block">在线技术支持</a>
+                <a href="/doc/index.sm?type=3#siWgS" class="btn btn-default btn-block">帮助与支持</a>
+                <a href="/doc/index.sm?type=3#7GouB" class="btn btn-default btn-child btn-block">浏览器支持</a>
+                <a href="/doc/index.sm?type=3#vIfm23" class="btn btn-default btn-child btn-block">常见问题与解答</a>
+                <a href="/doc/index.sm?type=3#SCpS6" class="btn btn-default btn-child btn-block">惩罚机制</a>
             </div>
             <div class="col-lg-3 col-sm-3 col-xs-6 text-center">
-                <a href="chs/blog.html" class="btn btn-default btn-block">关注我们</a>
-                <a href="chs/blog.html" class="btn btn-default btn-child btn-block">官网博客</a>
-                <a href="http://weibo.com/SUBMSG" class="btn btn-default btn-child btn-block" target="_blank">新浪微博</a>
-                <a href="chs/documents/info/0o64G.html" class="btn btn-default btn-child btn-block">微信公众平台</a>
+                <a href="/doc/index.sm" class="btn btn-default btn-block">开发者文档</a>
+                <a href="/doc/index.sm#f706A2" class="btn btn-default btn-child btn-block">开始接入</a>
+                <a href="/doc/index.sm#t2f1J2" class="btn btn-default btn-child btn-block">API文档</a>
+                <a href="/doc/index.sm?#yQZyA" class="btn btn-default btn-child btn-block">SDK下载</a>
             </div>
         </div>
     </div>

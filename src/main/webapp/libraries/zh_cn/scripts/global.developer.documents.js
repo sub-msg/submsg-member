@@ -1,6 +1,14 @@
 $(function() {
     var a, b, c, d, e;
     var docId;
+    $.address.change(function(k) {
+        var ads = k.value.split("/");
+        if(ads[1]!=""){
+        	docId = ads[1];
+            b.guide();
+            b.getContents();
+        }
+    }),
     $(".developer-nav").addClass("active"),
     $("#contents").find(".pre_container").each(function() {
         var a = $(this).html();
@@ -81,7 +89,6 @@ $(function() {
         if(docId!=""){
         	b.getContents();
         }
-        
     }),
     $(".bs-sidenav > li > a").live("click",
     function() {

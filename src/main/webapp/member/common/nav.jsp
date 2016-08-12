@@ -11,7 +11,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand submail_top_logo" href="index.sm"  title="首页 | SUBMSG"><span>SUBMSG</span></a>
+            <a class="navbar-brand submail_top_logo" href="/index.sm"  title="首页 | SUBMSG"><span>SUBMSG</span></a>
         </div>
         <hr class="nav-hr visible-xs">
         <div class="collapse navbar-collapse">

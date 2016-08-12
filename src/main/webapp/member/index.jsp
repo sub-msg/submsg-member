@@ -56,7 +56,7 @@
                     <div class="warp_container">
                         <div class="warp">
                             <div class="title">最近使用的模板</div>
-                            <div class="des-title"><a href="/chs/message/project" class="highlight" >查看全部模板</a></div>
+                            <div class="des-title"><a href="/member/enterTempList.sm" class="highlight" >查看全部模板</a></div>
                             <ul class="qprojects">
                               <li><a href="/member/create.sm"><img src="${libUrl}images/add-new-message.jpg" /><p></p></a></li>
                               <s:iterator var="data" value="msgTempList">

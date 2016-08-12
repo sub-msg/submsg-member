@@ -50,12 +50,11 @@
                         <p class="text1_p3">最专业的短信发送平台 / 解决方案</p>
                         <p class="text1_p4">短信验证码 / 短信通知 / 营销推广短信</p>
                         <p class="text1_p5">好用，不贵！3秒必达，10分钟接入，全自助式服务</p>
-                        <a class="btn try_btn" href="/chs/account/login#/signup">立即免费试用</a>
+                        <a class="btn try_btn" href="/member/index.sm">立即使用</a>
                         <div class="down_list">
                             <ul>
-                                <li><a href="/chs/documents/developer/index" class="a-btn a-btn-rl">查看 API 开发文档</a></li>
-                                <li><a href="/chs/documents/developer/BSx2b3" class="a-btn a-btn-rl">下载 SDK 开发包</a></li>
-                                <li><a href="/chs/blog/view/31" class="a-btn a-btn-rl">快速接入图文教程</a></li>
+                                <li><a href="/doc/index.sm#t2f1J2" class="a-btn a-btn-rl">查看 API 开发文档</a></li>
+                                <li><a href="/doc/index.sm#yQZyA" class="a-btn a-btn-rl">下载 SDK 开发包</a></li>
                             </ul>
                         </div>
                     </div>
@@ -81,12 +80,12 @@
                             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 text-center a2p_div" >
                                 <p class='a2p_icon_width'><img src="${libUrl}images/a2p/a2p_icon4.svg"  class="img-responsive" style='margin:0 auto;'/></p>
                                 <p class="a2p_div1_p1 mt_20_2">新用户专属优惠</p>
-                                <p class="a2p_div1_p2">新用户专属特别优惠计划，2000 条短信套餐仅需 79元（单价0.039/条）。<br /><a href="#" class="a-btn a-btn-sms-rl">了解更多</a></p>
+                                <p class="a2p_div1_p2">新用户专属特别优惠计划，2000 条短信套餐仅需 79元（单价0.039/条）。<br /></p>
                             </div>
                             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 text-center a2p_div">
                                 <p class='a2p_icon_width'><img src="${libUrl}images/a2p/a2p_icon5.svg"  class="img-responsive" style='margin:0 auto;'/></p>
                                 <p class="a2p_div1_p1 mt_20_2">金牌技术支持</p>
-                                <p class="a2p_div1_p2">7x24 客服电话支持，7X24 在线工单支持，及时解答您遇到的任何问题。</p>
+                                <p class="a2p_div1_p2">7x24 客服电话支持，7X24 在线支持，及时解答您遇到的任何问题。</p>
                             </div>
                         </div>
                     </div>
@@ -108,7 +107,7 @@
                                 <div class='code_area overflow_h'>
                                     <input id="inputCode" type="text" class="test_code fl" name="test_code" maxlength="4"/>
                                     <a href="javascript:void(0)" class="reloadverifycode">
-                                    <img src='/sms/codeImg' style='display:block;float:left;margin-left:20px;'/>
+                                    <!-- <img src='/sms/codeImg' style='display:block;float:left;margin-left:20px;'/> -->
                                     </a>
                                 </div>
                                 </div>
@@ -143,7 +142,7 @@
                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 text-center mb_20">
                         <p class='a2p_icon11_width '><img src="${libUrl}images/a2p/a2p_icon10.svg"  class="img-responsive" style='margin:0 auto;'/></p>
                         <p class="a2p_div1_p1">配套语音验证码</p>
-                        <p class="a2p_div1_p2 ">即使在极端场景下，用户无法接收短息，配合语音验证码能做到不遗漏每一个用户<br /><a href="/voice" class="a-btn a-btn-sms-rl">了解更多</a></p>
+                        <p class="a2p_div1_p2 ">即使在极端场景下，用户无法接收短息，配合语音验证码能做到不遗漏每一个用户<br /></p>
                     </div>
                 </div>
                 <div class='row padding_80' style="padding:20px 20px 80px;">
@@ -376,7 +375,7 @@
         </div>
         
         <div class='sections color_g last_sections'>
-            <a class="btn try_btn_2" href="/chs/account/login#/signup">立即免费试用</a>
+            <a class="btn try_btn_2" href="/member/index.sm">立即使用</a>
             <c:if test="${not empty siteCall}"><p>业务咨询请致电：${siteCall}</p></c:if>
         </div>
         

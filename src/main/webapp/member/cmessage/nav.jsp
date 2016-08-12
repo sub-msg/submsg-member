@@ -4,7 +4,7 @@
 <div class="header">
 		<div class="header_icon">
 			<p>
-				<a class="message_logo">SubMsg System</a>
+				<a class="message_logo" href="/member/index.sm">SubMsg System</a>
 			</p>
 			<div class="topMenuContainer">
 				<ul class="appmenu">

@@ -344,30 +344,19 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder, input:pla
 
 
 
+.header .accounts{height:75px; width:auto;display:block; float:right; margin-right:20px;position: relative;}
+.header .accounts ul{margin-top:24px; font-size:14px;}
+.header .accounts ul li{ float:left; height:25px; margin-right:8px; margin-top:4px;}
+.header .accounts ul .icon_account a {position:relative;}
+.header .accounts ul .icon_account a img{border-radius: 40px; -webkit-border-radius: 40px; -moz-border-radius: 40px; -o-border-radius: 40px; -khtml-border-radius: 40px; border:1px solid #17bf82; position:absolute;top:-10px;}
+.header .accounts ul .icon_account a span{ padding-left:38px; display:block;white-space: nowrap;color:#17bf82;}
 .header .accounts ul .icon_account a:hover img{border:1px solid #0063cc;}
 .header .accounts ul .icon_account a:hover span{color:#0063cc;}
-.header .accounts ul li a{color:#ff0000;}
+.header .accounts ul li a{color:#17bf82;}
 .header .accounts ul li a:hover{ text-decoration:none; color:#0063cc;}
 .header .accounts ul .lr{height:28px; width:1px; background-color:#d9d9d9; display:block; overflow:hidden;margin-top:-1px;}
-.header .accounts ul .help a{ width:26px; height:27px; display:block; overflow:hidden; text-indent:-9999px; background:url(../images/icon&stylesheets_norepeat_account.png) no-repeat -78px -66px; margin-top:-5px;}
-.header .accounts ul .help a:hover{ background-position:-26px -66px}
-.header .accounts ul .help a:active{background-position:-0px -66px}
+.header .accounts ul .help a{ width:26px; height:27px; display:block; overflow:hidden; text-indent:-9999px; background:url(../images/icon&stylesheets_norepeat_message.png) no-repeat -78px -66px; margin-top:-5px;}
 
-
-
-
-
-#welcome .header .accounts ul li a{color:#333;}
-#welcome .header .accounts ul li a:hover{color:#000;}
-#welcome .header .accounts ul .icon_account a img{border:none;top:-3px;width:24px;height:24px;}
-#welcome .header .accounts ul .icon_account a span{color:#333;}
-#welcome .header .accounts ul .icon_account a:hover span{color:#000;}
-
-#welcome .header .accounts ul .help a{background:url(../../images/tips/help_selected.svg) no-repeat 0px -0px; }
-
-#welcome .header .accounts ul{margin-top:10px;font-size:13px;}
-#welcome .header .accounts ul .lr{opacity:0;}
-#welcome .header .accounts ul .icon_account a span{padding-left:30px;}
 .dropboxshadow{-webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.5); -moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.5); box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.5);}
 .account_overview{width:330px;height:auto;}
 .account_overview .aro{width:28px;height:14px;position:absolute;top:-14px;left:90px; background:url(../images/icon&stylesheets_norepeat_account.png) no-repeat -203px -183px;}
