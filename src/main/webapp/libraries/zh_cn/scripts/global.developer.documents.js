@@ -49,17 +49,17 @@ $(function() {
             $(".bs-sidenav").hide(),
             $(".bs-searchnav").show(),
             $(".bs-searchnav").html("<li><p>正在搜索 “" + a + "”</p></li>"),
-            $.get("/chs/documents/searchContents", {
+            $.get("/doc/searchContents.sm", {
                 e: a,
                 app: 0
             },
             function(c) {
-                var e = $.parseJSON(c);
+                var e = c;//$.parseJSON(c);
                 $(".searching").hide(),
                 $(".reset").show(),
-                "true" == e.returns ? ($(".bs-searchnav").html("<li><p>找到" + e.count + "个与 “" + a + "” 相关的文档</p></li>"), $.each(e.search,
+                (0 == e.flag && e.rc.length>0 )? ($(".bs-searchnav").html("<li><p>找到" + e.rc.length + "个与 “" + a + "” 相关的文档</p></li>"), $.each(e.rc,
                 function(a, b) {
-                    $(".bs-searchnav").append('<li><a href="/chs/documents/developer/' + b.id + '">' + b.titleCN + "</a></li>")
+                    $(".bs-searchnav").append('<li><a href="/doc/index.sm?type=' + b.type + '#'+b.docId+'">' + b.docTitle + "</a></li>")
                 }), $("#contents").find(".pre_container").each(function() {
                     var a = $(this).html();
                     $(this).replaceWith("<pre>" + a + "</pre>")

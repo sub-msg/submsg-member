@@ -8,5 +8,6 @@
            <result name="success">/doc/index.jsp</result>
 		</action>
        <action name="getContent" class="cn.submsg.member.action.DocAction" method="getContent"></action>
+       <action name="searchContents" class="cn.submsg.member.action.DocAction" method="searchContents"></action>
     </package>
 </struts>

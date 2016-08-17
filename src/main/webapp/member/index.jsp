@@ -58,7 +58,7 @@
                             <div class="title">最近使用的模板</div>
                             <div class="des-title"><a href="/member/enterTempList.sm" class="highlight" >查看全部模板</a></div>
                             <ul class="qprojects">
-                              <li><a href="/member/create.sm"><img src="${libUrl}images/add-new-message.jpg" /><p></p></a></li>
+                              <li><a href="/member/enterCreateTemp.sm"><img src="${libUrl}images/add-new-message.jpg" /><p></p></a></li>
                               <s:iterator var="data" value="msgTempList">
                                  <li><a href="#"><div class="message_container_warp"><div class="warp">【${data.signContent}】${data.tempContent}</div></div><p></p></a></li>
                               </s:iterator>

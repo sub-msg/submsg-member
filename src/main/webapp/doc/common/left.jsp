@@ -10,7 +10,7 @@
 
                 <div  class="col-xs-9 col-lg-3 col-sm-6 col-md-3 sidebar">
                     <div class="search_form">
-                        <input type="text" name="search" class="search" placeholder="搜索">
+                       <input type="text" name="search" class="search" placeholder="搜索">
                             <span class="searching"></span>
                             <a class="reset" href="javascript:void(0)">reset</a>
                             </div>
@@ -26,11 +26,11 @@
 	 List<Doc> second = docService.getListByTypeAndLevel(type, 1);
      StringBuffer html = new StringBuffer();
 	 for(Doc fdoc:first){
-		 html.append("<li><a href='javascript:void(0)'  title='"+fdoc.getDocTitle()+"' id='"+fdoc.getDocId()+"' target= '_blank'>"+fdoc.getDocTitle()+"</a>");
+		 html.append("<li><a href='javascript:void(0)'  title='"+fdoc.getDocTitle()+"' id='"+fdoc.getDocId()+"'>"+fdoc.getDocTitle()+"</a>");
 		 html.append("<ul class='nav nav-list'>");
 		 for(Doc sdoc:second){
 			 if(fdoc.getId().intValue()==sdoc.getParentId()){
-				 html.append("<li><a href='javascript:void(0)' title='"+sdoc.getDocTitle()+"' id='"+sdoc.getDocId()+"' target= '_blank'>"+sdoc.getDocTitle()+"</a></li>");
+				 html.append("<li><a href='javascript:void(0)' title='"+sdoc.getDocTitle()+"' id='"+sdoc.getDocId()+"'>"+sdoc.getDocTitle()+"</a></li>");
 			 }
 		 }
 		 html.append("</ul>");

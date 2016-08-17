@@ -27,6 +27,20 @@ public class DocAction extends JsonBaseActionSupport {
 		return this.renderObjectResult(docService.getDocContent(docId));
 	}
 	
+	private String e;
+	public String searchContents(){
+		DocService docService = ServiceCacheFactory.getService(DocService.class);
+		return this.renderListResult(docService.searchDoc(e));
+	}
+	
+	public String getE() {
+		return e;
+	}
+
+	public void setE(String e) {
+		this.e = e;
+	}
+
 	public int getType() {
 		return type;
 	}
