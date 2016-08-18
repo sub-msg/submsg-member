@@ -53,6 +53,13 @@
 		<action name="getlogs" class="cn.submsg.member.action.LogAction" method="getlogs"></action>
 		<action name="getOrders" class="cn.submsg.member.action.PayMentAction" method="getOrders"></action>
 	</package>
+	
+	<package name="pay" extends="memberAuthInterceptor" namespace="/pay">
+	    <action name="alipayReq" class="cn.submsg.member.action.AlipayAction" method="alipayReq">
+	       <result name="success">/member/pay.jsp</result>
+	    </action>
+	    <action name="aliPaynotify" class="cn.submsg.member.action.AlipayAction" method="aliPaynotify"></action>  
+	</package>
 
 	<!-- 不用登录即可访问的界面 -->
 	<package name="nologin" extends="noLoginInterceptor" namespace="/">

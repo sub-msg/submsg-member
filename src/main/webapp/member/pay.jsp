@@ -134,7 +134,7 @@
                     <div class='col-lg-12 col-xs-12 col-sm-12 col-md-12'>
                         <div class='pay-operate-line' style='margin:40px 40px 0;'></div>
                     </div>
-                                        <form id="alipayment" role="form" novalidate="novalidate">
+                                        <form id="alipayment" role="form" novalidate="novalidate" action="/pay/alipayReq.sm" method="post">
                     <div class='col-lg-12 col-xs-12 col-sm-12 col-md-12'>
                         <div class='banks'>
                             <p style='font-size:28px;color:#666;'>选择支付方式</p>
@@ -348,7 +348,7 @@
                         </div>
                         <div style="margin:0 40px;">
                             <div class='col-lg-4 col-lg-offset-8 col-xs-12 col-sm-6 col-sm-offset-6 col-md-4 col-md-offset-8' >
-                                <input type="hidden" name="orderNumber" value="${porder.orderId}" />
+                                <input type="hidden" name="orderId" value="${porder.orderId}" />
                                 <input type="submit" class='btn btn-lg btn-block btn-success' id="pay" value="立即支付" />
                             </div>
                         </div>
