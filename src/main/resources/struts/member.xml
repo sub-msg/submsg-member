@@ -29,10 +29,6 @@
 		<action name="createInvoice" class="cn.submsg.member.action.PayMentAction" method="createInvoice"></action>	
 		<action name="getInvoiceById" class="cn.submsg.member.action.PayMentAction" method="getInvoiceById"></action>			
 		<action name="deleteInvoice" class="cn.submsg.member.action.PayMentAction" method="deleteInvoice"></action>		
-		<action name="pay" class="cn.submsg.member.action.PayMentAction" method="pay">
-		    <result name="success">/member/pay.jsp</result>	
-		    <result name="back" type="redirect">/mallIndex.sm</result>
-		</action>
 		<action name="enterTempList" class="cn.submsg.member.action.TempAction" method="enterTempList">
            <result name="success">/member/templist.jsp</result>
 		</action>		
@@ -54,11 +50,21 @@
 		<action name="getOrders" class="cn.submsg.member.action.PayMentAction" method="getOrders"></action>
 	</package>
 	
-	<package name="pay" extends="memberAuthInterceptor" namespace="/pay">
+	<package name="pay" extends="noLoginInterceptor" namespace="/pay">
+		<action name="pay" class="cn.submsg.member.action.PayMentAction" method="pay">
+		    <result name="success">/member/pay.jsp</result>	
+		    <result name="back" type="redirect">/mallIndex.sm</result>
+		</action>
 	    <action name="alipayReq" class="cn.submsg.member.action.AlipayAction" method="alipayReq">
 	       <result name="success">/member/pay.jsp</result>
 	    </action>
 	    <action name="aliPaynotify" class="cn.submsg.member.action.AlipayAction" method="aliPaynotify"></action>  
+	
+	    
+	    <action name="aliPayReturn" class="cn.submsg.member.action.AlipayAction" method="aliPayReturn">
+	       <result name="success" type="redirect">/pay/pay.sm?orderId=${out_trade_no}</result>
+	    </action>  
+	    
 	</package>
 
 	<!-- 不用登录即可访问的界面 -->

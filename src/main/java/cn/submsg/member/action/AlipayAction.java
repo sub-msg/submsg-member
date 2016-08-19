@@ -23,7 +23,7 @@ public class AlipayAction extends JsonBaseActionSupport {
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	private String orderId;
+	private String orderNumber;
 	private String payBank;
 	public String alipayReq() throws IOException{
 		this.setErrorResult(null);
@@ -36,7 +36,7 @@ public class AlipayAction extends JsonBaseActionSupport {
 		}
 		PayMentService paymentService = ServiceCacheFactory.getService(PayMentService.class);
 		response.getWriter().println("<!DOCTYPE html><html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><title>支付宝即时到账交易接口</title></head>");
-		String html = paymentService.alipayRequest(orderId);
+		String html = paymentService.alipayRequest(orderNumber);
 		response.getWriter().println(html);
 		response.getWriter().println("<body></body></html>");
 		return null;
@@ -73,12 +73,37 @@ public class AlipayAction extends JsonBaseActionSupport {
        return null;
 	}
 	
-	
-	public String getOrderId() {
-		return orderId;
+	/**
+	 * 返回
+	 * @return
+	 */
+	@SuppressWarnings("rawtypes")
+	public String aliPayReturn() {
+		// 获取支付宝POST过来反馈信息
+		Map<String, String> params = new HashMap<String, String>();
+		Map requestParams = ServletActionContext.getRequest().getParameterMap();
+		for (Iterator iter = requestParams.keySet().iterator(); iter.hasNext();) {
+			String name = (String) iter.next();
+			String[] values = (String[]) requestParams.get(name);
+			String valueStr = "";
+			for (int i = 0; i < values.length; i++) {
+				valueStr = (i == values.length - 1) ? valueStr + values[i] : valueStr + values[i] + ",";
+			}
+			// 乱码解决，这段代码在出现乱码时使用。如果mysign和sign不相等也可以使用这段代码转化
+			// valueStr = new String(valueStr.getBytes("ISO-8859-1"), "gbk");
+			params.put(name, valueStr);
+		}
+		PayMentService paymentService = ServiceCacheFactory.getService(PayMentService.class);
+		paymentService.aliPayNotify(out_trade_no, trade_no, trade_status, seller_id, params);
+		return SUCCESS;
 	}
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
+	
+	
+	public String getOrderNumber() {
+		return orderNumber;
+	}
+	public void setOrderNumber(String orderNumber) {
+		this.orderNumber = orderNumber;
 	}
 	public String getOut_trade_no() {
 		return out_trade_no;

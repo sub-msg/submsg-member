@@ -1,5 +1,7 @@
 package cn.submsg.member.interceptor;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.apache.struts2.ServletActionContext;
 
 import com.opensymphony.xwork2.ActionInvocation;
@@ -25,6 +27,24 @@ public class MemberAuthInterceptor extends AbstractInterceptor{
 			String sessionId = ServletActionContext.getRequest().getSession().getId();
 			Session session = SessionManager.ins().getSession(sessionId);
 			if(session==null){
+				HttpServletRequest req = ServletActionContext.getRequest();
+	            // 获取此请求的地址，请求地址包含application name，进行subString操作，去除application name
+	            String path = req.getRequestURI();
+	            // 获得请求中的参数
+	            String queryString = req.getQueryString();
+	            // 预防空指针
+	            if (queryString == null) {
+	                queryString = "";
+	            }
+	            if(!queryString.equals("")){
+	            	path = path + "?" + queryString;
+	            }
+	            //登出界面不能存在这个里面  不然会一直登出
+	            if(path.indexOf("logout.sm")!=-1){
+	            	path = "";
+	            }
+	            // 存入session，方便调用
+	            ServletActionContext.getRequest().getSession().setAttribute("prePage", path);
 				return "nologin";
 			}
 			aldAction.setUserSession(session);

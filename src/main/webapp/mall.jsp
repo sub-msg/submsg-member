@@ -152,28 +152,13 @@ $("#d-sas-minus").live("click",function(){
 	$(this).parents(".d-sas-buyinput").find("input[name=d-sas-input]").val(a);
 })
 
-
 $("#d-sas-buybutton").live("click",function(){
 	var num=parseInt($(this).parent().prev(".d-sas-buyinput").find("input[name=d-sas-input]").val());
 	var id = parseInt($(this).parent().prev(".d-sas-buyinput").find("input[name=d-sas-input-id]").val());
-    var action = "/member/payMent.sm";  
-    // 创建Form  
-    var form = $('<form></form>');  
-    // 设置属性  
-    form.attr('action', action);  
-    form.attr('method', 'post');  
-    // form的target属性决定form在哪个页面提交  
-    // _self -> 当前页面 _blank -> 新页面  
-    form.attr('target', '_self');  
-    // 创建Input  
-    var num_input = $('<input type="text" name="num" />');  
-    num_input.attr('value', num);  
-    form.append(num_input);  
-    var id_input = $('<input type="text" name="id" />');  
-    id_input.attr('value', id);  
-    form.append(id_input);
-    // 提交表单  
-    form.submit();  
+    var d = '<form name="mallHiddenForm" id="mallHiddenForm" action="/member/payMent.sm" method="post" target="_self"><input type="text" name="num" value="' + num + '"/><input type="text" name="id" value="' + id + '"/><input type="submit" style="display:none" /></form>';
+    $("body").append(d);
+    $("#mallHiddenForm").submit();
+    $("#mallHiddenForm").remove();
 })
 
 </script>

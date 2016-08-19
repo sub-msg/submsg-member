@@ -149,6 +149,10 @@ $(function() {
                 var e, f, g, h, k = c;
                 $("#signup-sppiner").remove();
                 if("0" == k.flag){
+                	if(k.rc.prePage!=""){
+                		window.location =k.rc.prePage;
+                		return;
+                	}
                 	window.location = "/member/index.sm";
                 	return;
                 }else if("1" == k.flag||"2" == k.flag||"3" == k.flag){

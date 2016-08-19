@@ -39,6 +39,7 @@ public class MemberAction extends JsonBaseActionSupport {
 	public String logout(){
 		String sessionId = ServletActionContext.getRequest().getSession().getId();
 		SessionManager.ins().removeSession(sessionId);
+		ServletActionContext.getRequest().getSession().setAttribute("prePage", "");
 		return SUCCESS;
 	}
 	

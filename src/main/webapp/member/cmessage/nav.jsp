@@ -1,3 +1,5 @@
+<%@page import="com.sr178.module.web.session.SessionManager"%>
+<%@page import="com.sr178.module.web.session.Session"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
@@ -16,12 +18,13 @@
 			</div>
 			<div class="headerBg"></div>
 		</div>
+		<% Session navSession = SessionManager.ins().getSession(session.getId()); %>
 		<div class="accounts">
 			<ul>
 				<li class="icon_account submenus_container"><a
 					href="javascript:void(0)" id="accountbtn"> <img
 						src="${libUrl}images/icon/icon64x64.jpg"
-						width="32" height="32" /> <span>孟 潮</span>
+						width="32" height="32" /> <span><%=navSession.getStringAttr("name") %></span>
 				</a>
 					<div class="submenus_remenu">
 						<div class="account_overview">

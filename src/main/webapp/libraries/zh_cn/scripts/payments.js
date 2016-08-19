@@ -326,7 +326,7 @@ $(function() {
         },
         function(a) {
             var b = a;// $.parseJSON(a);
-            "0" == b.flag ? (window.location = "/member/pay.sm?orderId=" + b.rc.orderId) : alert("发生了错误")
+            "0" == b.flag ? (window.location = "/pay/pay.sm?orderId=" + b.rc.orderId) : alert("发生了错误")
        }
         )
         ):$("body").eventdialog({

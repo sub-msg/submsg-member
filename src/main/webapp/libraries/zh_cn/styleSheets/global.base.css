@@ -8,7 +8,7 @@
     font-family:'PingHei';
     font-style:normal;
     font-weight:200;
-    src:local('☺︎'), url("http://libraries.submail.cn/resources/fonts/PingHei-light.woff") format("woff"), url("http://libraries.submail.cn/resources/fonts/PingHei-light.ttf") format("truetype");
+    src:local('鈽猴笌'), url("http://libraries.submail.cn/resources/fonts/PingHei-light.woff") format("woff"), url("http://libraries.submail.cn/resources/fonts/PingHei-light.ttf") format("truetype");
 }
 
 @font-face {
@@ -247,7 +247,7 @@ blockquote p, blockquote span,blockquote p span{font-size:12px;}
 .login-h-para{width:auto;height:50px; margin:5px 20px;}
 .login-h-para .login-para{margin:0;}
 
-/*----------------------------弹框css————————————————————————————————————————*/
+/*----------------------------寮规css鈥斺�斺�斺�斺�斺�斺�斺�斺�斺�斺�斺�斺�斺�斺�斺�斺�斺�斺�斺�斺�斺�斺�斺�斺�斺�斺�斺�斺�斺�斺�斺�斺�斺�斺�斺�斺�斺�斺�斺��*/
 
 .close-viedeo-btn{width:22px;height:22px;display:block;overflow:hidden;background:url("../../images/close_video.png") no-repeat 0 0;position:fixed;top:40px;left:40px;z-index:9999999;}
 .emptyContainer{width:100%;height:100%;background:#000; opacity:0.2;position:fixed;top:0px;left:0px; z-index:999999;}
@@ -291,7 +291,7 @@ blockquote p, blockquote span,blockquote p span{font-size:12px;}
 
 .payments_confirm_container{width:400px; height:280px;background:#fff; position:fixed;top:50%;left:50%;z-index:9999999;border-radius: 5px; margin-left:-200px;margin-top:-160px; -webkit-border-radius:5px; -moz-border-radius: 5px; -o-border-radius: 5px; -khtml-border-radius: 5px; -webkit-box-shadow: rgba(0,0,0,0.5) 0 15px 30px; -moz-box-shadow:inset rgba(0,0,0,0.5) 0 15px 30px; box-shadow: rgba(0,0,0,0.5) 0 15px 30px;}
 .payments_confirm_container .warp{margin:10px;}
-/*=============弹框CSS END==============*/
+/*=============寮规CSS END==============*/
 
 
 
@@ -785,6 +785,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fab061', end
 /* ====================================solutions END=================================*/
 /************************************* payments ****************************************/
 .pay-top-left{font-size:40px;color:#FE9A14;float:left}
+.pay-top-center{font-size:40px;color:#ff0000;}
 .pay-top-right{float:right;color:#fff;background:#007ffc; font-size:18px;padding:10px 20px;-webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.25);-moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.25);box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.25);}
 .pay-top{border-bottom:solid 2px #f3f3f3;}
 .section-title{color:#999;font-weight:lighter;display:block;width:100%;line-height:30px;border-bottom:solid 1px #aaa;font-size:20px;padding:5px 15px;margin:3px 0;}
@@ -795,7 +796,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fab061', end
 .pay-next{width:200px;}
 .pay-next[disabled]{background:url('../../images/subloading_0x007ffc_26px.gif') #007ffc no-repeat 7%;padding:10px 26px;text-indent: 1.2em;}
 
-/**************************新版填写发票信息**********************************/
+/**************************鏂扮増濉啓鍙戠エ淇℃伅**********************************/
 .inv_addr_list{padding:0;}
 .inv_addr_list li{list-style: none;font-size: 12px;margin-bottom: 20px;-webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.25);-moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.25);box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.25); position:relative;}
 .inv_addr_list li:hover{background-color:#f3f3f3;}
@@ -846,15 +847,15 @@ label.error span {width: 12px;height: 6px;background: url("../../images/configur
 #hasinvoice+label{}
 #noinvoice:checked+label{background:#007ffc url("../images/selected-box.png") no-repeat 15px 50%;color:#fff;padding-left:40px; background-size:20px 20px; }
 #hasinvoice:checked+label{background:#007ffc url("../images/selected-box.png") no-repeat 15px 50%;color:#fff;padding-left:40px; background-size:20px 20px;}
-/*********************************新版发票CSS END**************************************/
-/********************************优惠券CSS START*************************************/
+/*********************************鏂扮増鍙戠エCSS END**************************************/
+/********************************浼樻儬鍒窩SS START*************************************/
 .coupon{border: solid 1px #007ffc;width: 240px;line-height: 30px;background: #007ffc;}
 .coupon input{border: none;text-indent: 5px;width: 160px;line-height: 20px;padding: 5px 10px;font-size: 16px;color:#666;}
 .coupon .coupon-insert{color: #fff;width: 78px;text-align: center;float: right;height: 30px;}
 .coupon .coupon-insert:hover{text-decoration: none;background-color: #0065c8}
 .coupon_info p{margin-top: 20px;font-size: 14px;color: #999;}
 .coupon_info .coupon_deadline{margin-left: 40px;font-size: 14px}
-/********************************优惠券CSS END***************************************/
+/********************************浼樻儬鍒窩SS END***************************************/
 .pay-operate-line{display:block;height:1px;background:#fdb24c;margin-top:50px;}
 .pay-radio{padding: 12px 30px;font-size: 16px;font-weight: 300;display:block;float:left;margin-right:20px;color:#007ffc;-webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.25);-moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.25);box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.25);}
 .pay-radio:hover{background:#f3f3f3;}

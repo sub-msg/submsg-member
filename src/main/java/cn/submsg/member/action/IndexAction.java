@@ -52,7 +52,9 @@ public class IndexAction extends JsonBaseActionSupport{
 		session.setAttr(SessionAttrName.NAME, member.getFirstName()+member.getSecondName());
 		session.setAttr(SessionAttrName.USERID,member.getId());
 		SessionManager.ins().addSession(sessionId, session);
-		return this.renderSuccessResult();
+		Object o = ServletActionContext.getRequest().getSession().getAttribute("prePage");
+		String prePage = o==null?"":(String)o;
+		return this.renderKeyValueResult("prePage", prePage);
 	}
 	
     /**

@@ -26,6 +26,9 @@
 	type="text/javascript" charset="utf-8"></script>
 <script src="${libUrl}zh_cn/scripts/global.base.js"
 	type="text/javascript" charset="utf-8"></script>
+<script src="${libUrl}zh_cn/scripts/store.payments.js"
+	type="text/javascript" charset="utf-8"></script>
+<script src="${libUrl}PlugIns/jquery.validate.min.js?2.5.0" type="text/javascript" charset="utf-8"></script>
 
 <%@ include file="/member/common/com_head_element.jsp"%>
 </head>
@@ -65,12 +68,18 @@
             
             <div class='col-lg-12 col-xs-12 col-sm-12 col-md-12' style='margin-top:40px;'>
                 <div class='row pay-top'>
-                    <span class='pay-top-left'>安全结账</span>
+                    <c:if test="${porder.status==0}"><span class='pay-top-left'>安全结账</span></c:if>
+                    <c:if test="${porder.status==1}"><span class='pay-top-center' style="padding: 0px 300px;">恭喜您！订单已支付成功。</span></c:if>
                 </div>
             </div>
             <div class='row'>
                 <div class='col-lg-12 col-xs-12 col-sm-12 col-md-12'>
+                     <c:if test="${porder.status==1}">
+                      <span class='section-title section-title-selected' style='align:center;'>订单详情</span>
+                     </c:if>
+                    <c:if test="${porder.status==0}">
                     <span class='section-title section-title-selected'>支付</span>
+                    </c:if>
                 </div>
                 <div id='pay-pay' class='section-operate'>
                     <div class='col-lg-12 col-xs-12 col-sm-12 col-md-12'>
@@ -134,7 +143,8 @@
                     <div class='col-lg-12 col-xs-12 col-sm-12 col-md-12'>
                         <div class='pay-operate-line' style='margin:40px 40px 0;'></div>
                     </div>
-                                        <form id="alipayment" role="form" novalidate="novalidate" action="/pay/alipayReq.sm" method="post">
+                    <c:if test="${porder.status==0}">
+              <form id="alipayment" role="form" novalidate="novalidate">
                     <div class='col-lg-12 col-xs-12 col-sm-12 col-md-12'>
                         <div class='banks'>
                             <p style='font-size:28px;color:#666;'>选择支付方式</p>
@@ -348,7 +358,7 @@
                         </div>
                         <div style="margin:0 40px;">
                             <div class='col-lg-4 col-lg-offset-8 col-xs-12 col-sm-6 col-sm-offset-6 col-md-4 col-md-offset-8' >
-                                <input type="hidden" name="orderId" value="${porder.orderId}" />
+                                <input type="hidden" name="orderNumber" value="${porder.orderId}" />
                                 <input type="submit" class='btn btn-lg btn-block btn-success' id="pay" value="立即支付" />
                             </div>
                         </div>
@@ -374,7 +384,7 @@
                         </div>
                        
                     </div>
-                    
+                    </c:if>
                 </div>
             </div>
             
