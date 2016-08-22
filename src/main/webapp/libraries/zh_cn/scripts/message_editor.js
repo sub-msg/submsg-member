@@ -181,8 +181,8 @@ $(function() {
         e = e.replace(/【/g, "["),
         e = e.replace(/】/g, "]"),
         a >= j ? ($(".messageTextEditor").val(e.substring(0, j)), $(".editorLength").text("剩余 0 字")) : ($(".messageTextEditor").val(e), $(".editorLength").text("剩余 " + (j - a) + " 字")),
-        $("#textCount").text(e.length + $("input[name=signatureValue]").val().length),
-        $("#messageCount").text(Math.ceil((e.length + $("input[name=signatureValue]").val().length) / k)),
+        $("#textCount").text(e.length + $("input[name=signatureValue]").val().length + 2),
+        $("#messageCount").text(Math.ceil((e.length + $("input[name=signatureValue]").val().length + 2) / k)),
         1 == d && (f = b + c, g = e + $("input[name=signatureValue]").val(), f != g && ($(".sending").remove(), $(".sendlater").remove(), $("input[name=testPhone]").attr("disabled", "true"), $("input[name=sendtestMessage]").hide()))
     },
     p = function() {
