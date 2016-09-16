@@ -149,7 +149,9 @@
              <c:if test="${not empty userName}">
             <a class="btn btn-primary try_btn_2 try_btn_mail" href="/member/index.sm">立即免费试用</a>
             </c:if>
-            <c:if test="${not empty siteCall}"><p>业务咨询请致电：${siteCall}</p></c:if>
+            <p>业务咨询请联系：<a id="mibew-agent-button" href="http://customer-service.submsg.cn:8787/index.php/chat?locale=zh-cn" target="_blank" onclick="Mibew.Objects.ChatPopups['57db5b064912484f'].open();return false;">在线客服</a><script type="text/javascript" src="http://customer-service.submsg.cn:8787/js/compiled/chat_popup.js"></script><script type="text/javascript">Mibew.ChatPopup.init({"id":"57db5b064912484f","url":"http:\/\/customer-service.submsg.cn:8787\/index.php\/chat?locale=zh-cn","preferIFrame":true,"modSecurity":false,"width":640,"height":480,"resizable":true,"styleLoader":"http:\/\/customer-service.submsg.cn:8787\/index.php\/chat\/style\/popup"});</script>
+            </p>
+            <c:if test="${not empty siteCall}"><p>或致电：${siteCall}</p></c:if>
         </div>
         
 

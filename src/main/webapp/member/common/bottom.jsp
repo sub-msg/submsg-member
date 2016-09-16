@@ -21,7 +21,7 @@
             <div class="clearfix visible-xs"></div>
             <div class="col-lg-3 col-sm-3 col-xs-6 text-center">
                 <a href="/doc/index.sm?type=3#siWgS" class="btn btn-default btn-block">帮助与支持</a>
-                <a href="/doc/index.sm?type=3#7GouB" class="btn btn-default btn-child btn-block">浏览器支持</a>
+                <a id="mibew-agent-button" class="btn btn-default btn-child btn-block" href="http://customer-service.submsg.cn:8787/index.php/chat?locale=zh-cn" target="_blank" onclick="Mibew.Objects.ChatPopups['57db5b064912484f'].open();return false;">在线客服</a><script type="text/javascript" src="http://customer-service.submsg.cn:8787/js/compiled/chat_popup.js"></script><script type="text/javascript">Mibew.ChatPopup.init({"id":"57db5b064912484f","url":"http:\/\/customer-service.submsg.cn:8787\/index.php\/chat?locale=zh-cn","preferIFrame":true,"modSecurity":false,"width":640,"height":480,"resizable":true,"styleLoader":"http:\/\/customer-service.submsg.cn:8787\/index.php\/chat\/style\/popup"});</script>
                 <a href="/doc/index.sm?type=3#vIfm23" class="btn btn-default btn-child btn-block">常见问题与解答</a>
                 <a href="/doc/index.sm?type=3#SCpS6" class="btn btn-default btn-child btn-block">惩罚机制</a>
             </div>
@@ -53,7 +53,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 rights-text">
-                <p>© 2016 SUBMSG All Rights reserved. 保留所有权利</p>
+                <p>© 2016 SUBMSG All Rights reserved. 保留所有权利. </p>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 icp-text">
                 <p>${siteIcp}</p>
