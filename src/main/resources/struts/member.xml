@@ -59,10 +59,10 @@
 	       <result name="success">/member/pay.jsp</result>
 	    </action>
 	    <action name="aliPaynotify" class="cn.submsg.member.action.AlipayAction" method="aliPaynotify"></action>  
-	
 	    
-	    <action name="aliPayReturn" class="cn.submsg.member.action.AlipayAction" method="aliPayReturn">
-	       <result name="success" type="redirect">/pay/pay.sm?orderId=${out_trade_no}</result>
+	    <action name="jdPaynotify" class="cn.submsg.member.action.JdBankPayAction" method="jdPayNotify"></action>  
+	    <action name="jdPayReturn" class="cn.submsg.member.action.JdBankPayAction" method="jdPayReturn">
+	       <result name="success" type="redirect">/pay/pay.sm?orderId=${v_oid}</result>
 	    </action>  
 	    
 	</package>

@@ -166,189 +166,234 @@
                             <div class='banks'>
                                 <div class="paybank">
                                     <span>
-                                        <input type="radio" name="payBank" value="CMB" id="CMB"/>
+                                        <input type="radio" name="payBank" value="3080" id="3080"/>
                                     </span>
-                                    <label for="CMB">
+                                    <label for="3080">
                                         <img src="${libUrl}images/bank1.jpg" alt="招商银行"/>
                                     </label>
                                 </div>
-                                
+                               <div class="paybank">
+                                    <span>
+                                        <input type="radio" name="payBank" value="104" id="104"/>
+                                    </span>
+                                    <label for="104">
+                                        <img src="${libUrl}images/bank17.jpg" alt="中国银行"/>
+                                    </label>
+                                </div>
                                 <div class="paybank">
                                     <span>
-                                        <input type="radio" name="payBank" value="CCB"id="CCB" />
+                                        <input type="radio" name="payBank" value="1051" id="1051" />
                                     </span>
-                                    <label for="CCB">
+                                    <label for="1051">
                                         <img src="${libUrl}images/bank2.jpg" alt="中国建设银行"/>
                                     </label>
                                 </div>
                                 
                                 <div class="paybank">
                                     <span>
-                                        <input type="radio" name="payBank" value="ICBCB2C" id="ICBCB2C"/>
+                                        <input type="radio" name="payBank" value="1025" id="1025"/>
                                     </span>
-                                    <label for="ICBCB2C">
+                                    <label for="1025">
                                         <img src="${libUrl}images/bank3.jpg" alt="中国工商银行"/>
                                     </label>
                                 </div>
-                                
                                 <div class="paybank">
                                     <span>
-                                        <input type="radio" name="payBank" value="SPABANK" id="SPABANK"/>
+                                        <input type="radio" name="payBank" value="103" id="103" />
+                                            </span>
+                                    <label for="103">
+                                        <img src="${libUrl}images/bank8.jpg" alt="中国农业银行"/>
+                                    </label>
+                                </div>
+                                <div class="paybank">
+                                    <span>
+                                        <input type="radio" name="payBank" value="307" id="307"/>
                                     </span>
-                                    <label for="SPABANK">
+                                    <label for="307">
                                         <img src="${libUrl}images/bank4.jpg" alt="平安银行"/>
                                     </label>
                                 </div>
                                 
                                 <div class="paybank">
                                     <span>
-                                        <input type="radio" name="payBank" value="CMBC" id="CMBC"/>
+                                        <input type="radio" name="payBank" value="305" id="305"/>
                                     </span>
-                                    <label for="CMBC">
+                                    <label for="305">
                                         <img src="${libUrl}images/bank5.jpg" alt="中国民生银行"/>
                                     </label>
                                 </div>
                                 
                                 <div class="paybank">
                                     <span>
-                                        <input type="radio" name="payBank" value="CIB" id="CIB"/>
+                                        <input type="radio" name="payBank" value="309" id="309"/>
                                     </span>
-                                    <label for="CIB">
+                                    <label for="309">
                                         <img src="${libUrl}images/bank6.jpg" alt="兴业银行"/>
                                     </label>
                                 </div>
                                 
                                 <div class="paybank">
                                     <span>
-                                        <input type="radio" name="payBank" value="ABC" id="ABC">
-                                            </span>
-                                    <label for="ABC">
-                                        <img src="${libUrl}images/bank8.jpg" alt="中国农业银行"/>
-                                    </label>
-                                </div>
-                                
-                                <div class="paybank">
-                                    <span>
-                                        <input type="radio" name="payBank" value="BJBANK" id="BJBANK"/>
+                                        <input type="radio" name="payBank" value="310" id="310"/>
                                     </span>
-                                    <label for="BJBANK">
-                                        <img src="${libUrl}images/bank10.jpg" alt="北京银行"/>
+                                    <label for="310">
+                                        <img src="${libUrl}images/bank11.jpg" alt="北京银行"/>
                                     </label>
                                 </div>
                                 
                                 <div class="paybank">
                                     <span>
-                                        <input type="radio" name="payBank" value="COMM-DEBIT" id="COMM-DEBIT">
+                                        <input type="radio" name="payBank" value="3407" id="3407" />
                                             </span>
-                                    <label for="COMM-DEBIT">
-                                        <img src="${libUrl}images/bank11.jpg" alt="交通银行"/>
+                                    <label for="3407">
+                                        <img src="${libUrl}images/bank10.jpg" alt="交通银行"/>
                                     </label>
                                 </div>
                                 
                                 <div class="paybank">
                                     <span>
-                                        <input type="radio" name="payBank" value="SPDB-DEBIT" id="SPDB-DEBIT"/>
+                                        <input type="radio" name="payBank" value="314" id="314"/>
                                     </span>
-                                    <label for="SPDB-DEBIT">
+                                    <label for="314">
                                         <img src="${libUrl}images/bank12.jpg" alt="浦发银行"/>
                                     </label>
                                 </div>
                                 
                                 <div class="paybank">
                                     <span>
-                                        <input type="radio" name="payBank" value="CEB-DEBIT" id="CEB-DEBIT"/>
+                                        <input type="radio" name="payBank" value="312" id="312"/>
                                     </span>
-                                    <label for="CEB-DEBIT">
+                                    <label for="312">
                                         <img src="${libUrl}images/bank13.jpg" alt="中国光大银行"/>
                                     </label>
                                 </div>
                                 
                                 <div class="paybank">
                                     <span>
-                                        <input type="radio" name="payBank" value="BJRCB" id="BJRCB"/>
+                                        <input type="radio" name="payBank" value="335" id="335"/>
                                     </span>
-                                    <label for="BJRCB">
+                                    <label for="335">
                                         <img src="${libUrl}images/bank14.jpg" alt="北京农村商业银行"/>
                                     </label>
                                 </div>
                                 
                                 <div class="paybank">
                                     <span>
-                                        <input type="radio" name="payBank" value="CITIC" id="CITIC"/>
+                                        <input type="radio" name="payBank" value="313" id="313"/>
                                     </span>
-                                    <label for="CITIC">
+                                    <label for="313">
                                         <img src="${libUrl}images/bank16.jpg" alt="中信银行"/>
                                     </label>
                                 </div>
                                 
-                                <div class="paybank">
-                                    <span>
-                                        <input type="radio" name="payBank" value="BOCB2C" id="BOCB2C"/>
-                                    </span>
-                                    <label for="BOCB2C">
-                                        <img src="${libUrl}images/bank17.jpg" alt="中国银行"/>
-                                    </label>
-                                </div>
+
                                 
                                 <div class="paybank">
                                     <span>
-                                        <input type="radio" name="payBank" value="SHBANK" id="SHBANK"/>
+                                        <input type="radio" name="payBank" value="326" id="326"/>
                                     </span>
-                                    <label for="SHBANK">
+                                    <label for="326">
                                         <img src="${libUrl}images/bank22.jpg" alt="上海银行"/>
                                     </label>
                                 </div>
                                 
                                 <div class="paybank">
                                     <span>
-                                        <input type="radio" name="payBank" value="GDB" id="GDB"/>
+                                        <input type="radio" name="payBank" value="3061" id="3061"/>
                                     </span>
-                                    <label for="GDB">
+                                    <label for="3061">
                                         <img src="${libUrl}images/bank9.jpg" alt="广发银行"/>
                                     </label>
                                 </div>
                                 
                                 <div class="paybank">
                                     <span>
-                                        <input type="radio" name="payBank" value="HZCBB2C" id="HZCBB2C"/>
+                                        <input type="radio" name="payBank" value="324" id="324"/>
                                     </span>
-                                    <label for="HZCBB2C">
+                                    <label for="324">
                                         <img src="${libUrl}images/bank23.jpg" alt="杭州银行"/>
                                     </label>
                                 </div>
                                 
                                 <div class="paybank">
                                     <span>
-                                        <input type="radio" name="payBank" value="NBBANK" id="NBBANK"/>
+                                        <input type="radio" name="payBank" value="302" id="302"/>
                                     </span>
-                                    <label for="NBBANK">
+                                    <label for="302">
                                         <img src="${libUrl}images/bank24.jpg" alt="宁波银行"/>
                                     </label>
                                 </div>
                                 
                                 <div class="paybank">
                                     <span>
-                                        <input type="radio" name="payBank" value="FDB" id="FDB"/>
+                                        <input type="radio" name="payBank" value="3230" id="3230"/>
                                     </span>
-                                    <label for="FDB">
-                                        <img src="${libUrl}images/bank25.jpg" alt="富滇银行"/>
-                                    </label>
-                                </div>
-                                
-                                <div class="paybank">
-                                    <span>
-                                        <input type="radio" name="payBank" value="POSTGC" id="POSTGC"/>
-                                    </span>
-                                    <label for="POSTGC">
+                                    <label for="3230">
                                         <img src="${libUrl}images/bank26.jpg" alt="中国邮政储蓄银行"/>
                                     </label>
                                 </div>
                                 
                                 <div class="paybank"><span>
-                                    <input type="radio" name="payBank" value="SHRCB" id="SHRCB"/>
+                                    <input type="radio" name="payBank" value="343" id="343"/>
                                 </span>
-                                <label for="SHRCB">
+                                <label for="343">
                                     <img src="${libUrl}images/bank21.jpg" alt="上海农商银行"/>
+                                </label>
+                                </div>
+                                
+                                 <div class="paybank"><span>
+                                    <input type="radio" name="payBank" value="311" id="311"/>
+                                </span>
+                                <label for="311">
+                                    <img src="${libUrl}images/bank-hx.gif" alt="华夏银行"/>
+                                </label>
+                                </div>
+                                
+                              <div class="paybank"><span>
+                                    <input type="radio" name="payBank" value="317" id="317"/>
+                                </span>
+                                <label for="317">
+                                    <img src="${libUrl}images/bank-bh.gif" alt="渤海银行"/>
+                                </label>
+                                </div>
+                                
+                               <div class="paybank"><span>
+                                    <input type="radio" name="payBank" value="342" id="342"/>
+                                </span>
+                                <label for="342">
+                                    <img src="${libUrl}images/bank-cqncsy.gif" alt="重庆农商银行"/>
+                                </label>
+                                </div>
+                                
+                                                              <div class="paybank"><span>
+                                    <input type="radio" name="payBank" value="316" id="316"/>
+                                </span>
+                                <label for="316">
+                                    <img src="${libUrl}images/bank-nj.gif" alt="南京银行"/>
+                                </label>
+                                </div>
+                                
+                                <div class="paybank"><span>
+                                    <input type="radio" name="payBank" value="336" id="336"/>
+                                </span>
+                                <label for="336">
+                                    <img src="${libUrl}images/bank-cd.gif" alt="成都银行"/>
+                                </label>
+                                </div>
+                                
+                                <div class="paybank"><span>
+                                    <input type="radio" name="payBank" value="3341" id="3341"/>
+                                </span>
+                                <label for="3341">
+                                    <img src="${libUrl}images/bank-qd.gif" alt="青岛银行"/>
+                                </label>
+                                </div>
+                                
+                                                              <div class="paybank"><span>
+                                    <input type="radio" name="payBank" value="344" id="344"/>
+                                </span>
+                                <label for="344">
+                                    <img src="${libUrl}images/bank-hf.gif" alt="恒丰银行"/>
                                 </label>
                                 </div>
                             </div>
