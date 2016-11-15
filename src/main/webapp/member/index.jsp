@@ -42,8 +42,10 @@
                                         <div class="overview_section">
                                             <div class="warp">
                                                 <div class="title">短信发送服务</div>
-                                                <div class="des-title"><a href="/mallIndex.sm">购买发送服务</a></div>
+                                                <div class="des-title"><a href="/mallIndex.sm">去商城购买</a></div>
                                                 <div class="cretis" id="overview_message_credis">${msgInfo.msgNum}</div>
+                                                <div class="title">国际短信余额</div>
+                                                <div class="cretis" id="overview_message_credis">￥${msgInfo.msgBalance}</div>
                                             </div>
                                         </div>
                                     </div>

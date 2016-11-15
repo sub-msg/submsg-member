@@ -88,7 +88,11 @@
 					<div class="d-sas-inline"></div>
 					<div class="d-sas-ptcolor">
 						<p class="d-sas-present-title">${data.nums}</p>
-						<p><c:if test="${data.nums%10000!=0}"><fmt:formatNumber type="number" value="${data.nums/10000}" pattern="0.0" maxFractionDigits="1" minFractionDigits="1"/></c:if><c:if test="${data.nums%10000==0}"><fmt:formatNumber type="number" value="${data.nums/10000}" pattern="0" maxFractionDigits="0" minFractionDigits="0"/></c:if>万 次短信发送服务</p>
+						<p> 
+						<c:if test="${data.id!=6}">
+						<c:if test="${data.nums%10000!=0}"><fmt:formatNumber type="number" value="${data.nums/10000}" pattern="0.0" maxFractionDigits="1" minFractionDigits="1"/></c:if><c:if test="${data.nums%10000==0}"><fmt:formatNumber type="number" value="${data.nums/10000}" pattern="0" maxFractionDigits="0" minFractionDigits="0"/></c:if>万 次短信发送服务</p>
+					    </c:if>
+					    <c:if test="${data.id==6}">国际短信余额充值</c:if>
 					</div>
 					<div class="d-sas-inline"></div>
 					<div class="d-sas-pp">
@@ -98,7 +102,9 @@
 					</div>
 					<div class="d-sas-inline"></div>
 					<div class="d-sas-price-pers">
-						<p>单价 ￥<fmt:formatNumber type="number" value="${data.price/data.nums}" pattern="0.000" maxFractionDigits="3" minFractionDigits="3"/></p>
+						<p><c:if test="${data.id!=6}">单价 ￥<fmt:formatNumber type="number" value="${data.price/data.nums}" pattern="0.000" maxFractionDigits="3" minFractionDigits="3"/></c:if>
+						<c:if test="${data.id==6}">单价参照价目表</c:if>
+						</p>
 					</div>
 					<div class="d-sas-underline"></div>
 					<div class="d-sas-buycount">

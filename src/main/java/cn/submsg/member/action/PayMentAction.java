@@ -44,7 +44,7 @@ public class PayMentAction extends JsonBaseActionSupport{
 	public String creatOrder(){
 		this.setErrorResult(JSON);
 		PayMentService payMentService = ServiceCacheFactory.getService(PayMentService.class);
-		String orderId = payMentService.creatOrder(this.getUserId(), productId, num, invoiceId);
+		String orderId = payMentService.creatOrder(this.getUserIdMy(), productId, num, invoiceId);
 		return this.renderKeyValueResult("orderId", orderId);
 	}
 	/**
@@ -95,7 +95,7 @@ public class PayMentAction extends JsonBaseActionSupport{
 	public String getInvoiceList(){
 		this.setErrorResult(JSON);
 		PayMentService payMentService = ServiceCacheFactory.getService(PayMentService.class);
-		return this.renderListResult(payMentService.getUserInvoiceList(getUserId()));
+		return this.renderListResult(payMentService.getUserInvoiceList(getUserIdMy()));
 	}
 	/**
 	 * 获取单个发票信息
@@ -129,7 +129,7 @@ public class PayMentAction extends JsonBaseActionSupport{
     public String createInvoice(){
     	this.setErrorResult(JSON);
     	PayMentService payMentService = ServiceCacheFactory.getService(PayMentService.class);
-    	payMentService.createOrEditInvoice(getUserId(), id, type, title, firstname,lastname, provice, city, area, address, mob, s_address, s_mob, s_bank, s_account, s_taxcode);
+    	payMentService.createOrEditInvoice(getUserIdMy(), id, type, title, firstname,lastname, provice, city, area, address, mob, s_address, s_mob, s_bank, s_account, s_taxcode);
     	return this.renderSuccessResult();
     }
     
@@ -140,13 +140,13 @@ public class PayMentAction extends JsonBaseActionSupport{
     public String deleteInvoice(){
     	this.setErrorResult(JSON);
     	PayMentService payMentService = ServiceCacheFactory.getService(PayMentService.class);
-    	payMentService.deleteInvoiceById(id,this.getUserId());
+    	payMentService.deleteInvoiceById(id,this.getUserIdMy());
     	return this.renderSuccessResult();
     }
     
     
 
-    private int getUserId(){
+    private int getUserIdMy(){
     	return this.getUserSession().getIntAttr(SessionAttrName.USERID);
     }
 

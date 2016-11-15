@@ -40,7 +40,7 @@ public class TempAction extends JsonBaseActionSupport{
 		}else{
 			typeString = t;
 		}
-		return this.renderListResult(memberService.getUserMsgTempListByPage(getUserId(), 20, 0, typeString, searchString));
+		return this.renderListResult(memberService.getUserMsgTempListByPage(getUserIdMy(), 20, 0, typeString, searchString));
 	}
 	/**
 	 * 更新模板标题
@@ -51,7 +51,7 @@ public class TempAction extends JsonBaseActionSupport{
 	public String updateTempTitle(){
 		this.setErrorResult(JSON);
 		MemberService memberService = ServiceCacheFactory.getService(MemberService.class);
-		memberService.updateTempTitle(this.getUserId(), tempId, tempTitle);
+		memberService.updateTempTitle(this.getUserIdMy(), tempId, tempTitle);
 		return this.renderSuccessResult();
 	}
 	/**
@@ -61,7 +61,7 @@ public class TempAction extends JsonBaseActionSupport{
 	public String deleteTemp(){
 		this.setErrorResult(JSON);
 		MemberService memberService = ServiceCacheFactory.getService(MemberService.class);
-		memberService.deleteTempByTempId(getUserId(), tempId);
+		memberService.deleteTempByTempId(getUserIdMy(), tempId);
 		return this.renderSuccessResult();
 	}
 	/**
@@ -71,7 +71,7 @@ public class TempAction extends JsonBaseActionSupport{
 	public String getSignList(){
 		this.setErrorResult(JSON);
 		MemberService memberService = ServiceCacheFactory.getService(MemberService.class);
-		return this.renderListResult(memberService.getMemberSignList(this.getUserId()));
+		return this.renderListResult(memberService.getMemberSignList(this.getUserIdMy()));
 	}
 	/*
 	 * 添加短信模板
@@ -84,9 +84,9 @@ public class TempAction extends JsonBaseActionSupport{
 		MemberService memberService = ServiceCacheFactory.getService(MemberService.class);
 		
 		if(!Strings.isNullOrEmpty(tempId)){
-			memberService.editTemp(tempId, getUserId(), signId, tempContent, tempStatus);
+			memberService.editTemp(tempId, getUserIdMy(), signId, tempContent, tempStatus);
 		}else{
-			memberService.addTemp(getUserId(), signId, tempContent, tempStatus);
+			memberService.addTemp(getUserIdMy(), signId, tempContent, tempStatus);
 		}
 		return this.renderSuccessResult();
 	}
@@ -98,7 +98,7 @@ public class TempAction extends JsonBaseActionSupport{
 	public String deleteSign(){
 		this.setErrorResult(JSON);
 		MemberService memberService = ServiceCacheFactory.getService(MemberService.class);
-		memberService.deleteMemberSign(getUserId(), signId);
+		memberService.deleteMemberSign(getUserIdMy(), signId);
 		return this.renderSuccessResult();
 	}
 	/**
@@ -108,7 +108,7 @@ public class TempAction extends JsonBaseActionSupport{
 	public String addSign(){
 		this.setErrorResult(JSON);
 		MemberService memberService = ServiceCacheFactory.getService(MemberService.class);
-		memberService.addMemberSign(getUserId(), signContent);
+		memberService.addMemberSign(getUserIdMy(), signContent);
 		return this.renderSuccessResult();
 	}
 	/**
@@ -118,7 +118,7 @@ public class TempAction extends JsonBaseActionSupport{
 	public String getMsgTempBean(){
 		this.setErrorResult(JSON);
 		MemberService memberService = ServiceCacheFactory.getService(MemberService.class);
-		return this.renderObjectResult(memberService.getMsgTempBean(getUserId(), tempId));
+		return this.renderObjectResult(memberService.getMsgTempBean(getUserIdMy(), tempId));
 	}
 	/**
 	 * 进入新建模版界面
@@ -128,7 +128,7 @@ public class TempAction extends JsonBaseActionSupport{
 		return SUCCESS;
 	}
 	
-    private int getUserId(){
+    private int getUserIdMy(){
     	return this.getUserSession().getIntAttr(SessionAttrName.USERID);
     }
 	public String getR() {

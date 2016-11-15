@@ -91,6 +91,7 @@ $(function() {
                                         d += "<td>" + $.format.date(b.reqTime, format) + "</td>",
                                         d += "<td>" + b.projectId + "</td>",
                                         d += "<td>" + c + b.bill + "</td>",
+                                        d += "<td>" + c + b.price + "</td>",
                                         d += "<td>" + b.toMobile + "</td>",
                                         d += '<td style="line-height:20px; width:30%;text-indent:0px; font-size:12px;">' + b.msgContent + "</td>",
                                         d += "<td>" + sStr + "</td>",
@@ -98,7 +99,7 @@ $(function() {
                                         i++
                                     })
                 		}
-                		0 == h ? (e = ' <tr><td class="title">No.</td><td class="title">日期</td><td class="title">应用</td><td class="title">计费</td><td class="title">联系人</td><td class="title">内容</td><td class="title">状态</td></tr>', $("#messageTable").html(e + d)) : $("#messageTable").append(d);
+                		0 == h ? (e = ' <tr><td class="title">No.</td><td class="title">日期</td><td class="title">应用</td><td class="title">计费</td><td class="title">余额计费</td><td class="title">联系人</td><td class="title">内容</td><td class="title">状态</td></tr>', $("#messageTable").html(e + d)) : $("#messageTable").append(d);
                 	}else if("login" == g[1]){
                 		d = "", $("#login").find(".nodata").hide(), $.each(c.rc,
                                 function(a, b) {

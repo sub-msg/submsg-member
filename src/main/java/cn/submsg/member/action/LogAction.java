@@ -38,15 +38,15 @@ public class LogAction extends JsonBaseActionSupport {
 		e = e.replace("月","-");
 		e = e.replace("日","");
 		if(a.equals("message")){
-			return this.renderPageResult(logService.getMsgSendLog(getUserId(), p, 50, s, e));
+			return this.renderPageResult(logService.getMsgSendLog(getUserIdMy(), p, 50, s, e));
 		}else if(a.equals("buy")){
-			return this.renderPageResult(logService.getPayMentLog(getUserId(), p, 50, s, e));
+			return this.renderPageResult(logService.getPayMentLog(getUserIdMy(), p, 50, s, e));
 		}
 		return this.renderErrorResult("无效的日志类型");
 	}
 	
 	
-	private int getUserId(){
+	private int getUserIdMy(){
 	    	return this.getUserSession().getIntAttr(SessionAttrName.USERID);
 	}
 	public String getA() {
