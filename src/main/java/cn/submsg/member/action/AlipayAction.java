@@ -30,16 +30,15 @@ public class AlipayAction extends JsonBaseActionSupport {
 		HttpServletResponse response = ServletActionContext.getResponse();
 		
 		response.setContentType("text/html; charset=UTF-8");
-		
+		PayMentService paymentService = ServiceCacheFactory.getService(PayMentService.class);
 		if(payBank!=null&&!payBank.equals("ALIPAY")){
-			throw new ServiceException(8900, "银行卡充值暂时关闭，请先用支付宝进行支付！");
-//			PayMentService paymentService = ServiceCacheFactory.getService(PayMentService.class);
+//			throw new ServiceException(8900, "银行卡充值暂时关闭，请先用支付宝进行支付！");
 			//银行卡支付
-//			String result = paymentService.jdBankPayReq(orderNumber, payBank);
-//			response.getWriter().println(result);
-//			return null;
+			String result = paymentService.jdBankPayReq(orderNumber, payBank);
+			response.getWriter().println(result);
+			return null;
 		}else{
-			PayMentService paymentService = ServiceCacheFactory.getService(PayMentService.class);
+			
 			response.getWriter().println("<!DOCTYPE html><html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><title>支付宝即时到账交易接口</title></head>");
 			String html = paymentService.alipayRequest(orderNumber);
 			response.getWriter().println(html);
