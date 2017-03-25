@@ -48,6 +48,7 @@
 		</action>
 		<action name="getlogs" class="cn.submsg.member.action.LogAction" method="getlogs"></action>
 		<action name="getOrders" class="cn.submsg.member.action.PayMentAction" method="getOrders"></action>
+		<action name="readNotice" class="cn.submsg.member.action.MemberAction" method="readNotice"></action>
 	</package>
 	
 	<package name="pay" extends="noLoginInterceptor" namespace="/pay">

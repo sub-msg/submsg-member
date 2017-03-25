@@ -23,6 +23,102 @@
         <script src="${libUrl}PlugIns/jquery.rotate.js?2.5.0" type="text/javascript" charset="utf-8"></script>
         <script src="${libUrl}zh_cn/scripts/sys_base.js?2.5.0" type="text/javascript" charset="utf-8"></script>
         <script src="${libUrl}PlugIns/submenus/submenus.js" type="text/javascript" charset="utf-8"></script>
+        <style>
+
+
+#teamcont{
+	width: 1000px;
+	height: 650px;
+	margin: 0 auto;
+	padding:0 auto;
+	font-family: 'Microsoft Yahei', sans-serif;
+    font-size: 62.5%;
+    font-family: 'Microsoft Yahei', sans-serif;
+}
+#teamcont .partener{
+	
+	margin-left:30px;
+	margin-top:30px;
+	
+}
+#teamcont #pichuan .partener{
+	float:left;
+}
+.pname{
+	padding:25px 0 10px 0;
+	font-weight:bold;
+	color:black;
+}
+.pinfo{
+	color:black;
+}
+.parinforma{
+	position:absolute;
+	z-index:10;
+	width:710px;
+	color:black;
+	display:none;
+	border:solid 5px #00bc7c;
+	-moz-border-radius:12px;
+	-webkit-border-radius:12px;
+	border-radius:12px;
+	background:#FFFFFF;
+}
+#teamcont .partener .row1{
+	background-color:#0000CC;
+	filter:alpha(opacity=90); 
+	-moz-opacity:0.9; 
+	opacity:0.9;
+	-moz-border-radius:60px;
+	-webkit-border-radius:60px;
+	border-radius:60px;
+	cursor:pointer;
+	 -moz-box-shadow: 3px 3px 4px #efefef;
+    -webkit-box-shadow: 3px 3px 4px #efefef;
+    box-shadow: 3px 3px 4px #00bc7c;
+    /* For IE 8 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#00bc7c')";
+    /* For IE 5.5 - 7 */
+    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#00bc7c');
+	
+}
+
+.showRight{
+	float:left;
+	
+}
+.showRight  .huntitle{
+	padding:10px 0px 10px 10px;
+	font-size:30px;
+	line-height:0px;
+	width:650px;
+	text-align:center;
+}
+.showRight  .huncontent{
+	padding:15px 0px 20px 30px;
+	font-size:18px;
+	line-height:35px;
+	width:650px;
+	text-align:left;
+}
+.closebtn{
+	clear:both;
+	position:relative;
+	top:3px;
+	left:670px;
+	width:36px;
+	height:36px;
+	background-image:url(/images/close-n.png);
+	cursor:pointer;
+}
+.cssshadow {
+    -moz-box-shadow: 1px 1px 20px 4px #00bc7c;
+    -webkit-box-shadow:1px 1px 20px 4px #00bc7c;
+    box-shadow:1px 1px 20px 4px #b93539;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#00bc7c')";
+    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#00bc7c');
+}
+</style>
         <%@ include file="/member/common/com_head_element.jsp"%>
     </head>
     <body id="message">
@@ -71,5 +167,46 @@
 <%@ include file="/member/cmessage/bottom.jsp"%>
                        </div>
                        </div>
+<c:if test="${not empty notice}">
+                       <div id="teamcont" >
+	<div style="width:780px;margin:200px auto; text-align:center">
+			<div class="parinforma cssshadow">
+				<div class="closebtn"></div>
+				<div class="showRight">
+				    <div class="huntitle">${notice.title}</div>
+					<div class="huncontent">	
+					${notice.content}
+</div>
+				</div>
+				<div style="clear:both"></div>
+			</div>
+
+	</div>		
+</div>
+<script type="text/javascript">
+$(".parinforma").slideDown("normal");
+//$("#pichuan .row1").click(function(){
+//	var picIndex=$("#pichuan .row1").index($(this));
+//	$(".parinforma").hide();
+//	$("#pichuan").hide();
+//	$(".parinforma").eq(picIndex).slideDown("normal");
+//})
+$("#teamcont .closebtn").mouseenter(function(){
+	$(this).css({'background':'url(/images/close-s.png)'});
+}).mouseleave(function(){
+	$(this).css({'background':'url(/images/close-n.png)'});
+})
+$("#teamcont .closebtn").click(function(){
+	$(".parinforma").hide();
+	  $.post("/member/readNotice.sm", {
+		  noticeId: ${notice.id},
+          tim: Math.random()
+      },
+      function(d) {
+      	 
+      });
+})
+</script>
+</c:if>
     </body>
 </html>

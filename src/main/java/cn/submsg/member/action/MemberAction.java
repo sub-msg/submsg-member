@@ -11,6 +11,7 @@ import com.sr178.module.web.session.SessionManager;
 import cn.submsg.member.bean.MsgTempBean;
 import cn.submsg.member.bo.MemberMsgInfo;
 import cn.submsg.member.bo.MemberProject;
+import cn.submsg.member.bo.Notice;
 import cn.submsg.member.constant.SessionAttrName;
 import cn.submsg.member.service.MemberService;
 
@@ -25,11 +26,14 @@ public class MemberAction extends JsonBaseActionSupport {
 	
 	private MemberMsgInfo msgInfo;
 	
+	private Notice notice;
+	
 	public String execute(){
 		MemberService memberService = ServiceCacheFactory.getService(MemberService.class);
 		int userId = this.getUserSession().getIntAttr(SessionAttrName.USERID);
 		msgTempList = memberService.getUserMsgTempList(userId,7);
 		msgInfo = memberService.getMemberMsgInfo(userId);
+		notice = memberService.getLastNotReadNotice(userId);
 		return SUCCESS;
 	}
 	/**
@@ -92,6 +96,15 @@ public class MemberAction extends JsonBaseActionSupport {
 		return this.renderSuccessResult();
 	}
 	
+	private int noticeId;
+	public String readNotice(){
+		this.setErrorResult(JSON);
+		MemberService memberService = ServiceCacheFactory.getService(MemberService.class);
+		int userId = this.getUserSession().getIntAttr(SessionAttrName.USERID);
+		memberService.readNotice(userId, noticeId);
+		return this.renderSuccessResult();
+	}
+	
 
 	public List<MsgTempBean> getMsgTempList() {
 		return msgTempList;
@@ -145,6 +158,16 @@ public class MemberAction extends JsonBaseActionSupport {
 	public void setBind(String bind) {
 		this.bind = bind;
 	}
-
-	
+	public Notice getNotice() {
+		return notice;
+	}
+	public void setNotice(Notice notice) {
+		this.notice = notice;
+	}
+	public int getNoticeId() {
+		return noticeId;
+	}
+	public void setNoticeId(int noticeId) {
+		this.noticeId = noticeId;
+	}
 }
